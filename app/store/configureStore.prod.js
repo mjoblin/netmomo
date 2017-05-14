@@ -1,7 +1,7 @@
 import { routerMiddleware } from 'react-router-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 
-import history from '../history';
+import history from '../services/history';
 import rootReducer from '../reducers';
 
 
