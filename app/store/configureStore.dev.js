@@ -1,8 +1,8 @@
 import { routerMiddleware } from 'react-router-redux';
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import rootReducer from 'AppRoot/modules/rootReducer';
-import DevTools from 'AppRoot/services/DevTools';
 import history from 'AppRoot/services/history';
 
 
@@ -10,9 +10,8 @@ export default function configureStore(initialState) {
     const store = createStore(
         rootReducer,
         initialState,
-        compose(
-            applyMiddleware(routerMiddleware(history)),
-            DevTools.instrument()
+        composeWithDevTools(
+            applyMiddleware(routerMiddleware(history))
         )
     );
 
