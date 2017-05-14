@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
-const Home = ({ children }) =>
+const Home = () => (
     <div>
-        <span>giggity goo</span>
-    </div>;
+        <span>home</span><p />
+        <Link to='/away'>Away</Link>
+    </div>
+);
 
 export default Home;
 
