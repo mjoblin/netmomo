@@ -2,10 +2,10 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
 
-import home from '../../home';
+import home from 'AppRoot/modules/home';
 // TODO: Only import DevTools if not in production?
-import DevTools from '../../../services/DevTools';
-import history from '../../../services/history';
+import DevTools from 'AppRoot/services/DevTools';
+import history from 'AppRoot/services/history';
 
 
 const App = () => (
