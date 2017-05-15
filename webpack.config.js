@@ -10,6 +10,7 @@ module.exports = {
         'webpack-dev-server/client?http://0.0.0.0:3000',
         'webpack/hot/only-dev-server',
         'react-hot-loader/patch',
+        'babel-polyfill',
         path.join(__dirname, 'app/index.js')
     ],
     output: {

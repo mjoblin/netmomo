@@ -1,18 +1,11 @@
 import { routerReducer } from 'react-router-redux';
 import { combineReducers } from 'redux';
 
+import app from './app';
 
-const filter = (state = '', action) => {
-    switch (action.type) {
-        case 'FILTER':
-            return action.filter;
-        default:
-            return state;
-    }
-};
 
 const rootReducer = combineReducers({
-    filter,
+    app: app.reducer,
     router: routerReducer,
 });
 
