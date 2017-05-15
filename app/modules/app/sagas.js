@@ -1,5 +1,6 @@
 import { eventChannel, END, delay } from 'redux-saga';
 import { all, call, put, take } from 'redux-saga/effects';
+
 import { newDumpling, shiftyConnecting, shiftyConnected, shiftyDisconnected,
     shiftyError, shiftyReconnectAttempt } from './actions';
 import { SHIFTY_CONNECTED, SHIFTY_DISCONNECTED } from './actionTypes';
@@ -44,13 +45,15 @@ const initShiftyConnection = () =>
         return () => {
             if ((socket.readyState !== socket.CLOSING) &&
                 (socket.readyState !== socket.CLOSED)) {
-                console.log('Terminating shifty websocket connection');
+                console.log('Terminating shifty connection');
                 socket.close();
             }
         };
     });
 
 function* watchShiftyConnection() {
+    // Attempt initial connection to shifty.
+    yield put(shiftyConnecting());
     let channel = yield call(initShiftyConnection);
 
     // Configure reconnection settings.
@@ -60,15 +63,16 @@ function* watchShiftyConnection() {
     const reconnectDelayMax = 10000;
     let reconnectDelay = initialReconnectDelay;
 
-    yield put(shiftyConnecting());
-
     while (true) {
-        // Take the action from the shifty channel and dispatch it.
+        // Take the action from the shifty channel and dispatch it.  This will
+        // usually be a DUMPLING action, but may also be an update on the
+        // connection status (used for handling reconnects).
         const action = yield take(channel);
         yield put(action);
 
         if (action.type === SHIFTY_DISCONNECTED) {
-            // We lost our shifty connection so attempt to re-connect.
+            // We lost our shifty connection so attempt to reconnect.
+            // TODO: Are we leaving unwanted/dead channels doing this?
             reconnecting = true;
             console.log(
                 `Attempting to reconnect to shifty in ${reconnectDelay} ms`);
