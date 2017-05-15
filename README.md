@@ -12,3 +12,4 @@ A NetDumplings viewer.
 * Investigate linting (`eslint`).
 * Investigate testing.
 * Check babel config.
+* Add jsdoc documentation and additional inline docs.
