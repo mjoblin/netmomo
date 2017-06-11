@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import { Switch, NavLink } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
-import {List, ListItem} from 'material-ui/List';
+import { Menu } from 'antd';
 
 import dnsLookupModule from 'AppRoot/modules/dnsLookup';
 import homeModule from 'AppRoot/modules/home';
@@ -13,38 +13,71 @@ import history from 'AppRoot/services/history';
 import styles from './styles';
 
 
-const App = () => (
-    <ConnectedRouter history={history}>
-        <div style={styles.app}>
-            <List>
-                <ListItem
-                    primaryText="Home"
-                    containerElement={<NavLink to="/" />}
-                />
-                <ListItem
-                    primaryText="DNS lookups"
-                    containerElement={<NavLink to="/dnsLookup" />}
-                />
-                <ListItem
-                    primaryText="Packet counts"
-                    containerElement={<NavLink to="/packetCount" />}
-                />
-                <ListItem
-                    primaryText="System status"
-                    containerElement={<NavLink to="/systemStatus" />}
-                />
-            </List>
+class App extends React.Component {
+    constructor(props) {
+        super(props);
 
-            <div style={styles.activeModule}>
-                <Switch>
-                    <Route exact path="/" component={homeModule.components.Home} />
-                    <Route path="/dnsLookup" component={dnsLookupModule.components.DNSLookup} />
-                    <Route path="/packetCount" component={packetCountModule.components.PacketCount} />
-                    <Route path="/systemStatus" component={systemStatusModule.components.SystemStatus} />
-                </Switch>
-            </div>
-        </div>
-    </ConnectedRouter>
-);
+        this.state = {
+            currentSelection: "home",
+        };
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(e) {
+        this.setState({
+            currentSelection: e.key,
+        });
+    }
+
+    render() {
+        return (
+            <ConnectedRouter history={history}>
+                <div style={styles.app}>
+                    <Menu
+                        theme="dark"
+                        mode="inline"
+                        onClick={this.handleClick}
+                        selectedKeys={[this.state.currentSelection]}
+                    >
+                        <Menu.Item key="home">
+                            <NavLink to="/">Home</NavLink>
+                        </Menu.Item>
+                        <Menu.Item key="dns">
+                            <NavLink to="/dnsLookup">DNS lookups</NavLink>
+                        </Menu.Item>
+                        <Menu.Item key="packets">
+                            <NavLink to="/packetCount">Packet counts</NavLink>
+                        </Menu.Item>
+                        <Menu.Item key="status">
+                            <NavLink to="/systemStatus">System status</NavLink>
+                        </Menu.Item>
+                    </Menu>
+
+                    <div style={styles.activeModule}>
+                        <Switch>
+                            <Route
+                                exact path="/"
+                                component={homeModule.components.Home}
+                            />
+                            <Route
+                                path="/dnsLookup"
+                                component={dnsLookupModule.components.DNSLookup}
+                            />
+                            <Route
+                                path="/packetCount"
+                                component={packetCountModule.components.PacketCount}
+                            />
+                            <Route
+                                path="/systemStatus"
+                                component={systemStatusModule.components.SystemStatus}
+                            />
+                        </Switch>
+                    </div>
+                </div>
+            </ConnectedRouter>
+        );
+    }
+}
 
 export default App;
