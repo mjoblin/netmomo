@@ -1,10 +1,11 @@
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import 'react-hot-loader/patch';
 import { Provider } from 'react-redux';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import { LocaleProvider } from 'antd';
+import enUS from 'antd/lib/locale-provider/en_US';
 
 import app from './modules/app';
 import store from './store';
@@ -17,11 +18,11 @@ injectTapEventPlugin();
 const render = Component => {
     ReactDOM.render(
         <AppContainer>
-            <MuiThemeProvider>
+            <LocaleProvider locale={enUS}>
                 <Provider store={store}>
                     <Component />
                 </Provider>
-            </MuiThemeProvider>
+            </LocaleProvider>
         </AppContainer>,
         document.getElementById('root')
     );
