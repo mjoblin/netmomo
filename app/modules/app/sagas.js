@@ -10,6 +10,8 @@ const initShiftyConnection = () =>
     eventChannel(emitter => {
         // Connect to NetDumplings default websocket port.
         const socket = new WebSocket('ws://localhost:11348');
+        //const socket = new WebSocket('ws://10.0.1.7:11348');
+        //const socket = new WebSocket('ws://10.0.1.3:11348');
 
         // Websocket event handlers.
         socket.addEventListener('open', event => {
