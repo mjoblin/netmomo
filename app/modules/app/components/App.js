@@ -2,19 +2,21 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import { Switch, NavLink } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu } from 'antd';
 
+import { ConnectionStatus } from 'AppRoot/components';
 import dnsLookupModule from 'AppRoot/modules/dnsLookup';
 import homeModule from 'AppRoot/modules/home';
 import packetCountModule from 'AppRoot/modules/packetCount';
 import settingsModule from 'AppRoot/modules/settings';
 import systemStatusModule from 'AppRoot/modules/systemStatus';
 import history from 'AppRoot/services/history';
-
-import styles from './styles';
+import dumplingImage from 'AppRoot/assets/dumpling_web.png';
 
 
 const { Content, Footer, Sider } = Layout;
+
+import styles from './styles';
 
 
 class App extends React.Component {
@@ -39,6 +41,11 @@ class App extends React.Component {
             <ConnectedRouter history={history}>
                 <Layout style={{ height: '100vh' }}>
                     <Sider style={{ overflow: 'auto' }}>
+                        <div style={styles.nettlerLogoContainer}>
+                            <img src={dumplingImage} style={styles.nettlerLogoImage} />
+                            <span style={styles.nettlerLogoText}>{"> nettler <"}</span>
+                        </div>
+
                         <Menu
                             theme="dark"
                             mode="inline"
@@ -61,6 +68,10 @@ class App extends React.Component {
                                 <NavLink to="/settings">Settings</NavLink>
                             </Menu.Item>
                         </Menu>
+
+                        <div style={{ margin: '1em', position: 'absolute', bottom: 10 }} >
+                            <ConnectionStatus />
+                        </div>
                     </Sider>
 
                     <Layout>
@@ -88,10 +99,6 @@ class App extends React.Component {
                                 />
                             </Switch>
                         </Content>
-
-                        <Footer>
-                            footer
-                        </Footer>
                     </Layout>
                 </Layout>
             </ConnectedRouter>

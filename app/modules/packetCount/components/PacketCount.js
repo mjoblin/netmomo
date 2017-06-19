@@ -1,9 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { VictoryChart, VictoryLine, VictoryTheme } from 'victory';
+import { Tabs } from 'antd';
 import moment from 'moment';
 
+import { getAsArray } from '../selectors';
+import PacketCountTable from './PacketCountTable';
+import PacketCountChart from './PacketCountChart';
+
+
+const TabPane = Tabs.TabPane;
 
 class PacketCount extends React.Component {
     constructor(...args) {
@@ -17,10 +23,11 @@ class PacketCount extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
+        /*
         if (this.firstTime) {
             this.setState({
                 data: [
-                    {when: moment(), y: nextProps.packetCount.Ethernet}
+                    {when: moment(), y: nextProps.packetCounts.Ethernet}
                 ]
             });
             this.firstTime = false;
@@ -32,46 +39,27 @@ class PacketCount extends React.Component {
         this.setState({
             data: [
                 ...data2,
-                {when: moment(), y: nextProps.packetCount.Ethernet}
+                {when: moment(), y: nextProps.packetCounts.Ethernet}
             ]
         })
+        */
     }
 
     render() {
-        const packetCount = this.props.packetCount;
+        const packetCounts = this.props.packetCounts;
 
         return (
             <div>
-                <div>
-                    <h2>Packet counts</h2>
-                    <table>
-                        {
-                            Object.keys(packetCount).map(protocol => (
-                                <tr key={protocol}>
-                                    <td>{protocol}</td>
-                                    <td>{packetCount[protocol].toLocaleString()}</td>
-                                </tr>
-                            ))
-                        }
-                    </table>
-                </div>
-                <div>
-                    <VictoryChart
-                        theme={VictoryTheme.material}
-                        width={1400}
-                        height={800}
-                        padding={100}
-                        animate={{duration: 500, onLoad: {duration: 1000}}}
-                        easing="linear"
-                    >
-                        <VictoryLine
-                            interpolation="linear"
-                            data={this.state.data}
-                            x={d => moment(d.when).format('hh:mm:ss')}
-                            scale="log"
-                        />
-                    </VictoryChart>
-                </div>
+                <h2>Packet counts</h2>
+
+                <Tabs defaultActiveKey="packets_table" animated={false}>
+                    <TabPane tab="Table" key="packets_table">
+                        <PacketCountTable packetCounts={packetCounts} />
+                    </TabPane>
+                    <TabPane tab="Chart" key="packets_chart">
+                        <PacketCountChart data={this.state.data} />
+                    </TabPane>
+                </Tabs>
             </div>
         );
     }
@@ -79,11 +67,11 @@ class PacketCount extends React.Component {
 
 
 PacketCount.propTypes = {
-    packetCount: PropTypes.object.isRequired,
+    packetCounts: PropTypes.array.isRequired,
 };
 
 const mapStateToProps = state => ({
-    packetCount: state.packetCount,
+    packetCounts: getAsArray(state)
 });
 
 export default connect(

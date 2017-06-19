@@ -60,10 +60,18 @@ module.exports = {
                 loader: 'babel-loader'
             },
             {
-                test: [/\.s?css$/],
+                test: [/\.scss$/],
                 loader: 'style-loader!css-loader?modules&localIdentName=[name]---[local]---[hash:base64:5]!sass-loader'
                 //loader: 'style-loader!sass-loader!css-loader?modules&localIdentName=[name]---[local]---[hash:base64:5]'
                 //loader: 'style-loader!css-loader?modules&localIdentName=[name]---[local]---[hash:base64:5]'
+            },
+            {
+                test: [/\.css$/],
+                use: [
+                    "style-loader",
+                    {loader: 'css-loader', options: {sourceMap: 1}},
+                    "postcss-loader",
+                ]
             },
             {
                 test: /\.less$/,
@@ -79,7 +87,7 @@ module.exports = {
                 loader: 'url-loader?limit=10000&mimetype=application/font-woff'
             },
             {
-                test: /\.(ttf|eot|svg)(\?[a-z0-9#=&.]+)?$/,
+                test: /\.(ttf|eot|svg|png)(\?[a-z0-9#=&.]+)?$/,
                 loader: 'file-loader'
             }
         ]
