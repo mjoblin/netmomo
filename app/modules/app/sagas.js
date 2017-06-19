@@ -16,7 +16,7 @@ const initShiftyConnection = () =>
         // Websocket event handlers.
         socket.addEventListener('open', event => {
             console.log('Connected to shifty');
-            socket.send(JSON.stringify({ 'eater_name': 'ndview' }));
+            socket.send(JSON.stringify({ 'eater_name': 'netmomo' }));
             return emitter(shiftyConnected());
         });
 

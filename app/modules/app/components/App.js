@@ -43,7 +43,7 @@ class App extends React.Component {
                     <Sider style={{ overflow: 'auto' }}>
                         <div style={styles.nettlerLogoContainer}>
                             <img src={dumplingImage} style={styles.nettlerLogoImage} />
-                            <span style={styles.nettlerLogoText}>{"> nettler <"}</span>
+                            <span style={styles.nettlerLogoText}>{"netmomo"}</span>
                         </div>
 
                         <Menu
