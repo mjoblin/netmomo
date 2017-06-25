@@ -19,7 +19,6 @@ class ConnectionStatus extends React.Component {
 
         return (
             <span>
-                <span style={{ color: '#D0D0D0', marginRight: '5px' }}>Shifty:</span>
                 <span style={{ color: statusColorMap[this.props.shiftyConnectionStatus] }}>
                     { this.props.shiftyConnectionStatus }
                 </span>
@@ -34,7 +33,7 @@ ConnectionStatus.propTypes = {
 };
 
 const mapStateToProps = state => ({
-    shiftyConnectionStatus: state.app.shiftyConnectionStatus,
+    shiftyConnectionStatus: appModule.selectors.shiftyConnectionStatus(state),
 });
 
 export default connect(
