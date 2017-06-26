@@ -1,17 +1,19 @@
-import { eventChannel, END, delay } from 'redux-saga';
-import { all, call, put, take } from 'redux-saga/effects';
+import { eventChannel, delay } from 'redux-saga';
+import { actionChannel, all, call, put, race, take, takeEvery } from 'redux-saga/effects';
 
 import { newDumpling, shiftyConnecting, shiftyConnected, shiftyDisconnected,
     shiftyError, shiftyReconnectAttempt } from './actions';
-import { SHIFTY_CONNECTED, SHIFTY_DISCONNECTED } from './actionTypes';
+import { SHIFTY_CANCEL_RECONNECT, SHIFTY_CONNECT, SHIFTY_CONNECTED,
+    SHIFTY_DISCONNECT, SHIFTY_DISCONNECTED } from './actionTypes';
 
 
-const initShiftyConnection = () =>
+const initShiftyConnection = (host, port) =>
     eventChannel(emitter => {
-        // Connect to NetDumplings default websocket port.
-        const socket = new WebSocket('ws://localhost:11348');
-        //const socket = new WebSocket('ws://10.0.1.7:11348');
-        //const socket = new WebSocket('ws://10.0.1.3:11348');
+        // Connect to shifty.
+        const shiftyUrl = `ws://${host}:${port}`;
+        console.log(`Initializing shifty connection: ${shiftyUrl}`);
+
+        const socket = new WebSocket(shiftyUrl);
 
         // Websocket event handlers.
         socket.addEventListener('open', event => {
@@ -54,9 +56,10 @@ const initShiftyConnection = () =>
     });
 
 function* watchShiftyConnection() {
-    // Attempt initial connection to shifty.
-    yield put(shiftyConnecting());
-    let channel = yield call(initShiftyConnection);
+    let wantToBeConnected = false;
+    let firstConnectionAttempt = true;
+    let activeShiftyHost, activeShiftyPort;
+    let shiftyChannel;
 
     // Configure reconnection settings.
     let reconnecting = false;
@@ -65,29 +68,93 @@ function* watchShiftyConnection() {
     const reconnectDelayMax = 10000;
     let reconnectDelay = initialReconnectDelay;
 
+    const externalActions =
+        [SHIFTY_CANCEL_RECONNECT, SHIFTY_CONNECT, SHIFTY_DISCONNECT];
+
     while (true) {
-        // Take the action from the shifty channel and dispatch it.  This will
-        // usually be a DUMPLING action, but may also be an update on the
-        // connection status (used for handling reconnects).
-        const action = yield take(channel);
-        yield put(action);
+        // Wait for an action we care about to come in. This will either be a
+        // CONNECT/DISCONNECT action, or (if the shifty channel is open)
+        // an action coming from shifty -- which will usually be a DUMPLING
+        // action but might also be an action providing an update on the
+        // shifty connection status.
+        const racers = {
+            externalAction: take(externalActions),
+        };
 
-        if (action.type === SHIFTY_DISCONNECTED) {
-            // We lost our shifty connection so attempt to reconnect.
-            // TODO: Are we leaving unwanted/dead channels doing this?
-            reconnecting = true;
-            console.log(
-                `Attempting to reconnect to shifty in ${reconnectDelay} ms`);
+        if (shiftyChannel) {
+            racers.fromChannel = take(shiftyChannel);
+        }
 
-            yield put(shiftyReconnectAttempt(reconnectDelay));
-            yield call(delay, reconnectDelay);
+        const newAction = yield race(racers);
+        const action = newAction.externalAction || newAction.fromChannel;
 
-            channel = yield call(initShiftyConnection);
-            reconnectDelay += reconnectDelayIncrement;
-            reconnectDelay = reconnectDelay > reconnectDelayMax ?
-                reconnectDelayMax : reconnectDelay;
-        } else if (action.type === SHIFTY_CONNECTED && reconnecting) {
-            // We've successfully reconnected.
+        console.log(`ACTION: ${action.type}`);
+
+        // Publish the action so others can react to it. We don't do this for
+        // the actions coming from an external source as we don't want to
+        // duplicate them.
+        if (!externalActions.includes(action.type)) {
+            yield put(action);
+        }
+
+        // Handle the new action.
+        // TODO: Allow for reconnects to be cancelled.
+        debugger;
+
+        if (action.type === SHIFTY_CONNECT) {
+            // We want to connect to shifty.
+            wantToBeConnected = true;
+            firstConnectionAttempt = true;
+            reconnecting = false;
+            activeShiftyHost = action.host;
+            activeShiftyPort = action.port;
+
+            // Attempt an initial connection to shifty.
+            yield put(shiftyConnecting());
+            shiftyChannel = yield call(
+                initShiftyConnection, activeShiftyHost, activeShiftyPort);
+            reconnectDelay = initialReconnectDelay;
+        } else if (action.type === SHIFTY_DISCONNECT) {
+            // We no longer want to be connected to shifty.
+            wantToBeConnected = false;
+            if (shiftyChannel) {
+                shiftyChannel.close();
+                yield put(shiftyDisconnected());
+            }
+        } else if (action.type === SHIFTY_DISCONNECTED) {
+            // If we got a DISCONNECT while we were already connected then
+            // we want to switch into a reconnect state. First connection
+            // attempts don't reconnect as those are likely due to a bad
+            // host/port.
+            reconnecting = wantToBeConnected && !firstConnectionAttempt;
+
+            if (reconnecting) {
+                console.log(
+                    `Attempting to reconnect to shifty in ${reconnectDelay} ms`);
+
+                yield put(shiftyReconnectAttempt(reconnectDelay));
+                yield call(delay, reconnectDelay);
+
+                shiftyChannel = yield call(
+                    initShiftyConnection, activeShiftyHost, activeShiftyPort);
+
+                if (wantToBeConnected) {
+                    reconnectDelay += reconnectDelayIncrement;
+                    reconnectDelay = reconnectDelay > reconnectDelayMax ?
+                        reconnectDelayMax : reconnectDelay;
+                }
+            }
+        } else if (action.type === SHIFTY_CONNECTED) {
+            firstConnectionAttempt = false;
+
+            if (reconnecting) {
+                // We've successfully reconnected.
+                reconnecting = false;
+                reconnectDelay = initialReconnectDelay;
+            }
+        } else if (action.type === SHIFTY_CANCEL_RECONNECT) {
+            console.log('Cancelling shifty reconnects');
+            wantToBeConnected = false;
             reconnecting = false;
             reconnectDelay = initialReconnectDelay;
         }

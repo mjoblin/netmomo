@@ -6,7 +6,7 @@ import { SHIFTY_CONNECTING, SHIFTY_CONNECTED, SHIFTY_DISCONNECTED,
 
 
 const DEFAULT_STATE = {
-    shiftyConnectionStatus: SHIFTY_CONNECTING,
+    shiftyConnectionStatus: SHIFTY_DISCONNECTED,
     dumplingsSeen: {},
 };
 
