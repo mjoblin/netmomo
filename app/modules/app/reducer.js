@@ -13,10 +13,18 @@ const DEFAULT_STATE = {
 const appReducer = (state = DEFAULT_STATE, action) => {
     switch (action.type) {
         case t.SHIFTY_CONNECTING:
-            return {
-                ...state,
-                shiftyConnectionStatus: SHIFTY_CONNECTING
-            };
+            // If we're attempting to connect while in reconnect mode then we
+            // want to keep the connection status as RECONNECTING. This avoids
+            // constantly toggling the status between CONNECTING and
+            // RECONNECTING between each reconnect attempt.
+            if (state.shiftyConnectionStatus === SHIFTY_RECONNECTING) {
+                return state;
+            } else {
+                return {
+                    ...state,
+                    shiftyConnectionStatus: SHIFTY_CONNECTING
+                };
+            }
         case t.SHIFTY_CONNECTED:
             return {
                 ...state,
