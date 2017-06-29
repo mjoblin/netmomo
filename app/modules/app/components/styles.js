@@ -15,7 +15,7 @@ const styles = {
     },
     nettlerLogoImage: {
         width: '50%',
-        marginRight: '15px',
+        marginRight: '10px',
     },
     nettlerLogoText: {
         color: '#D0D0D0',

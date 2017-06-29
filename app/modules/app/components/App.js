@@ -1,5 +1,8 @@
+import _ from 'lodash';
 import React from 'react';
+import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { Switch, NavLink } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
 import { Layout, Menu } from 'antd';
@@ -13,10 +16,11 @@ import systemStatusModule from 'AppRoot/modules/systemStatus';
 import history from 'AppRoot/services/history';
 import dumplingImage from 'AppRoot/assets/dumpling_web.png';
 
-
-const { Content, Footer, Sider } = Layout;
-
+import notificationModule from 'AppRoot/modules/notifications';
 import styles from './styles';
+
+const { Content, Sider } = Layout;
+const { Notifications } = notificationModule.components;
 
 
 class App extends React.Component {
@@ -24,7 +28,7 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            currentSelection: "home",
+            currentSelection: "/",
         };
 
         this.handleClick = this.handleClick.bind(this);
@@ -32,7 +36,15 @@ class App extends React.Component {
 
     handleClick(e) {
         this.setState({
+            ...this.state,
             currentSelection: e.key,
+        });
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            ...this.state,
+            currentSelection: nextProps.routerPath,
         });
     }
 
@@ -52,19 +64,19 @@ class App extends React.Component {
                             onClick={this.handleClick}
                             selectedKeys={[this.state.currentSelection]}
                         >
-                            <Menu.Item key="home">
+                            <Menu.Item key="/">
                                 <NavLink to="/">Home</NavLink>
                             </Menu.Item>
-                            <Menu.Item key="dns">
+                            <Menu.Item key="/dnsLookup">
                                 <NavLink to="/dnsLookup">DNS lookups</NavLink>
                             </Menu.Item>
-                            <Menu.Item key="packets">
+                            <Menu.Item key="/packetCount">
                                 <NavLink to="/packetCount">Packet counts</NavLink>
                             </Menu.Item>
-                            <Menu.Item key="status">
+                            <Menu.Item key="/systemStatus">
                                 <NavLink to="/systemStatus">System status</NavLink>
                             </Menu.Item>
-                            <Menu.Item key="settings">
+                            <Menu.Item key="/settings">
                                 <NavLink to="/settings">Settings</NavLink>
                             </Menu.Item>
                         </Menu>
@@ -100,10 +112,22 @@ class App extends React.Component {
                             </Switch>
                         </Content>
                     </Layout>
+                    
+                    <Notifications />
                 </Layout>
             </ConnectedRouter>
         );
     }
 }
 
-export default App;
+App.propTypes = {
+    routerPath: PropTypes.string.isRequired,
+};
+
+const mapStateToProps = state => ({
+    routerPath: _.get(state, 'router.location.pathname', '/'),
+});
+
+export default connect(
+    mapStateToProps,
+)(App);

@@ -6,10 +6,6 @@ import appModule from 'AppRoot/modules/app';
 
 
 class ConnectionStatus extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const statusColorMap = {};
         statusColorMap[appModule.constants.SHIFTY_CONNECTING] = '#D0D030';
