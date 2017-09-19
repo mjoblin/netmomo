@@ -7,6 +7,8 @@ import { SHIFTY_CANCEL_RECONNECT, SHIFTY_CONNECT, SHIFTY_CONNECTED,
     SHIFTY_DISCONNECT, SHIFTY_DISCONNECTED } from './actionTypes';
 
 
+// TODO: Consider redux-observable/RxJS for the websocket handling.
+
 /**
  *
  * @param host
