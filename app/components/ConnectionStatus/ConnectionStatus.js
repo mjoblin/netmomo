@@ -6,6 +6,7 @@ import { Switch } from 'antd';
 
 import appModule from 'AppRoot/modules/app';
 import settingsModule from 'AppRoot/modules/settings';
+import './style.scss';
 
 
 class ConnectionStatus extends React.Component {
@@ -13,7 +14,7 @@ class ConnectionStatus extends React.Component {
         const { actions, settings } = this.props;
 
         return (
-            <span>
+            <span className="connection-status">
                 <Switch
                     checked={this.props.shiftyConnected}
                     onChange={
@@ -22,7 +23,9 @@ class ConnectionStatus extends React.Component {
                             actions.shiftyDisconnect()
                     }
                 />
-                <span> { this.props.shiftyConnectionStatus }</span>
+                <span className="status-text">
+                    { this.props.shiftyConnectionStatus }
+                </span>
             </span>
         );
     }
