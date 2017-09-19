@@ -11,7 +11,7 @@ and netmomo takes care of the front-end display.
 
 netmomo currently displays some rudimentary information on packet protocol
 counts, DNS lookups, and ARP traffic. The idea is that it could be extended
-(along with the NetDumplings chef implementations) to end up with more useful
+(along with the NetDumplings chef implementations) to end up with a more useful
 application. It's also a little more practical than other NetDumplings viewers
 like [packscape](https://github.com/mjoblin/packscape).
 
