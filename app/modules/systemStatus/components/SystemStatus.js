@@ -8,18 +8,27 @@ import { Tabs } from 'antd';
 import * as selectors from '../selectors';
 import Eaters from './Eaters';
 import Kitchens from './Kitchens';
+import './style.scss';
 
 const TabPane = Tabs.TabPane;
 
 
 const SystemStatus = ({ systemStatus }) => {
     return (
-        <div>
+        <div className="system-status">
             <h2>System status</h2>
-            uptime: { moment.duration(systemStatus.server_uptime, 'seconds').format(
+            <div className="summary">
+                <span className="label">shifty uptime:</span>
+                <span className="value">
+                    { moment.duration(systemStatus.server_uptime, 'seconds').format(
                           'd [days], h [hrs], mm [mins], ss [secs]') }
-            <br />
-            dumplings sent: { systemStatus.total_dumplings_sent.toLocaleString() }<br />
+                </span>
+                <br />
+                <span className="label">dumplings sent:</span>
+                <span className="value">
+                    { systemStatus.total_dumplings_sent.toLocaleString() }
+                </span>
+            </div>
 
             <Tabs defaultActiveKey="kitchens" animated={false}>
                 <TabPane tab="Kitchens" key="kitchens">

@@ -1,0 +1,15 @@
+.system-status {
+    .summary {
+        margin-top: 1em;
+        margin-bottom: 1em;
+
+        .label {
+        }
+
+        .value {
+            margin-left: .5em;
+            font-weight: bold;
+            -webkit-font-smoothing: antialiased;
+        }
+    }
+}
