@@ -7,7 +7,7 @@ import { Button, Dropdown, Icon, Input, Menu, Table } from 'antd';
 
 import * as actionCreators from '../actions.js';
 import { getAsArray, getHostComponentLevels } from '../selectors';
-import './style.css';
+import './style.scss';
 
 
 class DNSLookup extends React.Component {
@@ -24,22 +24,19 @@ class DNSLookup extends React.Component {
             {
                 title: 'Host',
                 dataIndex: 'host',
-                key: 'host',
                 sorter: (a, b) => a.host.localeCompare(b.host),
             },
             {
                 title: 'Count',
                 dataIndex: 'count',
-                key: 'count',
                 sorter: (a, b) => a.count - b.count,
                 className: 'column-count',
             },
             {
                 title: 'Latest',
                 dataIndex: 'latest',
-                key: 'latest',
                 sorter: (a, b) => a.latest - b.latest,
-                render: (text, record, index) =>
+                render: text =>
                     moment(text).format('MMMM DD YYYY, h:mm:ss a'),
             },
         ];
@@ -55,31 +52,31 @@ class DNSLookup extends React.Component {
         );
 
         return (
-            <div>
+            <div className="dns-lookup">
                 <h2>DNS lookups</h2>
 
-                <span>{"Host levels: "}</span>
+                <span className="label">{"Host levels: "}</span>
                 <Dropdown overlay={hostLevelsMenu} trigger={['click']}>
-                    <Button>
+                    <Button className="value">
                         {this.props.hostComponentLevels === 0 ?
                             'All' : this.props.hostComponentLevels}
                         <Icon type="down"/>
                     </Button>
                 </Dropdown>
 
-                <span>Host filter:</span>
+                <span className="label">Host filter:</span>
                 <Input
+                    className="value value-host-filter"
                     placeholder="Host filter"
                     onChange={e => this.handleHostFilterEntry(e)}
-                    style={{ width: '20em' }}
                 />
 
                 <Table
+                    className="results-table"
                     dataSource={this.props.dnsLookups}
                     columns={columns}
                     pagination={false}
                     size="middle"
-                    style={{paddingTop: '1em'}}
                 />
             </div>
         );
@@ -88,6 +85,7 @@ class DNSLookup extends React.Component {
 
 
 DNSLookup.propTypes = {
+    actions: PropTypes.array.isRequired,
     dnsLookups: PropTypes.array.isRequired,
     hostComponentLevels: PropTypes.number.isRequired,
 };
@@ -98,11 +96,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => {
-    return { actions: bindActionCreators(actionCreators, dispatch) }
+    return { actions: bindActionCreators(actionCreators, dispatch) };
 };
 
 
 export default connect(
     mapStateToProps,
-    mapDispatchToProps,
+    mapDispatchToProps
 )(DNSLookup);

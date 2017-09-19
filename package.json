@@ -7,7 +7,7 @@
     "test": "",
     "start": "node server",
     "build": "rimraf dist && webpack --config ./webpack.production.config.js --progress --profile --colors",
-    "eslint": "eslint ."
+    "lint": "eslint ."
   },
   "author": "Mike Joblin",
   "license": "MIT",
@@ -22,6 +22,7 @@
     "material-ui": "^0.18.1",
     "moment": "^2.18.1",
     "moment-duration-format": "^1.3.0",
+    "numeral": "^2.0.6",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -47,6 +48,7 @@
     "css-loader": "^0.28.1",
     "eslint": "^3.19.0",
     "eslint-loader": "^1.7.1",
+    "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-react": "^7.0.1",
     "eslint-plugin-redux-saga": "^0.3.0",
     "file-loader": "^0.11.1",

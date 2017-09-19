@@ -34,7 +34,7 @@ class Notifications extends React.Component {
 
             }
 
-            this.setState({ ...this.state, connectedToShifty })
+            this.setState({ ...this.state, connectedToShifty });
         }
     }
 
@@ -52,6 +52,6 @@ const mapStateToProps = state => ({
 });
 
 export default connect(
-    mapStateToProps,
+    mapStateToProps
 )(Notifications);
 

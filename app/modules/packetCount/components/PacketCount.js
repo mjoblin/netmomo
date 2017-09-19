@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Tabs } from 'antd';
-import moment from 'moment';
 
 import { getAsArray } from '../selectors';
 import PacketCountTable from './PacketCountTable';
 import PacketCountChart from './PacketCountChart';
+import './style.scss';
 
 
 const TabPane = Tabs.TabPane;
@@ -18,45 +18,36 @@ class PacketCount extends React.Component {
         this.firstTime = true;
 
         this.state = {
-            data: [{when: moment(), y: 0}]
+            data: [],
         };
     }
 
     componentWillReceiveProps(nextProps) {
-        /*
-        if (this.firstTime) {
+        if (nextProps.packetCounts) {
             this.setState({
-                data: [
-                    {when: moment(), y: nextProps.packetCounts.Ethernet}
-                ]
+                data: nextProps.packetCounts.map(protocol => {
+                    return {
+                        x: protocol.protocol,
+                        y: protocol.count,
+                        width: 50
+                    };
+                }),
             });
-            this.firstTime = false;
         }
-
-        let data2 = this.state.data;
-        data2 = data2.slice(-5);
-
-        this.setState({
-            data: [
-                ...data2,
-                {when: moment(), y: nextProps.packetCounts.Ethernet}
-            ]
-        })
-        */
     }
 
     render() {
         const packetCounts = this.props.packetCounts;
 
         return (
-            <div>
+            <div className="packet-count">
                 <h2>Packet counts</h2>
 
                 <Tabs defaultActiveKey="packets_table" animated={false}>
                     <TabPane tab="Table" key="packets_table">
                         <PacketCountTable packetCounts={packetCounts} />
                     </TabPane>
-                    <TabPane tab="Chart" key="packets_chart">
+                    <TabPane tab="Chart" key="packets_chart" >
                         <PacketCountChart data={this.state.data} />
                     </TabPane>
                 </Tabs>
@@ -75,6 +66,6 @@ const mapStateToProps = state => ({
 });
 
 export default connect(
-    mapStateToProps,
+    mapStateToProps
 )(PacketCount);
 

@@ -8,6 +8,7 @@ import { ConnectedRouter } from 'react-router-redux';
 import { Layout, Menu } from 'antd';
 
 import { ConnectionStatus } from 'AppRoot/components';
+import arpModule from 'AppRoot/modules/arp';
 import dnsLookupModule from 'AppRoot/modules/dnsLookup';
 import homeModule from 'AppRoot/modules/home';
 import packetCountModule from 'AppRoot/modules/packetCount';
@@ -17,7 +18,7 @@ import history from 'AppRoot/services/history';
 import dumplingImage from 'AppRoot/assets/dumpling_web.png';
 
 import notificationModule from 'AppRoot/modules/notifications';
-import styles from './styles';
+import './style.scss';
 
 const { Content, Sider } = Layout;
 const { Notifications } = notificationModule.components;
@@ -51,11 +52,11 @@ class App extends React.Component {
     render() {
         return (
             <ConnectedRouter history={history}>
-                <Layout style={{ height: '100vh' }}>
-                    <Sider style={{ overflow: 'auto' }}>
-                        <div style={styles.nettlerLogoContainer}>
-                            <img src={dumplingImage} style={styles.nettlerLogoImage} />
-                            <span style={styles.nettlerLogoText}>{"netmomo"}</span>
+                <Layout className="layout-container">
+                    <Sider className="menu">
+                        <div className="logo-container">
+                            <img className="icon" src={dumplingImage} />
+                            <span className="label">{"netmomo"}</span>
                         </div>
 
                         <Menu
@@ -66,6 +67,9 @@ class App extends React.Component {
                         >
                             <Menu.Item key="/">
                                 <NavLink to="/">Home</NavLink>
+                            </Menu.Item>
+                            <Menu.Item key="/arp">
+                                <NavLink to="/arp">ARP</NavLink>
                             </Menu.Item>
                             <Menu.Item key="/dnsLookup">
                                 <NavLink to="/dnsLookup">DNS lookups</NavLink>
@@ -81,17 +85,21 @@ class App extends React.Component {
                             </Menu.Item>
                         </Menu>
 
-                        <div style={{ margin: '1em', position: 'absolute', bottom: 10 }} >
+                        <div className="connection-status-container">
                             <ConnectionStatus />
                         </div>
                     </Sider>
 
-                    <Layout>
-                        <Content style={{ margin: '2em' }}>
+                    <Layout className="body">
+                        <Content>
                             <Switch>
                                 <Route
                                     exact path="/"
                                     component={homeModule.components.Home}
+                                />
+                                <Route
+                                    path="/arp"
+                                    component={arpModule.components.ARP}
                                 />
                                 <Route
                                     path="/dnsLookup"
@@ -129,5 +137,5 @@ const mapStateToProps = state => ({
 });
 
 export default connect(
-    mapStateToProps,
+    mapStateToProps
 )(App);

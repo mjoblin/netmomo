@@ -29,24 +29,23 @@ const initShiftyConnection = (host, port) =>
     eventChannel(emitter => {
         // Connect to shifty.
         const shiftyUrl = `ws://${host}:${port}`;
-        console.log(`Initializing shifty connection: ${shiftyUrl}`);
 
         const socket = new WebSocket(shiftyUrl);
 
         // Websocket event handlers.
-        socket.addEventListener('open', event => {
+        socket.addEventListener('open', () => {
             console.log('Connected to shifty');
             socket.send(JSON.stringify({ 'eater_name': 'netmomo' }));
             emitter(shiftyConnected());
         });
 
-        socket.addEventListener('close', event => {
+        socket.addEventListener('close', () => {
             console.log('Connection to shifty closed');
             emitter(shiftyDisconnected());
             emitter(END);
         });
 
-        socket.addEventListener('error', event => {
+        socket.addEventListener('error', () => {
             emitter(shiftyError(
                 { message: 'There was an unexpected shifty WebSocket error' }));
         });
@@ -92,7 +91,7 @@ function* watchShiftyConnection() {
     const externalActions =
         [SHIFTY_CANCEL_RECONNECT, SHIFTY_CONNECT, SHIFTY_DISCONNECT];
 
-    while (true) {
+    for (;;) {
         // Wait for an action we care about to come in. This will either be a
         // CONNECT/DISCONNECT action, or (if the shifty channel is open)
         // an action coming from shifty -- which will usually be a DUMPLING

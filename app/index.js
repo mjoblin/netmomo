@@ -31,5 +31,5 @@ const render = Component => {
 render(app.components.App);
 
 if (module.hot) {
-    module.hot.accept('./modules/app', () => { render(app.components.App) });
+    module.hot.accept('./modules/app', () => { render(app.components.App); });
 }

@@ -12,7 +12,11 @@ export const getProtocolFilter = state => {
 
 export const getPacketCounts = state => {
     return Array.from(Object.keys(getDumplingData(state)),
-        protocol => ({ protocol, count: state[NAME].dumplingData[protocol] }));
+        protocol => ({
+            protocol,
+            key: protocol,
+            count: state[NAME].dumplingData[protocol]
+        }));
 };
 
 export const getAsArray = createSelector(

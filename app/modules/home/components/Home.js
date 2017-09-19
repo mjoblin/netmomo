@@ -3,28 +3,28 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
-import { Switch } from 'antd';
 
+import { ConnectionStatus } from 'AppRoot/components';
 import appModule from 'AppRoot/modules/app';
 import settingsModule from 'AppRoot/modules/settings';
+import './style.scss';
 
 
-const Home = ({ actions, shiftyConnected, settings }) => (
-    <div>
+const Home = () => (
+    <div className="home">
         <h1>Welcome to netmomo</h1>
+
         netmomo is a <a href="https://netdumplings.readthedocs.org">NetDumplings</a> dumpling
-        eater. It shows you the contents of the dumplings collected from your
-        network.
+        eater. It shows you the contents of the dumplings collected from your network.
 
         <p />
-        Connect to shifty:
-        <Switch
-            checked={shiftyConnected}
-            onChange={
-                val => val ? actions.shiftyConnect(settings.shiftyHost, settings.shiftyPort) : actions.shiftyDisconnect()}
-        />
+        <div className="shifty-connection-status">
+            shifty connection status: <ConnectionStatus />
+        </div>
         <p />
-        If you cannot connect to shifty then go to <NavLink to='/settings'>Settings.</NavLink>
+
+        If you cannot connect to shifty then try changing
+        the <NavLink to='/settings'>Settings.</NavLink>
     </div>
 );
 
@@ -44,10 +44,10 @@ const mapDispatchToProps = dispatch => {
             shiftyConnect: appModule.actions.shiftyConnect,
             shiftyDisconnect: appModule.actions.shiftyDisconnect
         }, dispatch)
-    }
+    };
 };
 
 export default connect(
     mapStateToProps,
-    mapDispatchToProps,
+    mapDispatchToProps
 )(Home);

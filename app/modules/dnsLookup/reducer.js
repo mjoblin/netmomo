@@ -13,13 +13,18 @@ const DEFAULT_STATE = {
 const dnsLookupReducer = (state = DEFAULT_STATE, action) => {
     switch (action.type) {
         case appModule.actionTypes.DUMPLING:
-            if (action.dumpling.metadata.chef === 'DNSLookupChef') {
+            if (action.dumpling.metadata.chef === 'DNSLookupChef' &&
+                action.dumpling.payload.lookups_seen
+            ) {
                 // Update the entire dnsLookup.dumplingData state with the new
-                // payload of the DNSLookupChef dumpling.
+                // payload of the DNSLookupChef dumpling, but only for the
+                // lookups_seen history of all lookups (we ignore the as-they-
+                // happen individual lookups which have a 'lookup' key instad
+                // of a 'lookups_seen' key).
                 return {
                     ...state,
                     dumplingData: deepcopy(action.dumpling.payload.lookups_seen),
-                }
+                };
             }
 
             // We ignore all other non-DNSLookupChef dumplings.

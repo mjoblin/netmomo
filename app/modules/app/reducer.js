@@ -40,7 +40,7 @@ const appReducer = (state = DEFAULT_STATE, action) => {
                 ...state,
                 shiftyConnectionStatus: SHIFTY_RECONNECTING
             };
-        case t.DUMPLING:
+        case t.DUMPLING: {
             // Keep track of how many dumplings we've seen from each chef.
             // These will probably not add up to total_dumplings_sent from the
             // SystemStatusChef dumplings because shifty has likely been up
@@ -51,6 +51,7 @@ const appReducer = (state = DEFAULT_STATE, action) => {
                 (newState.dumplingsSeen[chef] || 0) + 1;
 
             return newState;
+        }
         default:
             return state;
     }

@@ -10,7 +10,7 @@ export default function configureStore(initialState) {
         rootReducer,
         initialState,
         compose(
-            applyMiddleware(routerMiddleware(history)),
+            applyMiddleware(routerMiddleware(history))
         )
     );
 

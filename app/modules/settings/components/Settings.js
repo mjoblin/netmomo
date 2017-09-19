@@ -9,6 +9,7 @@ import appModule from 'AppRoot/modules/app';
 
 import * as actionCreators from '../actions.js';
 import { getSettings } from '../selectors';
+import './style.scss';
 
 
 const Settings = ({ settings, actions, shiftyConnectionStatus }) => {
@@ -27,47 +28,52 @@ const Settings = ({ settings, actions, shiftyConnectionStatus }) => {
     } else  {
         shiftyActionButtonText = 'Connect';
         shiftyActionButtonClickHandler =
-            () => { actions.shiftyConnect(settings.shiftyHost, settings.shiftyPort) }
+            () => { actions.shiftyConnect(settings.shiftyHost, settings.shiftyPort); };
     }
 
     return (
-        <div>
+        <div className="settings">
             <h2>Settings</h2>
 
-            <span>Shifty location:</span>
-            <Input
-                defaultValue={settings.shiftyHost}
-                style={{ width: '15em' }}
-                onChange={e => actions.setShiftyHost(e.target.value)}
-            />
+            <div>
+                <span className="label">Shifty location:</span>
+                <Input
+                    className="value value-shifty-host"
+                    defaultValue={settings.shiftyHost}
+                    onChange={e => actions.setShiftyHost(e.target.value)}
+                />
 
-            <span>Port:</span>
-            <InputNumber
-                defaultValue={11348}
-                min={1}
-                max={65535}
-                onChange={e => typeof(e) === 'number' && actions.setShiftyPort(e)}
-            />
-            <Button
-                type="primary"
-                onClick={shiftyActionButtonClickHandler}
-                disabled={
-                    shiftyConnectionStatus !== shiftyConnected &&
-                    shiftyConnectionStatus !== shiftyDisconnected &&
-                    shiftyConnectionStatus !== shiftyReconnecting
-                }
-            >
-                {shiftyActionButtonText}
-            </Button>
+                <span className="label">Port:</span>
+                <InputNumber
+                    className="value"
+                    defaultValue={11348}
+                    min={1}
+                    max={65535}
+                    onChange={e => typeof(e) === 'number' && actions.setShiftyPort(e)}
+                />
+                <Button
+                    type="primary"
+                    onClick={shiftyActionButtonClickHandler}
+                    disabled={
+                        shiftyConnectionStatus !== shiftyConnected &&
+                        shiftyConnectionStatus !== shiftyDisconnected &&
+                        shiftyConnectionStatus !== shiftyReconnecting
+                    }
+                >
+                    {shiftyActionButtonText}
+                </Button>
+            </div>
 
-            <p/>
-
-            <ConnectionStatus />
+            <div>
+                <span className="label">Shifty connection status:</span>
+                <ConnectionStatus className="value" />
+            </div>
         </div>
-    )
+    );
 };
 
 Settings.propTypes = {
+    actions: PropTypes.object.isRequired,
     settings: PropTypes.object.isRequired,
     shiftyConnectionStatus: PropTypes.string.isRequired,
 };
@@ -85,11 +91,11 @@ const mapDispatchToProps = dispatch => {
             shiftyDisconnect: appModule.actions.shiftyDisconnect,
             shiftyCancelReconnect: appModule.actions.shiftyCancelReconnect,
         }, dispatch)
-    }
+    };
 };
 
 
 export default connect(
     mapStateToProps,
-    mapDispatchToProps,
+    mapDispatchToProps
 )(Settings);

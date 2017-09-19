@@ -17,7 +17,7 @@ const packetCountReducer = (state = DEFAULT_STATE, action) => {
                 return {
                     ...state,
                     dumplingData: deepcopy(action.dumpling.payload.packet_counts),
-                }
+                };
             }
 
             // We ignore all other non-PacketCountChef dumplings.

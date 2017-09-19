@@ -17,8 +17,13 @@ export const getHostFilter = state => {
 export const getDNSLookups = state => {
     // Convert entire DNS host/count object into an array of objects per host.
     const dnsLookups = getDumplingData(state);
+
+    if (!dnsLookups || Object.keys(dnsLookups).length <= 0) {
+        return [];
+    }
+
     const allLookupsAsArray = Array.from(Object.keys(dnsLookups), host => {
-        return {host, ...dnsLookups[host]};});
+        return {host, key: host, ...dnsLookups[host]};});
 
     // Reduce the array to the number of desired levels.
     const levelsToKeep = state[NAME].hostComponentLevels;

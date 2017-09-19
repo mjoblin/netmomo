@@ -1,0 +1,27 @@
+.dns-lookup {
+    h2 {
+        margin-bottom: 10px;
+    }
+
+    .label {
+        margin-right: .5em;
+    }
+
+    .value {
+        margin-right: 1.5em;
+    }
+
+    .value-host-filter {
+        width: 20em;
+    }
+
+    .results-table {
+        padding-top: 1em;
+
+        th.column-count,
+        td.column-count {
+            text-align: right!important;
+        }
+    }
+}
+

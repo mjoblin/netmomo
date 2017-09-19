@@ -1,7 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Table } from 'antd';
-
-import './style.css';
 
 
 const PacketCountTable = ({ packetCounts }) => {
@@ -18,6 +17,7 @@ const PacketCountTable = ({ packetCounts }) => {
             dataIndex: 'count',
             key: 'count',
             sorter: (a, b) => a.count - b.count,
+            render: text => text.toLocaleString(),
             className: 'column-count',
             width: 100,
         },
@@ -29,9 +29,13 @@ const PacketCountTable = ({ packetCounts }) => {
             columns={columns}
             pagination={false}
             size="middle"
-            style={{paddingTop: '1em'}}
         />
     );
+};
+
+
+PacketCountTable.propTypes = {
+    packetCounts: PropTypes.object.isRequired,
 };
 
 

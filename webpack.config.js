@@ -60,12 +60,6 @@ module.exports = {
                 loader: 'babel-loader'
             },
             {
-                test: [/\.scss$/],
-                loader: 'style-loader!css-loader?modules&localIdentName=[name]---[local]---[hash:base64:5]!sass-loader'
-                //loader: 'style-loader!sass-loader!css-loader?modules&localIdentName=[name]---[local]---[hash:base64:5]'
-                //loader: 'style-loader!css-loader?modules&localIdentName=[name]---[local]---[hash:base64:5]'
-            },
-            {
                 test: [/\.css$/],
                 use: [
                     "style-loader",
@@ -80,6 +74,15 @@ module.exports = {
                     {loader: 'css-loader', options: {sourceMap: 1}},
                     "postcss-loader",
                     "less-loader"
+                ]
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    "style-loader",
+                    {loader: 'css-loader', options: {sourceMap: 1}},
+                    "postcss-loader",
+                    "sass-loader"
                 ]
             },
             {
