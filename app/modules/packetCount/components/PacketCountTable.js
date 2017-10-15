@@ -10,7 +10,6 @@ const PacketCountTable = ({ packetCounts }) => {
             dataIndex: 'protocol',
             key: 'protocol',
             sorter: (a, b) => a.protocol.localeCompare(b.protocol),
-            width: 100,
         },
         {
             title: 'Count',
