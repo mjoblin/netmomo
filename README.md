@@ -17,13 +17,13 @@ lookups, and ARP traffic. It is far from being a useful network monitoring
 application. The idea is that it could in theory be extended (along with the
 NetDumplings chef implementations) to end up with a more useful application.
 
-<img alt="home" width="250" src="../screenshots/screenshots/home.png">
-<img alt="dns" width="250" src="../screenshots/screenshots/dns.png">
-<img alt="packet counts table" width="250" src="../screenshots/screenshots/packetcounts_table.png">
-<img alt="packet counts chart" width="250" src="../screenshots/screenshots/packetcounts_chart.png">
-<img alt="system status" width="250" src="../screenshots/screenshots/systemstatus_kitchens.png">
-<img alt="system status" width="250" src="../screenshots/screenshots/systemstatus_eaters.png">
-<img alt="settings" width="250 "src="../screenshots/screenshots/settings.png">
+<img alt="home" width="800" src="../screenshots/screenshots/home.png">
+<img alt="dns" width="800" src="../screenshots/screenshots/dns.png">
+<img alt="packet counts table" width="800" src="../screenshots/screenshots/packetcounts_table.png">
+<img alt="packet counts chart" width="800" src="../screenshots/screenshots/packetcounts_chart.png">
+<img alt="system status" width="800" src="../screenshots/screenshots/systemstatus_kitchens.png">
+<img alt="system status" width="800" src="../screenshots/screenshots/systemstatus_eaters.png">
+<img alt="settings" width="800 "src="../screenshots/screenshots/settings.png">
 
 ## Installation
 
