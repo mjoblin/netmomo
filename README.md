@@ -53,7 +53,7 @@ registered with the back-end.
 NetDumpling eaters are the websocket clients receiving packet sniffing
 information from the NetDumplings back-end (via the `shifty` websocket server
 that they all connect to). This shows netmomo and another client called
-'printer' (a NetDumplings commandline helper tool).
+'dumplingprinter' (a NetDumplings commandline helper tool).
 
 <img alt="system status" width="800" src="../screenshots/screenshots/systemstatus_eaters.png">
 
