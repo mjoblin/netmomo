@@ -17,12 +17,51 @@ lookups, and ARP traffic. It is far from being a useful network monitoring
 application. The idea is that it could in theory be extended (along with the
 NetDumplings chef implementations) to end up with a more useful application.
 
+### Home screen
+
+The main home screen of netmomo.
+
 <img alt="home" width="800" src="../screenshots/screenshots/home.png">
+
+### DNS lookups
+
+DNS lookups filtered to those containing 'apple.com'.
+
 <img alt="dns" width="800" src="../screenshots/screenshots/dns.png">
+
+### Packet counts (table)
+
+A table of packet counts by protocol.
+
 <img alt="packet counts table" width="800" src="../screenshots/screenshots/packetcounts_table.png">
+
+### Packet counts (chart)
+
+A chart of packet counts by protocol.
+
 <img alt="packet counts chart" width="800" src="../screenshots/screenshots/packetcounts_chart.png">
+
+### System status (kitchens)
+
+NetDumplings kitchens are the packet sniffing processors (written in Python)
+registered with the back-end.
+
 <img alt="system status" width="800" src="../screenshots/screenshots/systemstatus_kitchens.png">
+
+### System status (eaters)
+
+NetDumpling eaters are the websocket clients receiving packet sniffing
+information from the NetDumplings back-end (via the `shifty` websocket server
+that they all connect to). This shows netmomo and another client called
+'printer' (a NetDumplings commandline helper tool).
+
 <img alt="system status" width="800" src="../screenshots/screenshots/systemstatus_eaters.png">
+
+### Settings
+
+A simple settings screen to tell netmomo where it can find the NetDumplings
+`shifty` websocket server.
+
 <img alt="settings" width="800 "src="../screenshots/screenshots/settings.png">
 
 ## Installation
