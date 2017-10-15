@@ -21,7 +21,8 @@ NetDumplings chef implementations) to end up with a more useful application.
 <img alt="dns" width="250" src="../screenshots/screenshots/dns.png">
 <img alt="packet counts table" width="250" src="../screenshots/screenshots/packetcounts_table.png">
 <img alt="packet counts chart" width="250" src="../screenshots/screenshots/packetcounts_chart.png">
-<img alt="system status" width="250" src="../screenshots/screenshots/systemstatus.png">
+<img alt="system status" width="250" src="../screenshots/screenshots/systemstatus_kitchens.png">
+<img alt="system status" width="250" src="../screenshots/screenshots/systemstatus_eaters.png">
 <img alt="settings" width="250 "src="../screenshots/screenshots/settings.png">
 
 ## Installation
