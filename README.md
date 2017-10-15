@@ -62,7 +62,7 @@ that they all connect to). This shows netmomo and another client called
 A simple settings screen to tell netmomo where it can find the NetDumplings
 `shifty` websocket server.
 
-<img alt="settings" width="800 "src="../screenshots/screenshots/settings.png">
+<img alt="settings" width="800 "src=../screenshots/screenshots/settings.png">
 
 ## Installation
 
