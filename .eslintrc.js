@@ -6,6 +6,7 @@ module.exports = {
     "plugins": [
         "react",
         "import",
+        "jest",
     ],
     "env": {
         "browser": true,
