@@ -2,21 +2,19 @@ import { setShiftyHost, setShiftyPort } from '../actions';
 
 
 describe('settings actions', () => {
-    it('setShiftyHost', () => {
+    test('setShiftyHost', () => {
         const testHost = 'foo.com';
-        const shiftyHostAction = setShiftyHost(testHost);
 
-        expect(shiftyHostAction).toEqual({
+        expect(setShiftyHost(testHost)).toEqual({
             type: 'settings/SET_SHIFTY_HOST',
             shiftyHost: testHost,
         });
     });
 
-    it('setShiftyPort', () => {
+    test('setShiftyPort', () => {
         const testPort = 1234;
-        const shiftyPortAction = setShiftyPort(testPort);
 
-        expect(shiftyPortAction).toEqual({
+        expect(setShiftyPort(testPort)).toEqual({
             type: 'settings/SET_SHIFTY_PORT',
             shiftyPort: testPort,
         });
