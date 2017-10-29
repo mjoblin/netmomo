@@ -12,9 +12,13 @@
     ],
     "env": {
         "test": {
-            "presets": [
-                ["es2015"],
-                "react"
+            "plugins": [
+                "transform-es2015-modules-commonjs",
+                ["module-resolver", {
+                    "alias": {
+                        "AppRoot": "./app"
+                    }
+                }]
             ]
         }
     }
