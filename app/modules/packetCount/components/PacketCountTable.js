@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Table } from 'antd';
 
 
-const PacketCountTable = ({ packetCounts }) => {
+export const PacketCountTable = ({ packetCounts }) => {
     const columns = [
         {
             title: 'Protocol',

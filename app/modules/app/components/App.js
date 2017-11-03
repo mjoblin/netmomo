@@ -30,7 +30,7 @@ const { Content, Sider } = Layout;
 const { Notifications } = notificationModule.components;
 
 
-class App extends React.Component {
+export const App = class extends React.Component {
     constructor(props) {
         super(props);
 
@@ -132,7 +132,9 @@ class App extends React.Component {
             </ConnectedRouter>
         );
     }
-}
+};
+
+App.displayName = 'App';
 
 App.propTypes = {
     routerPath: PropTypes.string.isRequired,
