@@ -11,6 +11,7 @@
   },
   "author": "Mike Joblin",
   "license": "MIT",
+  "repository": "https://github.com/mjoblin/netmomo.git",
   "dependencies": {
     "antd": "~2.11.0",
     "deepcopy": "^0.6.3",
