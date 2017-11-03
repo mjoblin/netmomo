@@ -1,0 +1,544 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Settings matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Settings
+    actions={
+      Object {
+        "setShiftyHost": [Function],
+        "setShiftyPort": [Function],
+        "shiftyCancelReconnect": [Function],
+        "shiftyConnect": [Function],
+        "shiftyDisconnect": [Function],
+      }
+    }
+    settings={
+      Object {
+        "shiftyHost": "localhost",
+        "shiftyPort": 11348,
+      }
+    }
+    shiftyConnectionStatus="Connected"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2>
+          Settings
+        </h2>,
+        <div>
+          <span
+            className="label"
+          >
+            Shifty location:
+          </span>
+          <Input
+            autosize={false}
+            className="value value-shifty-host"
+            defaultValue="localhost"
+            disabled={false}
+            onChange={[Function]}
+            prefixCls="ant-input"
+            type="text"
+          />
+          <span
+            className="label"
+          >
+            Port:
+          </span>
+          <InputNumber
+            className="value"
+            defaultValue={11348}
+            max={65535}
+            min={1}
+            onChange={[Function]}
+            prefixCls="ant-input-number"
+            step={1}
+          />
+          <Button
+            clicked={false}
+            disabled={false}
+            ghost={false}
+            loading={false}
+            onClick={[Function]}
+            prefixCls="ant-btn"
+            type="primary"
+          >
+            Disconnect
+          </Button>
+        </div>,
+        <div>
+          <span
+            className="label"
+          >
+            Shifty connection status:
+          </span>
+          <Connect(ConnectionStatus)
+            className="value"
+          />
+        </div>,
+      ],
+      "className": "settings",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Settings",
+        },
+        "ref": null,
+        "rendered": "Settings",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="label"
+            >
+              Shifty location:
+            </span>,
+            <Input
+              autosize={false}
+              className="value value-shifty-host"
+              defaultValue="localhost"
+              disabled={false}
+              onChange={[Function]}
+              prefixCls="ant-input"
+              type="text"
+            />,
+            <span
+              className="label"
+            >
+              Port:
+            </span>,
+            <InputNumber
+              className="value"
+              defaultValue={11348}
+              max={65535}
+              min={1}
+              onChange={[Function]}
+              prefixCls="ant-input-number"
+              step={1}
+            />,
+            <Button
+              clicked={false}
+              disabled={false}
+              ghost={false}
+              loading={false}
+              onClick={[Function]}
+              prefixCls="ant-btn"
+              type="primary"
+            >
+              Disconnect
+            </Button>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Shifty location:",
+              "className": "label",
+            },
+            "ref": null,
+            "rendered": "Shifty location:",
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "autosize": false,
+              "className": "value value-shifty-host",
+              "defaultValue": "localhost",
+              "disabled": false,
+              "onChange": [Function],
+              "prefixCls": "ant-input",
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Port:",
+              "className": "label",
+            },
+            "ref": null,
+            "rendered": "Port:",
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "className": "value",
+              "defaultValue": 11348,
+              "max": 65535,
+              "min": 1,
+              "onChange": [Function],
+              "prefixCls": "ant-input-number",
+              "step": 1,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Disconnect",
+              "clicked": false,
+              "disabled": false,
+              "ghost": false,
+              "loading": false,
+              "onClick": [Function],
+              "prefixCls": "ant-btn",
+              "type": "primary",
+            },
+            "ref": null,
+            "rendered": "Disconnect",
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="label"
+            >
+              Shifty connection status:
+            </span>,
+            <Connect(ConnectionStatus)
+              className="value"
+            />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Shifty connection status:",
+              "className": "label",
+            },
+            "ref": null,
+            "rendered": "Shifty connection status:",
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "className": "value",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2>
+            Settings
+          </h2>,
+          <div>
+            <span
+              className="label"
+            >
+              Shifty location:
+            </span>
+            <Input
+              autosize={false}
+              className="value value-shifty-host"
+              defaultValue="localhost"
+              disabled={false}
+              onChange={[Function]}
+              prefixCls="ant-input"
+              type="text"
+            />
+            <span
+              className="label"
+            >
+              Port:
+            </span>
+            <InputNumber
+              className="value"
+              defaultValue={11348}
+              max={65535}
+              min={1}
+              onChange={[Function]}
+              prefixCls="ant-input-number"
+              step={1}
+            />
+            <Button
+              clicked={false}
+              disabled={false}
+              ghost={false}
+              loading={false}
+              onClick={[Function]}
+              prefixCls="ant-btn"
+              type="primary"
+            >
+              Disconnect
+            </Button>
+          </div>,
+          <div>
+            <span
+              className="label"
+            >
+              Shifty connection status:
+            </span>
+            <Connect(ConnectionStatus)
+              className="value"
+            />
+          </div>,
+        ],
+        "className": "settings",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Settings",
+          },
+          "ref": null,
+          "rendered": "Settings",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="label"
+              >
+                Shifty location:
+              </span>,
+              <Input
+                autosize={false}
+                className="value value-shifty-host"
+                defaultValue="localhost"
+                disabled={false}
+                onChange={[Function]}
+                prefixCls="ant-input"
+                type="text"
+              />,
+              <span
+                className="label"
+              >
+                Port:
+              </span>,
+              <InputNumber
+                className="value"
+                defaultValue={11348}
+                max={65535}
+                min={1}
+                onChange={[Function]}
+                prefixCls="ant-input-number"
+                step={1}
+              />,
+              <Button
+                clicked={false}
+                disabled={false}
+                ghost={false}
+                loading={false}
+                onClick={[Function]}
+                prefixCls="ant-btn"
+                type="primary"
+              >
+                Disconnect
+              </Button>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Shifty location:",
+                "className": "label",
+              },
+              "ref": null,
+              "rendered": "Shifty location:",
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "autosize": false,
+                "className": "value value-shifty-host",
+                "defaultValue": "localhost",
+                "disabled": false,
+                "onChange": [Function],
+                "prefixCls": "ant-input",
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Port:",
+                "className": "label",
+              },
+              "ref": null,
+              "rendered": "Port:",
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "className": "value",
+                "defaultValue": 11348,
+                "max": 65535,
+                "min": 1,
+                "onChange": [Function],
+                "prefixCls": "ant-input-number",
+                "step": 1,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Disconnect",
+                "clicked": false,
+                "disabled": false,
+                "ghost": false,
+                "loading": false,
+                "onClick": [Function],
+                "prefixCls": "ant-btn",
+                "type": "primary",
+              },
+              "ref": null,
+              "rendered": "Disconnect",
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="label"
+              >
+                Shifty connection status:
+              </span>,
+              <Connect(ConnectionStatus)
+                className="value"
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Shifty connection status:",
+                "className": "label",
+              },
+              "ref": null,
+              "rendered": "Shifty connection status:",
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "className": "value",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;
