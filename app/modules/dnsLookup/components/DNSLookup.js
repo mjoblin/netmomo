@@ -85,7 +85,7 @@ export const DNSLookup = class extends React.Component {
 
 
 DNSLookup.propTypes = {
-    actions: PropTypes.array.isRequired,
+    actions: PropTypes.object.isRequired,
     dnsLookups: PropTypes.array.isRequired,
     hostComponentLevels: PropTypes.number.isRequired,
 };
