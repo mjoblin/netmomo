@@ -1,23 +1,9 @@
 import reducer from '../reducer';
+import testARPPacketDumpling from './packetDumpling.json';
 
 
 const defaultState = {
     dumplingData: [],
-};
-
-const testARPDumpling = {
-    metadata: {
-        chef: 'ARPChef',
-    },
-    payload: {
-        dst_hw: "01:01:01:01:01:01",
-        dst_ip: "192.168.1.1",
-        notes: "source device is new",
-        operation: "reply",
-        src_hw: "02:02:02:02:02:02",
-        src_ip: "192.168.1.2",
-        time: 1508700000.111111,
-    }
 };
 
 describe('arp reducer', () => {
@@ -31,12 +17,12 @@ describe('arp reducer', () => {
         expect(
             reducer(defaultState, {
                 type: 'app/DUMPLING',
-                dumpling: testARPDumpling,
+                dumpling: testARPPacketDumpling,
             })
         ).toEqual({
             dumplingData: [{
-                key: '02:02:02:02:02:02_01:01:01:01:01:01_1508700000.111111',
-                ...testARPDumpling.payload,
+                key: '02:02:02:02:02:02_01:01:01:01:01:01_1509932219145.2742',
+                ...testARPPacketDumpling.payload,
             }],
         });
     });
