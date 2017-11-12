@@ -1,0 +1,742 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SystemStatus matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SystemStatus
+    systemStatus={
+      Object {
+        "dumpling_eater_count": 1,
+        "dumpling_eaters": Array [
+          Object {
+            "eater_name": "netmomo",
+            "host": "::1",
+            "port": 53013,
+          },
+        ],
+        "dumpling_kitchen_count": 1,
+        "dumpling_kitchens": Array [
+          Object {
+            "chefs": Array [
+              "netdumplings.dumplingchefs.ARPChef",
+              "netdumplings.dumplingchefs.DNSLookupChef",
+              "netdumplings.dumplingchefs.PacketCountChef",
+            ],
+            "filter": "tcp or icmp or udp or arp",
+            "host": "127.0.0.1",
+            "interface": "en0",
+            "kitchen_name": "default_kitchen",
+            "poke_interval": 5,
+            "port": 53012,
+          },
+        ],
+        "server_uptime": 130.094683,
+        "total_dumplings_sent": 68,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2>
+          System status
+        </h2>,
+        <div
+          className="summary"
+        >
+          <span
+            className="label"
+          >
+            shifty uptime:
+          </span>
+          <span
+            className="value"
+          >
+            2 mins, 10 secs
+          </span>
+          <br />
+          <span
+            className="label"
+          >
+            dumplings sent:
+          </span>
+          <span
+            className="value"
+          >
+            68
+          </span>
+        </div>,
+        <Tabs
+          animated={false}
+          defaultActiveKey="kitchens"
+          hideAdd={false}
+          prefixCls="ant-tabs"
+        >
+          <TabPane
+            placeholder={null}
+            tab="Kitchens"
+          >
+            <Kitchens
+              kitchens={
+                Array [
+                  Object {
+                    "chefs": Array [
+                      "netdumplings.dumplingchefs.ARPChef",
+                      "netdumplings.dumplingchefs.DNSLookupChef",
+                      "netdumplings.dumplingchefs.PacketCountChef",
+                    ],
+                    "filter": "tcp or icmp or udp or arp",
+                    "host": "127.0.0.1",
+                    "interface": "en0",
+                    "kitchen_name": "default_kitchen",
+                    "poke_interval": 5,
+                    "port": 53012,
+                  },
+                ]
+              }
+            />
+          </TabPane>
+          <TabPane
+            placeholder={null}
+            tab="Eaters"
+          >
+            <Eaters
+              eaters={
+                Array [
+                  Object {
+                    "eater_name": "netmomo",
+                    "host": "::1",
+                    "port": 53013,
+                  },
+                ]
+              }
+            />
+          </TabPane>
+        </Tabs>,
+      ],
+      "className": "system-status",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "System status",
+        },
+        "ref": null,
+        "rendered": "System status",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="label"
+            >
+              shifty uptime:
+            </span>,
+            <span
+              className="value"
+            >
+              2 mins, 10 secs
+            </span>,
+            <br />,
+            <span
+              className="label"
+            >
+              dumplings sent:
+            </span>,
+            <span
+              className="value"
+            >
+              68
+            </span>,
+          ],
+          "className": "summary",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "shifty uptime:",
+              "className": "label",
+            },
+            "ref": null,
+            "rendered": "shifty uptime:",
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "2 mins, 10 secs",
+              "className": "value",
+            },
+            "ref": null,
+            "rendered": "2 mins, 10 secs",
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "dumplings sent:",
+              "className": "label",
+            },
+            "ref": null,
+            "rendered": "dumplings sent:",
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "68",
+              "className": "value",
+            },
+            "ref": null,
+            "rendered": "68",
+            "type": "span",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {
+          "animated": false,
+          "children": Array [
+            <TabPane
+              placeholder={null}
+              tab="Kitchens"
+            >
+              <Kitchens
+                kitchens={
+                  Array [
+                    Object {
+                      "chefs": Array [
+                        "netdumplings.dumplingchefs.ARPChef",
+                        "netdumplings.dumplingchefs.DNSLookupChef",
+                        "netdumplings.dumplingchefs.PacketCountChef",
+                      ],
+                      "filter": "tcp or icmp or udp or arp",
+                      "host": "127.0.0.1",
+                      "interface": "en0",
+                      "kitchen_name": "default_kitchen",
+                      "poke_interval": 5,
+                      "port": 53012,
+                    },
+                  ]
+                }
+              />
+            </TabPane>,
+            <TabPane
+              placeholder={null}
+              tab="Eaters"
+            >
+              <Eaters
+                eaters={
+                  Array [
+                    Object {
+                      "eater_name": "netmomo",
+                      "host": "::1",
+                      "port": 53013,
+                    },
+                  ]
+                }
+              />
+            </TabPane>,
+          ],
+          "defaultActiveKey": "kitchens",
+          "hideAdd": false,
+          "prefixCls": "ant-tabs",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "kitchens",
+            "nodeType": "class",
+            "props": Object {
+              "children": <Kitchens
+                kitchens={
+                  Array [
+                    Object {
+                      "chefs": Array [
+                        "netdumplings.dumplingchefs.ARPChef",
+                        "netdumplings.dumplingchefs.DNSLookupChef",
+                        "netdumplings.dumplingchefs.PacketCountChef",
+                      ],
+                      "filter": "tcp or icmp or udp or arp",
+                      "host": "127.0.0.1",
+                      "interface": "en0",
+                      "kitchen_name": "default_kitchen",
+                      "poke_interval": 5,
+                      "port": 53012,
+                    },
+                  ]
+                }
+              />,
+              "placeholder": null,
+              "tab": "Kitchens",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "function",
+              "props": Object {
+                "kitchens": Array [
+                  Object {
+                    "chefs": Array [
+                      "netdumplings.dumplingchefs.ARPChef",
+                      "netdumplings.dumplingchefs.DNSLookupChef",
+                      "netdumplings.dumplingchefs.PacketCountChef",
+                    ],
+                    "filter": "tcp or icmp or udp or arp",
+                    "host": "127.0.0.1",
+                    "interface": "en0",
+                    "kitchen_name": "default_kitchen",
+                    "poke_interval": 5,
+                    "port": 53012,
+                  },
+                ],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "eaters",
+            "nodeType": "class",
+            "props": Object {
+              "children": <Eaters
+                eaters={
+                  Array [
+                    Object {
+                      "eater_name": "netmomo",
+                      "host": "::1",
+                      "port": 53013,
+                    },
+                  ]
+                }
+              />,
+              "placeholder": null,
+              "tab": "Eaters",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "function",
+              "props": Object {
+                "eaters": Array [
+                  Object {
+                    "eater_name": "netmomo",
+                    "host": "::1",
+                    "port": 53013,
+                  },
+                ],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2>
+            System status
+          </h2>,
+          <div
+            className="summary"
+          >
+            <span
+              className="label"
+            >
+              shifty uptime:
+            </span>
+            <span
+              className="value"
+            >
+              2 mins, 10 secs
+            </span>
+            <br />
+            <span
+              className="label"
+            >
+              dumplings sent:
+            </span>
+            <span
+              className="value"
+            >
+              68
+            </span>
+          </div>,
+          <Tabs
+            animated={false}
+            defaultActiveKey="kitchens"
+            hideAdd={false}
+            prefixCls="ant-tabs"
+          >
+            <TabPane
+              placeholder={null}
+              tab="Kitchens"
+            >
+              <Kitchens
+                kitchens={
+                  Array [
+                    Object {
+                      "chefs": Array [
+                        "netdumplings.dumplingchefs.ARPChef",
+                        "netdumplings.dumplingchefs.DNSLookupChef",
+                        "netdumplings.dumplingchefs.PacketCountChef",
+                      ],
+                      "filter": "tcp or icmp or udp or arp",
+                      "host": "127.0.0.1",
+                      "interface": "en0",
+                      "kitchen_name": "default_kitchen",
+                      "poke_interval": 5,
+                      "port": 53012,
+                    },
+                  ]
+                }
+              />
+            </TabPane>
+            <TabPane
+              placeholder={null}
+              tab="Eaters"
+            >
+              <Eaters
+                eaters={
+                  Array [
+                    Object {
+                      "eater_name": "netmomo",
+                      "host": "::1",
+                      "port": 53013,
+                    },
+                  ]
+                }
+              />
+            </TabPane>
+          </Tabs>,
+        ],
+        "className": "system-status",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "System status",
+          },
+          "ref": null,
+          "rendered": "System status",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="label"
+              >
+                shifty uptime:
+              </span>,
+              <span
+                className="value"
+              >
+                2 mins, 10 secs
+              </span>,
+              <br />,
+              <span
+                className="label"
+              >
+                dumplings sent:
+              </span>,
+              <span
+                className="value"
+              >
+                68
+              </span>,
+            ],
+            "className": "summary",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "shifty uptime:",
+                "className": "label",
+              },
+              "ref": null,
+              "rendered": "shifty uptime:",
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "2 mins, 10 secs",
+                "className": "value",
+              },
+              "ref": null,
+              "rendered": "2 mins, 10 secs",
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "dumplings sent:",
+                "className": "label",
+              },
+              "ref": null,
+              "rendered": "dumplings sent:",
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "68",
+                "className": "value",
+              },
+              "ref": null,
+              "rendered": "68",
+              "type": "span",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "animated": false,
+            "children": Array [
+              <TabPane
+                placeholder={null}
+                tab="Kitchens"
+              >
+                <Kitchens
+                  kitchens={
+                    Array [
+                      Object {
+                        "chefs": Array [
+                          "netdumplings.dumplingchefs.ARPChef",
+                          "netdumplings.dumplingchefs.DNSLookupChef",
+                          "netdumplings.dumplingchefs.PacketCountChef",
+                        ],
+                        "filter": "tcp or icmp or udp or arp",
+                        "host": "127.0.0.1",
+                        "interface": "en0",
+                        "kitchen_name": "default_kitchen",
+                        "poke_interval": 5,
+                        "port": 53012,
+                      },
+                    ]
+                  }
+                />
+              </TabPane>,
+              <TabPane
+                placeholder={null}
+                tab="Eaters"
+              >
+                <Eaters
+                  eaters={
+                    Array [
+                      Object {
+                        "eater_name": "netmomo",
+                        "host": "::1",
+                        "port": 53013,
+                      },
+                    ]
+                  }
+                />
+              </TabPane>,
+            ],
+            "defaultActiveKey": "kitchens",
+            "hideAdd": false,
+            "prefixCls": "ant-tabs",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "kitchens",
+              "nodeType": "class",
+              "props": Object {
+                "children": <Kitchens
+                  kitchens={
+                    Array [
+                      Object {
+                        "chefs": Array [
+                          "netdumplings.dumplingchefs.ARPChef",
+                          "netdumplings.dumplingchefs.DNSLookupChef",
+                          "netdumplings.dumplingchefs.PacketCountChef",
+                        ],
+                        "filter": "tcp or icmp or udp or arp",
+                        "host": "127.0.0.1",
+                        "interface": "en0",
+                        "kitchen_name": "default_kitchen",
+                        "poke_interval": 5,
+                        "port": 53012,
+                      },
+                    ]
+                  }
+                />,
+                "placeholder": null,
+                "tab": "Kitchens",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "function",
+                "props": Object {
+                  "kitchens": Array [
+                    Object {
+                      "chefs": Array [
+                        "netdumplings.dumplingchefs.ARPChef",
+                        "netdumplings.dumplingchefs.DNSLookupChef",
+                        "netdumplings.dumplingchefs.PacketCountChef",
+                      ],
+                      "filter": "tcp or icmp or udp or arp",
+                      "host": "127.0.0.1",
+                      "interface": "en0",
+                      "kitchen_name": "default_kitchen",
+                      "poke_interval": 5,
+                      "port": 53012,
+                    },
+                  ],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "eaters",
+              "nodeType": "class",
+              "props": Object {
+                "children": <Eaters
+                  eaters={
+                    Array [
+                      Object {
+                        "eater_name": "netmomo",
+                        "host": "::1",
+                        "port": 53013,
+                      },
+                    ]
+                  }
+                />,
+                "placeholder": null,
+                "tab": "Eaters",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "function",
+                "props": Object {
+                  "eaters": Array [
+                    Object {
+                      "eater_name": "netmomo",
+                      "host": "::1",
+                      "port": 53013,
+                    },
+                  ],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;

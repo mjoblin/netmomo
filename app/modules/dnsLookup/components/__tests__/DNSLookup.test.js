@@ -25,7 +25,7 @@ const testDNSLookups = [
 
 describe('DNSLookup', () => {
     it('matches snapshot', () => {
-        const rendered = shallow(
+        const component = shallow(
             <DNSLookup
                 dnsLookups={testDNSLookups}
                 hostComponentLevels={0}
@@ -33,6 +33,6 @@ describe('DNSLookup', () => {
             />
         );
 
-        expect(rendered).toMatchSnapshot();
+        expect(component).toMatchSnapshot();
     });
 });

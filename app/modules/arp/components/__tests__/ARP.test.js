@@ -19,12 +19,12 @@ const testData = [
 
 describe('ARP', () => {
     it('matches snapshot', () => {
-        const rendered = shallow(
+        const component = shallow(
             <ARP
                 arp={testData}
             />
         );
 
-        expect(rendered).toMatchSnapshot();
+        expect(component).toMatchSnapshot();
     });
 });

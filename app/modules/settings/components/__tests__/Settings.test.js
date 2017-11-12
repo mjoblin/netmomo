@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Settings } from '../Settings';
 
-
 const testSettings = {
     shiftyHost: 'localhost',
     shiftyPort: 11348,
@@ -18,7 +17,7 @@ const testActions = {
 
 describe('Settings', () => {
     it('matches snapshot', () => {
-        const rendered = shallow(
+        const component = shallow(
             <Settings
                 actions={testActions}
                 settings={testSettings}
@@ -26,6 +25,6 @@ describe('Settings', () => {
             />
         );
 
-        expect(rendered).toMatchSnapshot();
+        expect(component).toMatchSnapshot();
     });
 });

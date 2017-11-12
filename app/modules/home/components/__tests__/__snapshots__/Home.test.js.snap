@@ -1,0 +1,276 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Home
+    settings={Object {}}
+    shiftyConnected={false}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h1>
+          Welcome to netmomo
+        </h1>,
+        "netmomo is a ",
+        <a
+          href="https://netdumplings.readthedocs.org"
+        >
+          NetDumplings
+        </a>,
+        " dumpling eater. It shows you the contents of the dumplings collected from your network.",
+        <p />,
+        <div
+          className="shifty-connection-status"
+        >
+          shifty connection status: 
+          <Connect(ConnectionStatus) />
+        </div>,
+        <p />,
+        "If you cannot connect to shifty then try changing the ",
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          to="/settings"
+        >
+          Settings.
+        </NavLink>,
+      ],
+      "className": "home",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Welcome to netmomo",
+        },
+        "ref": null,
+        "rendered": "Welcome to netmomo",
+        "type": "h1",
+      },
+      "netmomo is a ",
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "NetDumplings",
+          "href": "https://netdumplings.readthedocs.org",
+        },
+        "ref": null,
+        "rendered": "NetDumplings",
+        "type": "a",
+      },
+      " dumpling eater. It shows you the contents of the dumplings collected from your network.",
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "shifty connection status: ",
+            <Connect(ConnectionStatus) />,
+          ],
+          "className": "shifty-connection-status",
+        },
+        "ref": null,
+        "rendered": Array [
+          "shifty connection status: ",
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "p",
+      },
+      "If you cannot connect to shifty then try changing the ",
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "function",
+        "props": Object {
+          "activeClassName": "active",
+          "ariaCurrent": "true",
+          "children": "Settings.",
+          "to": "/settings",
+        },
+        "ref": null,
+        "rendered": "Settings.",
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h1>
+            Welcome to netmomo
+          </h1>,
+          "netmomo is a ",
+          <a
+            href="https://netdumplings.readthedocs.org"
+          >
+            NetDumplings
+          </a>,
+          " dumpling eater. It shows you the contents of the dumplings collected from your network.",
+          <p />,
+          <div
+            className="shifty-connection-status"
+          >
+            shifty connection status: 
+            <Connect(ConnectionStatus) />
+          </div>,
+          <p />,
+          "If you cannot connect to shifty then try changing the ",
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            to="/settings"
+          >
+            Settings.
+          </NavLink>,
+        ],
+        "className": "home",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Welcome to netmomo",
+          },
+          "ref": null,
+          "rendered": "Welcome to netmomo",
+          "type": "h1",
+        },
+        "netmomo is a ",
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "NetDumplings",
+            "href": "https://netdumplings.readthedocs.org",
+          },
+          "ref": null,
+          "rendered": "NetDumplings",
+          "type": "a",
+        },
+        " dumpling eater. It shows you the contents of the dumplings collected from your network.",
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "shifty connection status: ",
+              <Connect(ConnectionStatus) />,
+            ],
+            "className": "shifty-connection-status",
+          },
+          "ref": null,
+          "rendered": Array [
+            "shifty connection status: ",
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "p",
+        },
+        "If you cannot connect to shifty then try changing the ",
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": "Settings.",
+            "to": "/settings",
+          },
+          "ref": null,
+          "rendered": "Settings.",
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;

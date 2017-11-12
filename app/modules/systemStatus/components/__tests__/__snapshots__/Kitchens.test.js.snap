@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Eaters matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Kitchens
+    kitchens={
+      Array [
+        Object {
+          "chefs": Array [
+            "netdumplings.dumplingchefs.ARPChef",
+            "netdumplings.dumplingchefs.DNSLookupChef",
+            "netdumplings.dumplingchefs.PacketCountChef",
+          ],
+          "filter": "tcp or icmp or udp or arp",
+          "host": "127.0.0.1",
+          "interface": "en0",
+          "kitchen_name": "default_kitchen",
+          "poke_interval": 5,
+          "port": 53012,
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "class",
+    "props": Object {
+      "bordered": false,
+      "className": "",
+      "columns": Array [
+        Object {
+          "dataIndex": "kitchen_name",
+          "title": "Name",
+        },
+        Object {
+          "dataIndex": "host",
+          "title": "Host",
+        },
+        Object {
+          "dataIndex": "port",
+          "title": "Port",
+        },
+        Object {
+          "dataIndex": "interface",
+          "title": "Interface",
+        },
+        Object {
+          "dataIndex": "filter",
+          "title": "Filter",
+        },
+        Object {
+          "dataIndex": "poke_interval",
+          "title": "Poke (secs)",
+        },
+        Object {
+          "dataIndex": "chefs",
+          "render": [Function],
+          "title": "Chefs",
+        },
+      ],
+      "dataSource": Array [
+        Object {
+          "chefs": Array [
+            "netdumplings.dumplingchefs.ARPChef",
+            "netdumplings.dumplingchefs.DNSLookupChef",
+            "netdumplings.dumplingchefs.PacketCountChef",
+          ],
+          "filter": "tcp or icmp or udp or arp",
+          "host": "127.0.0.1",
+          "interface": "en0",
+          "kitchen_name": "default_kitchen",
+          "poke_interval": 5,
+          "port": 53012,
+        },
+      ],
+      "indentSize": 20,
+      "loading": false,
+      "locale": Object {},
+      "pagination": false,
+      "prefixCls": "ant-table",
+      "rowKey": [Function],
+      "rowSelection": null,
+      "showHeader": true,
+      "size": "middle",
+      "useFixedHeader": false,
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "class",
+      "props": Object {
+        "bordered": false,
+        "className": "",
+        "columns": Array [
+          Object {
+            "dataIndex": "kitchen_name",
+            "title": "Name",
+          },
+          Object {
+            "dataIndex": "host",
+            "title": "Host",
+          },
+          Object {
+            "dataIndex": "port",
+            "title": "Port",
+          },
+          Object {
+            "dataIndex": "interface",
+            "title": "Interface",
+          },
+          Object {
+            "dataIndex": "filter",
+            "title": "Filter",
+          },
+          Object {
+            "dataIndex": "poke_interval",
+            "title": "Poke (secs)",
+          },
+          Object {
+            "dataIndex": "chefs",
+            "render": [Function],
+            "title": "Chefs",
+          },
+        ],
+        "dataSource": Array [
+          Object {
+            "chefs": Array [
+              "netdumplings.dumplingchefs.ARPChef",
+              "netdumplings.dumplingchefs.DNSLookupChef",
+              "netdumplings.dumplingchefs.PacketCountChef",
+            ],
+            "filter": "tcp or icmp or udp or arp",
+            "host": "127.0.0.1",
+            "interface": "en0",
+            "kitchen_name": "default_kitchen",
+            "poke_interval": 5,
+            "port": 53012,
+          },
+        ],
+        "indentSize": 20,
+        "loading": false,
+        "locale": Object {},
+        "pagination": false,
+        "prefixCls": "ant-table",
+        "rowKey": [Function],
+        "rowSelection": null,
+        "showHeader": true,
+        "size": "middle",
+        "useFixedHeader": false,
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;

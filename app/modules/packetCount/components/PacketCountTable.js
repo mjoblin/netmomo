@@ -34,7 +34,7 @@ export const PacketCountTable = ({ packetCounts }) => {
 
 
 PacketCountTable.propTypes = {
-    packetCounts: PropTypes.object.isRequired,
+    packetCounts: PropTypes.array.isRequired,
 };
 
 

@@ -37,7 +37,7 @@ export const PacketCount = class extends React.Component {
     }
 
     render() {
-        const packetCounts = this.props.packetCounts;
+        const { packetCounts } = this.props;
 
         return (
             <div className="packet-count">
