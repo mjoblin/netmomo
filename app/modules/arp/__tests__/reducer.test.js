@@ -1,5 +1,6 @@
 import reducer from '../reducer';
 import testARPPacketDumpling from './packetDumpling.json';
+import appModule from "AppRoot/modules/app";
 
 
 const defaultState = {
@@ -7,16 +8,16 @@ const defaultState = {
 };
 
 describe('arp reducer', () => {
-    test('initial state', () => {
+    test('default state', () => {
         expect(
             reducer(undefined, {})
         ).toEqual(defaultState);
     });
 
-    test('app/DUMPLING action', () => {
+    test('app-level DUMPLING action from ARPChef', () => {
         expect(
             reducer(defaultState, {
-                type: 'app/DUMPLING',
+                type: appModule.actionTypes.DUMPLING,
                 dumpling: testARPPacketDumpling,
             })
         ).toEqual({
@@ -25,5 +26,20 @@ describe('arp reducer', () => {
                 ...testARPPacketDumpling.payload,
             }],
         });
+    });
+
+    // The reducer should ignore dumplings from other chefs.
+    test('app-level DUMPLING action from non-ARPChef', () => {
+        expect(
+            reducer(defaultState, {
+                type: appModule.actionTypes.DUMPLING,
+                dumpling: {
+                    'metadata': {
+                        'chef': 'SomeOtherChef',
+                    },
+                    'payload': {},
+                }
+            })
+        ).toEqual(defaultState);
     });
 });

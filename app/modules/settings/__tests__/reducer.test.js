@@ -1,4 +1,5 @@
 import reducer from '../reducer';
+import * as actionTypes from '../actionTypes';
 
 
 const defaultState = {
@@ -14,26 +15,30 @@ describe('settings reducer', () => {
     });
 
     test('settings/SET_SHIFTY_HOST action', () => {
+        const testHost = 'testHost';
+
         expect(
             reducer(defaultState, {
-                type: 'settings/SET_SHIFTY_HOST',
-                shiftyHost: 'testhost'
+                type: actionTypes.SET_SHIFTY_HOST,
+                shiftyHost: testHost,
             })
         ).toEqual({
-            shiftyHost: 'testhost',
-            shiftyPort: 11348,
+            ...defaultState,
+            shiftyHost: testHost,
         });
     });
 
     test('settings/SET_SHIFTY_PORT action', () => {
+        const testPort = 99;
+
         expect(
             reducer(defaultState, {
-                type: 'settings/SET_SHIFTY_PORT',
-                shiftyPort: 99,
+                type: actionTypes.SET_SHIFTY_PORT,
+                shiftyPort: testPort,
             })
         ).toEqual({
-            shiftyHost: 'localhost',
-            shiftyPort: 99,
+            ...defaultState,
+            shiftyPort: testPort,
         });
     });
 });
