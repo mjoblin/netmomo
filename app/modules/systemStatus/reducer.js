@@ -4,12 +4,12 @@ import appModule from 'AppRoot/modules/app';
 
 
 const DEFAULT_STATE = {
-    "dumpling_eater_count": 0,
-    "dumpling_eaters": [],
-    "dumpling_kitchen_count": 0,
-    "dumpling_kitchens": [],
-    "server_uptime": 0,
-    "total_dumplings_sent": 0,
+    dumpling_eater_count: 0,
+    dumpling_eaters: [],
+    dumpling_kitchen_count: 0,
+    dumpling_kitchens: [],
+    server_uptime: 0,
+    total_dumplings_sent: 0,
 };
 
 const systemStatusReducer = (state = DEFAULT_STATE, action) => {
