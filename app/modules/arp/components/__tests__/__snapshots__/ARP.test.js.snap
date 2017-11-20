@@ -1,0 +1,362 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ARP matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ARP
+    arp={
+      Array [
+        Object {
+          "data": Object {
+            "dst_hw": "01:01:01:01:01:01",
+            "dst_ip": "192.168.1.1",
+            "notes": "source device is new",
+            "operation": "reply",
+            "src_hw": "02:02:02:02:02:02",
+            "src_ip": "192.168.1.2",
+            "time": 1508700000.111111,
+          },
+          "key": "foo",
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2>
+          ARP
+        </h2>,
+        <Table
+          bordered={false}
+          className="results-table"
+          columns={
+            Array [
+              Object {
+                "dataIndex": "operation",
+                "title": "Operation",
+              },
+              Object {
+                "dataIndex": "src_hw",
+                "title": "Source HW",
+              },
+              Object {
+                "dataIndex": "src_ip",
+                "title": "Source IP",
+              },
+              Object {
+                "dataIndex": "dst_hw",
+                "title": "Dest HW",
+              },
+              Object {
+                "dataIndex": "dst_ip",
+                "title": "Dest IP",
+              },
+              Object {
+                "dataIndex": "notes",
+                "title": "Notes",
+              },
+              Object {
+                "dataIndex": "time",
+                "render": [Function],
+                "sorter": [Function],
+                "title": "When",
+              },
+            ]
+          }
+          dataSource={
+            Array [
+              Object {
+                "data": Object {
+                  "dst_hw": "01:01:01:01:01:01",
+                  "dst_ip": "192.168.1.1",
+                  "notes": "source device is new",
+                  "operation": "reply",
+                  "src_hw": "02:02:02:02:02:02",
+                  "src_ip": "192.168.1.2",
+                  "time": 1508700000.111111,
+                },
+                "key": "foo",
+              },
+            ]
+          }
+          indentSize={20}
+          loading={false}
+          locale={Object {}}
+          pagination={false}
+          prefixCls="ant-table"
+          rowKey="key"
+          rowSelection={null}
+          showHeader={true}
+          size="middle"
+          useFixedHeader={false}
+        />,
+      ],
+      "className": "arp",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "ARP",
+        },
+        "ref": null,
+        "rendered": "ARP",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {
+          "bordered": false,
+          "className": "results-table",
+          "columns": Array [
+            Object {
+              "dataIndex": "operation",
+              "title": "Operation",
+            },
+            Object {
+              "dataIndex": "src_hw",
+              "title": "Source HW",
+            },
+            Object {
+              "dataIndex": "src_ip",
+              "title": "Source IP",
+            },
+            Object {
+              "dataIndex": "dst_hw",
+              "title": "Dest HW",
+            },
+            Object {
+              "dataIndex": "dst_ip",
+              "title": "Dest IP",
+            },
+            Object {
+              "dataIndex": "notes",
+              "title": "Notes",
+            },
+            Object {
+              "dataIndex": "time",
+              "render": [Function],
+              "sorter": [Function],
+              "title": "When",
+            },
+          ],
+          "dataSource": Array [
+            Object {
+              "data": Object {
+                "dst_hw": "01:01:01:01:01:01",
+                "dst_ip": "192.168.1.1",
+                "notes": "source device is new",
+                "operation": "reply",
+                "src_hw": "02:02:02:02:02:02",
+                "src_ip": "192.168.1.2",
+                "time": 1508700000.111111,
+              },
+              "key": "foo",
+            },
+          ],
+          "indentSize": 20,
+          "loading": false,
+          "locale": Object {},
+          "pagination": false,
+          "prefixCls": "ant-table",
+          "rowKey": "key",
+          "rowSelection": null,
+          "showHeader": true,
+          "size": "middle",
+          "useFixedHeader": false,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2>
+            ARP
+          </h2>,
+          <Table
+            bordered={false}
+            className="results-table"
+            columns={
+              Array [
+                Object {
+                  "dataIndex": "operation",
+                  "title": "Operation",
+                },
+                Object {
+                  "dataIndex": "src_hw",
+                  "title": "Source HW",
+                },
+                Object {
+                  "dataIndex": "src_ip",
+                  "title": "Source IP",
+                },
+                Object {
+                  "dataIndex": "dst_hw",
+                  "title": "Dest HW",
+                },
+                Object {
+                  "dataIndex": "dst_ip",
+                  "title": "Dest IP",
+                },
+                Object {
+                  "dataIndex": "notes",
+                  "title": "Notes",
+                },
+                Object {
+                  "dataIndex": "time",
+                  "render": [Function],
+                  "sorter": [Function],
+                  "title": "When",
+                },
+              ]
+            }
+            dataSource={
+              Array [
+                Object {
+                  "data": Object {
+                    "dst_hw": "01:01:01:01:01:01",
+                    "dst_ip": "192.168.1.1",
+                    "notes": "source device is new",
+                    "operation": "reply",
+                    "src_hw": "02:02:02:02:02:02",
+                    "src_ip": "192.168.1.2",
+                    "time": 1508700000.111111,
+                  },
+                  "key": "foo",
+                },
+              ]
+            }
+            indentSize={20}
+            loading={false}
+            locale={Object {}}
+            pagination={false}
+            prefixCls="ant-table"
+            rowKey="key"
+            rowSelection={null}
+            showHeader={true}
+            size="middle"
+            useFixedHeader={false}
+          />,
+        ],
+        "className": "arp",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "ARP",
+          },
+          "ref": null,
+          "rendered": "ARP",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "bordered": false,
+            "className": "results-table",
+            "columns": Array [
+              Object {
+                "dataIndex": "operation",
+                "title": "Operation",
+              },
+              Object {
+                "dataIndex": "src_hw",
+                "title": "Source HW",
+              },
+              Object {
+                "dataIndex": "src_ip",
+                "title": "Source IP",
+              },
+              Object {
+                "dataIndex": "dst_hw",
+                "title": "Dest HW",
+              },
+              Object {
+                "dataIndex": "dst_ip",
+                "title": "Dest IP",
+              },
+              Object {
+                "dataIndex": "notes",
+                "title": "Notes",
+              },
+              Object {
+                "dataIndex": "time",
+                "render": [Function],
+                "sorter": [Function],
+                "title": "When",
+              },
+            ],
+            "dataSource": Array [
+              Object {
+                "data": Object {
+                  "dst_hw": "01:01:01:01:01:01",
+                  "dst_ip": "192.168.1.1",
+                  "notes": "source device is new",
+                  "operation": "reply",
+                  "src_hw": "02:02:02:02:02:02",
+                  "src_ip": "192.168.1.2",
+                  "time": 1508700000.111111,
+                },
+                "key": "foo",
+              },
+            ],
+            "indentSize": 20,
+            "loading": false,
+            "locale": Object {},
+            "pagination": false,
+            "prefixCls": "ant-table",
+            "rowKey": "key",
+            "rowSelection": null,
+            "showHeader": true,
+            "size": "middle",
+            "useFixedHeader": false,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;

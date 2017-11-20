@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Table } from 'antd';
 
 
-const PacketCountTable = ({ packetCounts }) => {
+export const PacketCountTable = ({ packetCounts }) => {
     const columns = [
         {
             title: 'Protocol',
@@ -34,7 +34,7 @@ const PacketCountTable = ({ packetCounts }) => {
 
 
 PacketCountTable.propTypes = {
-    packetCounts: PropTypes.object.isRequired,
+    packetCounts: PropTypes.array.isRequired,
 };
 
 

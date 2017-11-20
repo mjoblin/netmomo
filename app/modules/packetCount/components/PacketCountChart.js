@@ -4,7 +4,7 @@ import { VictoryBar, VictoryChart, VictoryLabel } from 'victory';
 import numeral from 'numeral';
 
 
-const PacketCountChart = ({ data }) => {
+export const PacketCountChart = ({ data }) => {
     if (!data) {
         return null;
     }

@@ -1,0 +1,806 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DNSLookup matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <DNSLookup
+    actions={Object {}}
+    dnsLookups={
+      Array [
+        Object {
+          "count": 10,
+          "host": "two.com",
+          "key": "two.com",
+          "latest": 1509758701947.23,
+        },
+        Object {
+          "count": 3,
+          "host": "three.two.com",
+          "key": "three.two.com",
+          "latest": 1509758701932.883,
+        },
+        Object {
+          "count": 1,
+          "host": "four.three.two.com",
+          "key": "four.three.two.com",
+          "latest": 1509758701941.5847,
+        },
+      ]
+    }
+    hostComponentLevels={0}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2>
+          DNS lookups
+        </h2>,
+        <span
+          className="label"
+        >
+          Host levels: 
+        </span>,
+        <Dropdown
+          mouseEnterDelay={0.15}
+          mouseLeaveDelay={0.1}
+          overlay={
+            <Menu
+              className=""
+              onClick={[Function]}
+              prefixCls="ant-menu"
+              theme="light"
+            >
+              <MenuItem
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onSelect={[Function]}
+              >
+                All
+              </MenuItem>
+              <MenuItem
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onSelect={[Function]}
+              >
+                1
+              </MenuItem>
+              <MenuItem
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onSelect={[Function]}
+              >
+                2
+              </MenuItem>
+              <MenuItem
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onSelect={[Function]}
+              >
+                3
+              </MenuItem>
+              <MenuItem
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onSelect={[Function]}
+              >
+                4
+              </MenuItem>
+            </Menu>
+          }
+          placement="bottomLeft"
+          prefixCls="ant-dropdown"
+          trigger={
+            Array [
+              "click",
+            ]
+          }
+        >
+          <Button
+            className="value"
+            clicked={false}
+            ghost={false}
+            loading={false}
+            prefixCls="ant-btn"
+          >
+            All
+            <Icon
+              type="down"
+            />
+          </Button>
+        </Dropdown>,
+        <span
+          className="label"
+        >
+          Host filter:
+        </span>,
+        <Input
+          autosize={false}
+          className="value value-host-filter"
+          disabled={false}
+          onChange={[Function]}
+          placeholder="Host filter"
+          prefixCls="ant-input"
+          type="text"
+        />,
+        <Table
+          bordered={false}
+          className="results-table"
+          columns={
+            Array [
+              Object {
+                "dataIndex": "host",
+                "sorter": [Function],
+                "title": "Host",
+              },
+              Object {
+                "className": "column-count",
+                "dataIndex": "count",
+                "sorter": [Function],
+                "title": "Count",
+              },
+              Object {
+                "dataIndex": "latest",
+                "render": [Function],
+                "sorter": [Function],
+                "title": "Latest",
+              },
+            ]
+          }
+          dataSource={
+            Array [
+              Object {
+                "count": 10,
+                "host": "two.com",
+                "key": "two.com",
+                "latest": 1509758701947.23,
+              },
+              Object {
+                "count": 3,
+                "host": "three.two.com",
+                "key": "three.two.com",
+                "latest": 1509758701932.883,
+              },
+              Object {
+                "count": 1,
+                "host": "four.three.two.com",
+                "key": "four.three.two.com",
+                "latest": 1509758701941.5847,
+              },
+            ]
+          }
+          indentSize={20}
+          loading={false}
+          locale={Object {}}
+          pagination={false}
+          prefixCls="ant-table"
+          rowKey="key"
+          rowSelection={null}
+          showHeader={true}
+          size="middle"
+          useFixedHeader={false}
+        />,
+      ],
+      "className": "dns-lookup",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "DNS lookups",
+        },
+        "ref": null,
+        "rendered": "DNS lookups",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Host levels: ",
+          "className": "label",
+        },
+        "ref": null,
+        "rendered": "Host levels: ",
+        "type": "span",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {
+          "children": <Button
+            className="value"
+            clicked={false}
+            ghost={false}
+            loading={false}
+            prefixCls="ant-btn"
+          >
+            All
+            <Icon
+              type="down"
+            />
+          </Button>,
+          "mouseEnterDelay": 0.15,
+          "mouseLeaveDelay": 0.1,
+          "overlay": <Menu
+            className=""
+            onClick={[Function]}
+            prefixCls="ant-menu"
+            theme="light"
+          >
+            <MenuItem
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onSelect={[Function]}
+            >
+              All
+            </MenuItem>
+            <MenuItem
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onSelect={[Function]}
+            >
+              1
+            </MenuItem>
+            <MenuItem
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onSelect={[Function]}
+            >
+              2
+            </MenuItem>
+            <MenuItem
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onSelect={[Function]}
+            >
+              3
+            </MenuItem>
+            <MenuItem
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onSelect={[Function]}
+            >
+              4
+            </MenuItem>
+          </Menu>,
+          "placement": "bottomLeft",
+          "prefixCls": "ant-dropdown",
+          "trigger": Array [
+            "click",
+          ],
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              "All",
+              <Icon
+                type="down"
+              />,
+            ],
+            "className": "value",
+            "clicked": false,
+            "ghost": false,
+            "loading": false,
+            "prefixCls": "ant-btn",
+          },
+          "ref": null,
+          "rendered": Array [
+            "All",
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "function",
+              "props": Object {
+                "type": "down",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Host filter:",
+          "className": "label",
+        },
+        "ref": null,
+        "rendered": "Host filter:",
+        "type": "span",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {
+          "autosize": false,
+          "className": "value value-host-filter",
+          "disabled": false,
+          "onChange": [Function],
+          "placeholder": "Host filter",
+          "prefixCls": "ant-input",
+          "type": "text",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {
+          "bordered": false,
+          "className": "results-table",
+          "columns": Array [
+            Object {
+              "dataIndex": "host",
+              "sorter": [Function],
+              "title": "Host",
+            },
+            Object {
+              "className": "column-count",
+              "dataIndex": "count",
+              "sorter": [Function],
+              "title": "Count",
+            },
+            Object {
+              "dataIndex": "latest",
+              "render": [Function],
+              "sorter": [Function],
+              "title": "Latest",
+            },
+          ],
+          "dataSource": Array [
+            Object {
+              "count": 10,
+              "host": "two.com",
+              "key": "two.com",
+              "latest": 1509758701947.23,
+            },
+            Object {
+              "count": 3,
+              "host": "three.two.com",
+              "key": "three.two.com",
+              "latest": 1509758701932.883,
+            },
+            Object {
+              "count": 1,
+              "host": "four.three.two.com",
+              "key": "four.three.two.com",
+              "latest": 1509758701941.5847,
+            },
+          ],
+          "indentSize": 20,
+          "loading": false,
+          "locale": Object {},
+          "pagination": false,
+          "prefixCls": "ant-table",
+          "rowKey": "key",
+          "rowSelection": null,
+          "showHeader": true,
+          "size": "middle",
+          "useFixedHeader": false,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2>
+            DNS lookups
+          </h2>,
+          <span
+            className="label"
+          >
+            Host levels: 
+          </span>,
+          <Dropdown
+            mouseEnterDelay={0.15}
+            mouseLeaveDelay={0.1}
+            overlay={
+              <Menu
+                className=""
+                onClick={[Function]}
+                prefixCls="ant-menu"
+                theme="light"
+              >
+                <MenuItem
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onSelect={[Function]}
+                >
+                  All
+                </MenuItem>
+                <MenuItem
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onSelect={[Function]}
+                >
+                  1
+                </MenuItem>
+                <MenuItem
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onSelect={[Function]}
+                >
+                  2
+                </MenuItem>
+                <MenuItem
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onSelect={[Function]}
+                >
+                  3
+                </MenuItem>
+                <MenuItem
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onSelect={[Function]}
+                >
+                  4
+                </MenuItem>
+              </Menu>
+            }
+            placement="bottomLeft"
+            prefixCls="ant-dropdown"
+            trigger={
+              Array [
+                "click",
+              ]
+            }
+          >
+            <Button
+              className="value"
+              clicked={false}
+              ghost={false}
+              loading={false}
+              prefixCls="ant-btn"
+            >
+              All
+              <Icon
+                type="down"
+              />
+            </Button>
+          </Dropdown>,
+          <span
+            className="label"
+          >
+            Host filter:
+          </span>,
+          <Input
+            autosize={false}
+            className="value value-host-filter"
+            disabled={false}
+            onChange={[Function]}
+            placeholder="Host filter"
+            prefixCls="ant-input"
+            type="text"
+          />,
+          <Table
+            bordered={false}
+            className="results-table"
+            columns={
+              Array [
+                Object {
+                  "dataIndex": "host",
+                  "sorter": [Function],
+                  "title": "Host",
+                },
+                Object {
+                  "className": "column-count",
+                  "dataIndex": "count",
+                  "sorter": [Function],
+                  "title": "Count",
+                },
+                Object {
+                  "dataIndex": "latest",
+                  "render": [Function],
+                  "sorter": [Function],
+                  "title": "Latest",
+                },
+              ]
+            }
+            dataSource={
+              Array [
+                Object {
+                  "count": 10,
+                  "host": "two.com",
+                  "key": "two.com",
+                  "latest": 1509758701947.23,
+                },
+                Object {
+                  "count": 3,
+                  "host": "three.two.com",
+                  "key": "three.two.com",
+                  "latest": 1509758701932.883,
+                },
+                Object {
+                  "count": 1,
+                  "host": "four.three.two.com",
+                  "key": "four.three.two.com",
+                  "latest": 1509758701941.5847,
+                },
+              ]
+            }
+            indentSize={20}
+            loading={false}
+            locale={Object {}}
+            pagination={false}
+            prefixCls="ant-table"
+            rowKey="key"
+            rowSelection={null}
+            showHeader={true}
+            size="middle"
+            useFixedHeader={false}
+          />,
+        ],
+        "className": "dns-lookup",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "DNS lookups",
+          },
+          "ref": null,
+          "rendered": "DNS lookups",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Host levels: ",
+            "className": "label",
+          },
+          "ref": null,
+          "rendered": "Host levels: ",
+          "type": "span",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "children": <Button
+              className="value"
+              clicked={false}
+              ghost={false}
+              loading={false}
+              prefixCls="ant-btn"
+            >
+              All
+              <Icon
+                type="down"
+              />
+            </Button>,
+            "mouseEnterDelay": 0.15,
+            "mouseLeaveDelay": 0.1,
+            "overlay": <Menu
+              className=""
+              onClick={[Function]}
+              prefixCls="ant-menu"
+              theme="light"
+            >
+              <MenuItem
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onSelect={[Function]}
+              >
+                All
+              </MenuItem>
+              <MenuItem
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onSelect={[Function]}
+              >
+                1
+              </MenuItem>
+              <MenuItem
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onSelect={[Function]}
+              >
+                2
+              </MenuItem>
+              <MenuItem
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onSelect={[Function]}
+              >
+                3
+              </MenuItem>
+              <MenuItem
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onSelect={[Function]}
+              >
+                4
+              </MenuItem>
+            </Menu>,
+            "placement": "bottomLeft",
+            "prefixCls": "ant-dropdown",
+            "trigger": Array [
+              "click",
+            ],
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                "All",
+                <Icon
+                  type="down"
+                />,
+              ],
+              "className": "value",
+              "clicked": false,
+              "ghost": false,
+              "loading": false,
+              "prefixCls": "ant-btn",
+            },
+            "ref": null,
+            "rendered": Array [
+              "All",
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "function",
+                "props": Object {
+                  "type": "down",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Host filter:",
+            "className": "label",
+          },
+          "ref": null,
+          "rendered": "Host filter:",
+          "type": "span",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "autosize": false,
+            "className": "value value-host-filter",
+            "disabled": false,
+            "onChange": [Function],
+            "placeholder": "Host filter",
+            "prefixCls": "ant-input",
+            "type": "text",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "bordered": false,
+            "className": "results-table",
+            "columns": Array [
+              Object {
+                "dataIndex": "host",
+                "sorter": [Function],
+                "title": "Host",
+              },
+              Object {
+                "className": "column-count",
+                "dataIndex": "count",
+                "sorter": [Function],
+                "title": "Count",
+              },
+              Object {
+                "dataIndex": "latest",
+                "render": [Function],
+                "sorter": [Function],
+                "title": "Latest",
+              },
+            ],
+            "dataSource": Array [
+              Object {
+                "count": 10,
+                "host": "two.com",
+                "key": "two.com",
+                "latest": 1509758701947.23,
+              },
+              Object {
+                "count": 3,
+                "host": "three.two.com",
+                "key": "three.two.com",
+                "latest": 1509758701932.883,
+              },
+              Object {
+                "count": 1,
+                "host": "four.three.two.com",
+                "key": "four.three.two.com",
+                "latest": 1509758701941.5847,
+              },
+            ],
+            "indentSize": 20,
+            "loading": false,
+            "locale": Object {},
+            "pagination": false,
+            "prefixCls": "ant-table",
+            "rowKey": "key",
+            "rowSelection": null,
+            "showHeader": true,
+            "size": "middle",
+            "useFixedHeader": false,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;

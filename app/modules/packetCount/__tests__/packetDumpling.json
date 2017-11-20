@@ -1,0 +1,17 @@
+{
+    "metadata": {
+        "chef": "PacketCountChef",
+        "creation_time": 1509932454476.0188,
+        "driver": "packet",
+        "kitchen": "default_kitchen"
+    },
+    "payload": {
+        "packet_counts": {
+            "ARP": 13,
+            "DNS": 24,
+            "Ethernet": 3509,
+            "TCP": 3093,
+            "UDP": 402
+        }
+    }
+}

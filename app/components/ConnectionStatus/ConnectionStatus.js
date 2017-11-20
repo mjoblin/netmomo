@@ -9,7 +9,7 @@ import settingsModule from 'AppRoot/modules/settings';
 import './style.scss';
 
 
-class ConnectionStatus extends React.Component {
+export const ConnectionStatus = class extends React.Component {
     render() {
         const { actions, settings } = this.props;
 
@@ -29,8 +29,9 @@ class ConnectionStatus extends React.Component {
             </span>
         );
     }
-}
+};
 
+ConnectionStatus.displayName = 'ConnectionStatus';
 
 ConnectionStatus.propTypes = {
     shiftyConnectionStatus: PropTypes.string.isRequired,

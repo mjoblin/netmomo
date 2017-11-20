@@ -1,0 +1,42 @@
+[
+    {
+        "protocol": "Ethernet",
+        "key": "Ethernet",
+        "count": 94410
+    },
+    {
+        "protocol": "IP",
+        "key": "IP",
+        "count": 93325
+    },
+    {
+        "protocol": "UDP",
+        "key": "UDP",
+        "count": 94243
+    },
+    {
+        "protocol": "Raw",
+        "key": "Raw",
+        "count": 94289
+    },
+    {
+        "protocol": "IPv6",
+        "key": "IPv6",
+        "count": 987
+    },
+    {
+        "protocol": "ARP",
+        "key": "ARP",
+        "count": 98
+    },
+    {
+        "protocol": "Padding",
+        "key": "Padding",
+        "count": 17
+    },
+    {
+        "protocol": "TCP",
+        "key": "TCP",
+        "count": 69
+    }
+]

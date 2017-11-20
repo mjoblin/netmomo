@@ -12,7 +12,7 @@ import { getSettings } from '../selectors';
 import './style.scss';
 
 
-const Settings = ({ settings, actions, shiftyConnectionStatus }) => {
+export const Settings = ({ settings, actions, shiftyConnectionStatus }) => {
     const shiftyConnected = appModule.constants.SHIFTY_CONNECTED;
     const shiftyDisconnected = appModule.constants.SHIFTY_DISCONNECTED;
     const shiftyReconnecting = appModule.constants.SHIFTY_RECONNECTING;

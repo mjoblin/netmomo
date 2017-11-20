@@ -5,7 +5,13 @@ import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Switch, NavLink } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
-import { Layout, Menu } from 'antd';
+import { Menu } from 'antd';
+
+// We import Layout this way rather than "import { Layout } from 'antd';"
+// because of an issue that only appears when running tests where we see
+// "ReferenceError: Layout is not defined".
+import Layout from 'antd/lib/layout';
+import 'antd/lib/layout/style';
 
 import { ConnectionStatus } from 'AppRoot/components';
 import arpModule from 'AppRoot/modules/arp';
@@ -24,7 +30,7 @@ const { Content, Sider } = Layout;
 const { Notifications } = notificationModule.components;
 
 
-class App extends React.Component {
+export const App = class extends React.Component {
     constructor(props) {
         super(props);
 
@@ -126,7 +132,9 @@ class App extends React.Component {
             </ConnectedRouter>
         );
     }
-}
+};
+
+App.displayName = 'App';
 
 App.propTypes = {
     routerPath: PropTypes.string.isRequired,

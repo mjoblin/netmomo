@@ -11,7 +11,7 @@ import './style.scss';
 
 const TabPane = Tabs.TabPane;
 
-class PacketCount extends React.Component {
+export const PacketCount = class extends React.Component {
     constructor(...args) {
         super(...args);
 
@@ -37,7 +37,7 @@ class PacketCount extends React.Component {
     }
 
     render() {
-        const packetCounts = this.props.packetCounts;
+        const { packetCounts } = this.props;
 
         return (
             <div className="packet-count">
@@ -54,8 +54,9 @@ class PacketCount extends React.Component {
             </div>
         );
     }
-}
+};
 
+PacketCount.displayName = 'PacketCount';
 
 PacketCount.propTypes = {
     packetCounts: PropTypes.array.isRequired,

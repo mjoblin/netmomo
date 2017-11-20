@@ -10,7 +10,7 @@ import { getAsArray, getHostComponentLevels } from '../selectors';
 import './style.scss';
 
 
-class DNSLookup extends React.Component {
+export const DNSLookup = class extends React.Component {
     handlehostLevelSelection(e) {
         this.props.actions.setHostComponentLevels(Number(e.key));
     }
@@ -81,11 +81,11 @@ class DNSLookup extends React.Component {
             </div>
         );
     }
-}
+};
 
 
 DNSLookup.propTypes = {
-    actions: PropTypes.array.isRequired,
+    actions: PropTypes.object.isRequired,
     dnsLookups: PropTypes.array.isRequired,
     hostComponentLevels: PropTypes.number.isRequired,
 };

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Table } from 'antd';
 
 
-const Eaters = ({ eaters }) => {
+export const Eaters = ({ eaters }) => {
     const columns = [
         {
             title: 'Name',

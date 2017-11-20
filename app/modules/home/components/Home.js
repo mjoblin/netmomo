@@ -10,7 +10,7 @@ import settingsModule from 'AppRoot/modules/settings';
 import './style.scss';
 
 
-const Home = () => (
+export const Home = () => (
     <div className="home">
         <h1>Welcome to netmomo</h1>
 

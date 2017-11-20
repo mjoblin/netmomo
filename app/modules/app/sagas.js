@@ -10,10 +10,12 @@ import { SHIFTY_CANCEL_RECONNECT, SHIFTY_CONNECT, SHIFTY_CONNECTED,
 // TODO: Consider redux-observable/RxJS for the websocket handling.
 
 /**
+ * Attempt to reconnect to shifty after a given delay.
  *
- * @param host
- * @param port
- * @param duration
+ * @param {string} host - The shifty host.
+ * @param {int} port - The shifty port for outgoing dumplings.
+ * @param {int} duration - Duration (in seconds) in wait before attempting to
+ *  reconnect.
  */
 function* reconnectAfterDelay(host, port, duration) {
     yield put(shiftyReconnectAttempt(duration));
@@ -23,9 +25,11 @@ function* reconnectAfterDelay(host, port, duration) {
 
 
 /**
+ * Initialize the connection to shifty, including configuring websocket event
+ * handlers.
  *
- * @param host
- * @param port
+ * @param {string} host - The shifty host.
+ * @param {int} port - The shifty port for outgoing dumplings.
  */
 const initShiftyConnection = (host, port) =>
     eventChannel(emitter => {
@@ -76,7 +80,10 @@ const initShiftyConnection = (host, port) =>
     });
 
 /**
- *
+ * Top-level manager for two action sources: new dumplings (from the shifty
+ * websocket) which need to be re-emitted to the app; or shifty
+ * connection-related actions (coming from the UI, such as requests to connect
+ * or disconnect from shifty).
  */
 function* watchShiftyConnection() {
     let wantToBeConnected = false;

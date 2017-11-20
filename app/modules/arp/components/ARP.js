@@ -8,7 +8,7 @@ import { getARP } from '../selectors';
 import './style.scss';
 
 
-class ARP extends React.Component {
+export const ARP = class extends React.Component {
     render() {
         const columns = [
             {
@@ -58,7 +58,7 @@ class ARP extends React.Component {
             </div>
         );
     }
-}
+};
 
 
 ARP.propTypes = {

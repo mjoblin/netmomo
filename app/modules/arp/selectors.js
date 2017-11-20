@@ -2,7 +2,7 @@ import { createSelector } from 'reselect';
 import { NAME } from './constants';
 
 
-export const getARPArray = state => {
+const getARPArray = state => {
     return state[NAME].dumplingData;
 };
 

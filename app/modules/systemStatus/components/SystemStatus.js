@@ -13,7 +13,7 @@ import './style.scss';
 const TabPane = Tabs.TabPane;
 
 
-const SystemStatus = ({ systemStatus }) => {
+export const SystemStatus = ({ systemStatus }) => {
     return (
         <div className="system-status">
             <h2>System status</h2>

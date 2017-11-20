@@ -6,7 +6,7 @@ import { notification } from 'antd';
 import appModule from 'AppRoot/modules/app';
 
 
-class Notifications extends React.Component {
+export const Notifications = class extends React.Component {
     constructor(props) {
         super(props);
 
@@ -41,7 +41,9 @@ class Notifications extends React.Component {
     render() {
         return (null);
     }
-}
+};
+
+Notifications.displayName = 'Notifications';
 
 Notifications.propTypes = {
     shiftyConnectionStatus: PropTypes.string.isRequired,

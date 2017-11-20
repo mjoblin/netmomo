@@ -1,13 +1,30 @@
 {
     "presets": [
-        ["es2015", {"modules": false}],
-        "es2016",
-        "es2017",
+        [
+            "env", {
+                "modules": false,
+                "targets": {
+                    "browsers": ["last 2 versions", "safari >= 7"]
+                }
+            }
+        ],
         "react"
     ],
     "plugins": [
         "react-hot-loader/babel",
         "transform-object-rest-spread",
         ["import", { "libraryName": "antd", "style": true }]
-    ]
+    ],
+    "env": {
+        "test": {
+            "plugins": [
+                "transform-es2015-modules-commonjs",
+                ["module-resolver", {
+                    "alias": {
+                        "AppRoot": "./app"
+                    }
+                }]
+            ]
+        }
+    }
 }

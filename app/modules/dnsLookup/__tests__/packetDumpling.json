@@ -1,0 +1,15 @@
+{
+    "metadata": {
+        "chef": "DNSLookupChef",
+        "creation_time": 1509932435591.887,
+        "driver": "packet",
+        "kitchen": "default_kitchen"
+    },
+    "payload": {
+        "lookup": {
+            "hostname": "test.site.com",
+            "when": 1509932435591.851
+        }
+    }
+}
+

@@ -1,0 +1,20 @@
+{
+    "total_dumplings_sent": 68,
+    "server_uptime": 130.094683,
+    "dumpling_kitchen_count": 1,
+    "dumpling_eater_count": 1,
+    "dumpling_kitchens": [{
+        "host": "127.0.0.1",
+        "port": 53012,
+        "kitchen_name": "default_kitchen",
+        "interface": "en0",
+        "filter": "tcp or icmp or udp or arp",
+        "chefs": ["netdumplings.dumplingchefs.ARPChef", "netdumplings.dumplingchefs.DNSLookupChef", "netdumplings.dumplingchefs.PacketCountChef"],
+        "poke_interval": 5
+    }],
+    "dumpling_eaters": [{
+        "host": "::1",
+        "port": 53013,
+        "eater_name": "netmomo"
+    }]
+}
