@@ -3,6 +3,10 @@ module.exports = {
     collectCoverageFrom: ["app/**/*.js"],
     collectCoverage: true,
     coverageDirectory: "./coverage",
+    coveragePathIgnorePatterns: [
+        "<rootDir>/app/modules/template/",
+        "<rootDir>/app/store/",
+    ],
     coverageReporters: [
         "lcov",
         "json",
@@ -10,8 +14,8 @@ module.exports = {
         "clover"
     ],
     testPathIgnorePatterns: [
-        "/node_modules/",
         "ignore",
+        "/node_modules/",
     ],
     transformIgnorePatterns: [
         "<rootDir>/node_modules/",
