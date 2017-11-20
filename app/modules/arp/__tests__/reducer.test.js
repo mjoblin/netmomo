@@ -1,5 +1,5 @@
 import reducer from '../reducer';
-import testARPPacketDumpling from './packetDumpling.json';
+import packetDumpling from './packetDumpling.json';
 import appModule from "AppRoot/modules/app";
 
 
@@ -18,12 +18,12 @@ describe('arp reducer', () => {
         expect(
             reducer(defaultState, {
                 type: appModule.actionTypes.DUMPLING,
-                dumpling: testARPPacketDumpling,
+                dumpling: packetDumpling,
             })
         ).toEqual({
             dumplingData: [{
                 key: '02:02:02:02:02:02_01:01:01:01:01:01_1509932219145.2742',
-                ...testARPPacketDumpling.payload,
+                ...packetDumpling.payload,
             }],
         });
     });
