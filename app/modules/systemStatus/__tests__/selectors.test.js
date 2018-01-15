@@ -40,7 +40,7 @@ describe('systemStatus selectors', () => {
                 },
             ],
             'server_uptime': 295.175053,
-            'total_dumplings_sent': 383,
+            'total_dumplings_out': 383,
         });
     });
 });

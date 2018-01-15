@@ -24,9 +24,14 @@ export const SystemStatus = ({ systemStatus }) => {
                           'd [days], h [hrs], mm [mins], ss [secs]') }
                 </span>
                 <br />
-                <span className="label">dumplings sent:</span>
+                <span className="label">dumplings in:</span>
                 <span className="value">
-                    { systemStatus.total_dumplings_sent.toLocaleString() }
+                    { systemStatus.total_dumplings_in.toLocaleString() }
+                </span>
+                <br />
+                <span className="label">dumplings out:</span>
+                <span className="value">
+                    { systemStatus.total_dumplings_out.toLocaleString() }
                 </span>
             </div>
 

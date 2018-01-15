@@ -42,9 +42,10 @@ const appReducer = (state = DEFAULT_STATE, action) => {
             };
         case t.DUMPLING: {
             // Keep track of how many dumplings we've seen from each chef.
-            // These will probably not add up to total_dumplings_sent from the
+            // These will probably not add up to total_dumplings_out from the
             // SystemStatusChef dumplings because shifty has likely been up
-            // longer than this web eater has.
+            // longer than this web eater has -- and there might be multiple
+            // eaters listening.
             const newState = deepcopy(state);
             const chef = action.dumpling.metadata.chef;
             newState.dumplingsSeen[chef] =
