@@ -12,23 +12,23 @@ import { getSettings } from '../selectors';
 import './style.scss';
 
 
-export const Settings = ({ settings, actions, shiftyConnectionStatus }) => {
-    const shiftyConnected = appModule.constants.HUB_CONNECTED;
-    const shiftyDisconnected = appModule.constants.HUB_DISCONNECTED;
-    const shiftyReconnecting = appModule.constants.HUB_RECONNECTING;
+export const Settings = ({ settings, actions, hubConnectionStatus }) => {
+    const hubConnected = appModule.constants.HUB_CONNECTED;
+    const hubDisconnected = appModule.constants.HUB_DISCONNECTED;
+    const hubReconnecting = appModule.constants.HUB_RECONNECTING;
 
-    let shiftyActionButtonText, shiftyActionButtonClickHandler;
+    let hubActionButtonText, hubActionButtonClickHandler;
 
-    if (shiftyConnectionStatus === shiftyConnected) {
-        shiftyActionButtonText = 'Disconnect';
-        shiftyActionButtonClickHandler = actions.shiftyDisconnect;
-    } else if (shiftyConnectionStatus === shiftyReconnecting) {
-        shiftyActionButtonText = 'Cancel Reconnect';
-        shiftyActionButtonClickHandler = actions.shiftyCancelReconnect;
+    if (hubConnectionStatus === hubConnected) {
+        hubActionButtonText = 'Disconnect';
+        hubActionButtonClickHandler = actions.hubDisconnect;
+    } else if (hubConnectionStatus === hubReconnecting) {
+        hubActionButtonText = 'Cancel Reconnect';
+        hubActionButtonClickHandler = actions.hubCancelReconnect;
     } else  {
-        shiftyActionButtonText = 'Connect';
-        shiftyActionButtonClickHandler =
-            () => { actions.shiftyConnect(settings.shiftyHost, settings.shiftyPort); };
+        hubActionButtonText = 'Connect';
+        hubActionButtonClickHandler =
+            () => { actions.hubConnect(settings.hubHost, settings.hubPort); };
     }
 
     return (
@@ -39,7 +39,7 @@ export const Settings = ({ settings, actions, shiftyConnectionStatus }) => {
                 <span className="label">Dumpling hub host:</span>
                 <Input
                     className="value value-hub-host"
-                    defaultValue={settings.shiftyHost}
+                    defaultValue={settings.hubHost}
                     onChange={e => actions.setHubHost(e.target.value)}
                 />
 
@@ -53,14 +53,14 @@ export const Settings = ({ settings, actions, shiftyConnectionStatus }) => {
                 />
                 <Button
                     type="primary"
-                    onClick={shiftyActionButtonClickHandler}
+                    onClick={hubActionButtonClickHandler}
                     disabled={
-                        shiftyConnectionStatus !== shiftyConnected &&
-                        shiftyConnectionStatus !== shiftyDisconnected &&
-                        shiftyConnectionStatus !== shiftyReconnecting
+                        hubConnectionStatus !== hubConnected &&
+                        hubConnectionStatus !== hubDisconnected &&
+                        hubConnectionStatus !== hubReconnecting
                     }
                 >
-                    {shiftyActionButtonText}
+                    {hubActionButtonText}
                 </Button>
             </div>
 
@@ -75,21 +75,21 @@ export const Settings = ({ settings, actions, shiftyConnectionStatus }) => {
 Settings.propTypes = {
     actions: PropTypes.object.isRequired,
     settings: PropTypes.object.isRequired,
-    shiftyConnectionStatus: PropTypes.string.isRequired,
+    hubConnectionStatus: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
     settings: getSettings(state),
-    shiftyConnectionStatus: appModule.selectors.shiftyConnectionStatus(state),
+    hubConnectionStatus: appModule.selectors.hubConnectionStatus(state),
 });
 
 const mapDispatchToProps = dispatch => {
     return {
         actions: bindActionCreators({
             ...actionCreators,
-            shiftyConnect: appModule.actions.shiftyConnect,
-            shiftyDisconnect: appModule.actions.shiftyDisconnect,
-            shiftyCancelReconnect: appModule.actions.shiftyCancelReconnect,
+            hubConnect: appModule.actions.hubConnect,
+            hubDisconnect: appModule.actions.hubDisconnect,
+            hubCancelReconnect: appModule.actions.hubCancelReconnect,
         }, dispatch)
     };
 };

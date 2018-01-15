@@ -8,7 +8,7 @@ describe('settings actions', () => {
 
         const expectedAction = {
             type: actionTypes.SET_HUB_HOST,
-            shiftyHost: testHost,
+            hubHost: testHost,
         };
 
         expect(actions.setHubHost(testHost)).toEqual(expectedAction);
@@ -19,7 +19,7 @@ describe('settings actions', () => {
 
         const expectedAction = {
             type: actionTypes.SET_HUB_PORT,
-            shiftyPort: testPort,
+            hubPort: testPort,
         };
 
         expect(actions.setHubPort(testPort)).toEqual(expectedAction);

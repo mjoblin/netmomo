@@ -6,17 +6,17 @@ export const newDumpling = dumpling => ({
     dumpling,
 });
 
-export const shiftyConnect = (host, port) => ({ type: t.HUB_CONNECT, host, port });
-export const shiftyDisconnect = () => ({ type: t.HUB_DISCONNECT });
+export const hubConnect = (host, port) => ({ type: t.HUB_CONNECT, host, port });
+export const hubDisconnect = () => ({ type: t.HUB_DISCONNECT });
 
-export const shiftyConnecting = () => ({ type: t.HUB_CONNECTING });
-export const shiftyUnavailable = () => ({ type: t.HUB_UNAVAILABLE });
-export const shiftyConnected = () => ({ type: t.HUB_CONNECTED });
-export const shiftyDisconnected = () => ({ type: t.HUB_DISCONNECTED });
-export const shiftyError = error => ({ type: t.HUB_ERROR, error });
-export const shiftyCancelReconnect = () => ({ type: t.HUB_CANCEL_RECONNECT });
+export const hubConnecting = () => ({ type: t.HUB_CONNECTING });
+export const hubUnavailable = () => ({ type: t.HUB_UNAVAILABLE });
+export const hubConnected = () => ({ type: t.HUB_CONNECTED });
+export const hubDisconnected = () => ({ type: t.HUB_DISCONNECTED });
+export const hubError = error => ({ type: t.HUB_ERROR, error });
+export const hubCancelReconnect = () => ({ type: t.HUB_CANCEL_RECONNECT });
 
-export const shiftyReconnectAttempt = delay => ({
+export const hubReconnectAttempt = delay => ({
     type: t.HUB_RECONNECT_ATTEMPT,
     delay,
 });

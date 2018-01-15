@@ -16,15 +16,15 @@ export const ConnectionStatus = class extends React.Component {
         return (
             <span className="connection-status">
                 <Switch
-                    checked={this.props.shiftyConnected}
+                    checked={this.props.hubConnected}
                     onChange={
                         val => val ?
-                            actions.shiftyConnect(settings.shiftyHost, settings.shiftyPort) :
-                            actions.shiftyDisconnect()
+                            actions.hubConnect(settings.hubHost, settings.hubPort) :
+                            actions.hubDisconnect()
                     }
                 />
                 <span className="status-text">
-                    { this.props.shiftyConnectionStatus }
+                    { this.props.hubConnectionStatus }
                 </span>
             </span>
         );
@@ -34,23 +34,23 @@ export const ConnectionStatus = class extends React.Component {
 ConnectionStatus.displayName = 'ConnectionStatus';
 
 ConnectionStatus.propTypes = {
-    shiftyConnectionStatus: PropTypes.string.isRequired,
-    shiftyConnected: PropTypes.bool.isRequired,
+    hubConnectionStatus: PropTypes.string.isRequired,
+    hubConnected: PropTypes.bool.isRequired,
     settings: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
-    shiftyConnectionStatus: appModule.selectors.shiftyConnectionStatus(state),
-    shiftyConnected: appModule.selectors.shiftyConnected(state),
+    hubConnectionStatus: appModule.selectors.hubConnectionStatus(state),
+    hubConnected: appModule.selectors.hubConnected(state),
     settings: settingsModule.selectors.getSettings(state),
 });
 
 const mapDispatchToProps = dispatch => {
     return {
         actions: bindActionCreators({
-            shiftyConnect: appModule.actions.shiftyConnect,
-            shiftyDisconnect: appModule.actions.shiftyDisconnect
+            hubConnect: appModule.actions.hubConnect,
+            hubDisconnect: appModule.actions.hubDisconnect
         }, dispatch)
     };
 };

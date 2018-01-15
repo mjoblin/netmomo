@@ -6,7 +6,7 @@ import { HUB_CONNECTING, HUB_CONNECTED, HUB_DISCONNECTED,
 
 
 const DEFAULT_STATE = {
-    shiftyConnectionStatus: HUB_DISCONNECTED,
+    hubConnectionStatus: HUB_DISCONNECTED,
     dumplingsSeen: {},
 };
 
@@ -17,33 +17,33 @@ const appReducer = (state = DEFAULT_STATE, action) => {
             // want to keep the connection status as RECONNECTING. This avoids
             // constantly toggling the status between CONNECTING and
             // RECONNECTING between each reconnect attempt.
-            if (state.shiftyConnectionStatus === HUB_RECONNECTING) {
+            if (state.hubConnectionStatus === HUB_RECONNECTING) {
                 return state;
             } else {
                 return {
                     ...state,
-                    shiftyConnectionStatus: HUB_CONNECTING
+                    hubConnectionStatus: HUB_CONNECTING
                 };
             }
         case t.HUB_CONNECTED:
             return {
                 ...state,
-                shiftyConnectionStatus: HUB_CONNECTED
+                hubConnectionStatus: HUB_CONNECTED
             };
         case t.HUB_DISCONNECTED:
             return {
                 ...state,
-                shiftyConnectionStatus: HUB_DISCONNECTED
+                hubConnectionStatus: HUB_DISCONNECTED
             };
         case t.HUB_RECONNECT_ATTEMPT:
             return {
                 ...state,
-                shiftyConnectionStatus: HUB_RECONNECTING
+                hubConnectionStatus: HUB_RECONNECTING
             };
         case t.DUMPLING: {
             // Keep track of how many dumplings we've seen from each chef.
             // These will probably not add up to total_dumplings_out from the
-            // SystemStatusChef dumplings because shifty has likely been up
+            // SystemStatusChef dumplings because hub has likely been up
             // longer than this web eater has -- and there might be multiple
             // eaters listening.
             const newState = deepcopy(state);

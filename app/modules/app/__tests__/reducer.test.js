@@ -6,7 +6,7 @@ import { HUB_DISCONNECTED, HUB_CONNECTING, HUB_CONNECTED,
 
 
 const defaultState = {
-    shiftyConnectionStatus: HUB_DISCONNECTED,
+    hubConnectionStatus: HUB_DISCONNECTED,
     dumplingsSeen: {},
 };
 
@@ -23,7 +23,7 @@ describe('app reducer', () => {
         // HUB_RECONNECTING in which case it should stay as-is.
         const stateReconnecting = {
             ...defaultState,
-            shiftyConnectionStatus: HUB_RECONNECTING,
+            hubConnectionStatus: HUB_RECONNECTING,
         };
 
         expect(
@@ -35,10 +35,10 @@ describe('app reducer', () => {
         // Other statuses should change to HUB_CONNECTING.
         [HUB_CONNECTING, HUB_CONNECTED, HUB_DISCONNECTED].forEach(status => {
             expect(
-                reducer({ ...defaultState, shiftyConnectionStatus: status }, {
+                reducer({ ...defaultState, hubConnectionStatus: status }, {
                     type: appModule.actionTypes.HUB_CONNECTING,
                 })
-            ).toEqual({ ...defaultState, shiftyConnectionStatus: HUB_CONNECTING });
+            ).toEqual({ ...defaultState, hubConnectionStatus: HUB_CONNECTING });
         });
     });
 
@@ -47,15 +47,15 @@ describe('app reducer', () => {
             reducer(defaultState, {
                 type: appModule.actionTypes.HUB_CONNECTED,
             })
-        ).toEqual({ ...defaultState, shiftyConnectionStatus: HUB_CONNECTED });
+        ).toEqual({ ...defaultState, hubConnectionStatus: HUB_CONNECTED });
     });
 
     test('HUB_DISCONNECTED action', () => {
         expect(
-            reducer({ ...defaultState, shiftyConnectionStatus: HUB_CONNECTED }, {
+            reducer({ ...defaultState, hubConnectionStatus: HUB_CONNECTED }, {
                 type: appModule.actionTypes.HUB_DISCONNECTED,
             })
-        ).toEqual({ ...defaultState, shiftyConnectionStatus: HUB_DISCONNECTED });
+        ).toEqual({ ...defaultState, hubConnectionStatus: HUB_DISCONNECTED });
     });
 
     test('HUB_RECONNECT_ATTEMPT action', () => {
@@ -63,7 +63,7 @@ describe('app reducer', () => {
             reducer(defaultState, {
                 type: appModule.actionTypes.HUB_RECONNECT_ATTEMPT,
             })
-        ).toEqual({ ...defaultState, shiftyConnectionStatus: HUB_RECONNECTING });
+        ).toEqual({ ...defaultState, hubConnectionStatus: HUB_RECONNECTING });
     });
 
     test('DUMPLING action', () => {

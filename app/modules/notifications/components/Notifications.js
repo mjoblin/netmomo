@@ -11,13 +11,13 @@ export const Notifications = class extends React.Component {
         super(props);
 
         this.state = {
-            connectedToHub: props.shiftyConnectionStatus ===
+            connectedToHub: props.hubConnectionStatus ===
                 appModule.constants.HUB_CONNECTED,
         };
     }
 
     componentWillReceiveProps(nextProps) {
-        const connectedToHub = nextProps.shiftyConnectionStatus ===
+        const connectedToHub = nextProps.hubConnectionStatus ===
             appModule.constants.HUB_CONNECTED;
 
         if (connectedToHub !== this.state.connectedToHub) {
@@ -46,11 +46,11 @@ export const Notifications = class extends React.Component {
 Notifications.displayName = 'Notifications';
 
 Notifications.propTypes = {
-    shiftyConnectionStatus: PropTypes.string.isRequired,
+    hubConnectionStatus: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
-    shiftyConnectionStatus: appModule.selectors.shiftyConnectionStatus(state),
+    hubConnectionStatus: appModule.selectors.hubConnectionStatus(state),
 });
 
 export default connect(

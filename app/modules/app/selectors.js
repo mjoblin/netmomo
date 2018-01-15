@@ -1,10 +1,10 @@
 import { NAME, HUB_CONNECTED } from './constants';
 
 
-export const shiftyConnectionStatus = state => {
-    return state[NAME].shiftyConnectionStatus;
+export const hubConnectionStatus = state => {
+    return state[NAME].hubConnectionStatus;
 };
 
-export const shiftyConnected = state => {
-    return state[NAME].shiftyConnectionStatus === HUB_CONNECTED;
+export const hubConnected = state => {
+    return state[NAME].hubConnectionStatus === HUB_CONNECTED;
 };

@@ -7,20 +7,20 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Settings
     actions={
       Object {
+        "hubCancelReconnect": [Function],
+        "hubConnect": [Function],
+        "hubDisconnect": [Function],
         "setHubHost": [Function],
         "setHubPort": [Function],
-        "shiftyCancelReconnect": [Function],
-        "shiftyConnect": [Function],
-        "shiftyDisconnect": [Function],
       }
     }
+    hubConnectionStatus="Connected"
     settings={
       Object {
-        "shiftyHost": "localhost",
-        "shiftyPort": 11348,
+        "hubHost": "localhost",
+        "hubPort": 11348,
       }
     }
-    shiftyConnectionStatus="Connected"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

@@ -1,8 +1,8 @@
 import { eventChannel, delay, END } from 'redux-saga';
 import { all, call, fork, put, race, take } from 'redux-saga/effects';
 
-import { newDumpling, shiftyConnecting, shiftyConnect, shiftyConnected,
-    shiftyDisconnected, shiftyError, shiftyReconnectAttempt } from './actions';
+import { newDumpling, hubConnecting, hubConnect, hubConnected,
+    hubDisconnected, hubError, hubReconnectAttempt } from './actions';
 import { HUB_CANCEL_RECONNECT, HUB_CONNECT, HUB_CONNECTED,
     HUB_DISCONNECT, HUB_DISCONNECTED } from './actionTypes';
 
@@ -10,49 +10,49 @@ import { HUB_CANCEL_RECONNECT, HUB_CONNECT, HUB_CONNECTED,
 // TODO: Consider redux-observable/RxJS for the websocket handling.
 
 /**
- * Attempt to reconnect to shifty after a given delay.
+ * Attempt to reconnect to hub after a given delay.
  *
- * @param {string} host - The shifty host.
- * @param {int} port - The shifty port for outgoing dumplings.
+ * @param {string} host - The hub host.
+ * @param {int} port - The hub port for outgoing dumplings.
  * @param {int} duration - Duration (in seconds) in wait before attempting to
  *  reconnect.
  */
 function* reconnectAfterDelay(host, port, duration) {
-    yield put(shiftyReconnectAttempt(duration));
+    yield put(hubReconnectAttempt(duration));
     yield call(delay, duration);
-    yield put(shiftyConnect(host, port));
+    yield put(hubConnect(host, port));
 }
 
 
 /**
- * Initialize the connection to shifty, including configuring websocket event
+ * Initialize the connection to hub, including configuring websocket event
  * handlers.
  *
- * @param {string} host - The shifty host.
- * @param {int} port - The shifty port for outgoing dumplings.
+ * @param {string} host - The hub host.
+ * @param {int} port - The hub port for outgoing dumplings.
  */
 const initHubConnection = (host, port) =>
     eventChannel(emitter => {
-        // Connect to shifty.
-        const shiftyUrl = `ws://${host}:${port}`;
+        // Connect to hub.
+        const hubUrl = `ws://${host}:${port}`;
 
-        const socket = new WebSocket(shiftyUrl);
+        const socket = new WebSocket(hubUrl);
 
         // Websocket event handlers.
         socket.addEventListener('open', () => {
             console.log('Connected to dumpling hub');
             socket.send(JSON.stringify({ 'eater_name': 'netmomo' }));
-            emitter(shiftyConnected());
+            emitter(hubConnected());
         });
 
         socket.addEventListener('close', () => {
             console.log('Connection to dumpling hub closed');
-            emitter(shiftyDisconnected());
+            emitter(hubDisconnected());
             emitter(END);
         });
 
         socket.addEventListener('error', () => {
-            emitter(shiftyError({
+            emitter(hubError({
                 message: 'There was an unexpected dumpling hub WebSocket error'
             }));
         });
@@ -81,15 +81,15 @@ const initHubConnection = (host, port) =>
     });
 
 /**
- * Top-level manager for two action sources: new dumplings (from the shifty
- * websocket) which need to be re-emitted to the app; or shifty
+ * Top-level manager for two action sources: new dumplings (from the hub
+ * websocket) which need to be re-emitted to the app; or hub
  * connection-related actions (coming from the UI, such as requests to connect
- * or disconnect from shifty).
+ * or disconnect from hub).
  */
 function* watchHubConnection() {
     let wantToBeConnected = false;
     let activeHubHost, activeHubPort;
-    let shiftyChannel;
+    let hubChannel;
 
     // Configure reconnection settings.
     let reconnectCount = 0;
@@ -103,16 +103,16 @@ function* watchHubConnection() {
 
     for (;;) {
         // Wait for an action we care about to come in. This will either be a
-        // CONNECT/DISCONNECT action, or (if the shifty channel is open)
-        // an action coming from shifty -- which will usually be a DUMPLING
+        // CONNECT/DISCONNECT action, or (if the hub channel is open)
+        // an action coming from hub -- which will usually be a DUMPLING
         // action but might also be an action providing an update on the
-        // shifty connection status.
+        // hub connection status.
         const racers = {
             externalAction: take(externalActions),
         };
 
-        if (shiftyChannel) {
-            racers.fromChannel = take(shiftyChannel);
+        if (hubChannel) {
+            racers.fromChannel = take(hubChannel);
         }
 
         const newAction = yield race(racers);
@@ -128,14 +128,14 @@ function* watchHubConnection() {
         // Handle the new action.
 
         if (action.type === HUB_CONNECT) {
-            // Attempt a connection to shifty. This will fail if shifty is
+            // Attempt a connection to hub. This will fail if hub is
             // unavailable, which manifests as a HUB_DISCONNECTED.
             wantToBeConnected = true;
             activeHubHost = action.host;
             activeHubPort = action.port;
 
-            yield put(shiftyConnecting());
-            shiftyChannel = yield call(
+            yield put(hubConnecting());
+            hubChannel = yield call(
                 initHubConnection, activeHubHost, activeHubPort);
         } else if (action.type === HUB_DISCONNECTED) {
             // If we got a DISCONNECT while we were already connected then
@@ -163,14 +163,14 @@ function* watchHubConnection() {
                 reconnectCount = 0;
             }
         } else if (action.type === HUB_DISCONNECT) {
-            // The user has requested a disconnect from shifty.
+            // The user has requested a disconnect from hub.
             console.log('Disconnecting from dumpling hub');
             wantToBeConnected = false;
             haveBeenSuccessfullyConnected = false;
 
-            if (shiftyChannel) {
-                shiftyChannel.close();
-                yield put(shiftyDisconnected());
+            if (hubChannel) {
+                hubChannel.close();
+                yield put(hubDisconnected());
             }
 
         } else if (action.type === HUB_CANCEL_RECONNECT) {
@@ -183,7 +183,7 @@ function* watchHubConnection() {
                 reconnectTask.cancel();
             }
 
-            yield put(shiftyDisconnected());
+            yield put(hubDisconnected());
         }
     }
 }

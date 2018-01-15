@@ -29,20 +29,20 @@ export const Home = () => (
 );
 
 Home.propTypes = {
-    shiftyConnected: PropTypes.bool.isRequired,
+    hubConnected: PropTypes.bool.isRequired,
     settings: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
-    shiftyConnected: appModule.selectors.shiftyConnected(state),
+    hubConnected: appModule.selectors.hubConnected(state),
     settings: settingsModule.selectors.getSettings(state),
 });
 
 const mapDispatchToProps = dispatch => {
     return {
         actions: bindActionCreators({
-            shiftyConnect: appModule.actions.shiftyConnect,
-            shiftyDisconnect: appModule.actions.shiftyDisconnect
+            hubConnect: appModule.actions.hubConnect,
+            hubDisconnect: appModule.actions.hubDisconnect
         }, dispatch)
     };
 };

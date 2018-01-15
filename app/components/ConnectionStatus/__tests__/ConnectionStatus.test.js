@@ -8,9 +8,9 @@ describe('ConnectionStatus', () => {
     it('matches snapshot', () => {
         const component = shallow(
             <ConnectionStatus
-                shiftyConnectionStatus={HUB_CONNECTED}
-                shiftyConnected={true}
-                settings={{ shiftyHost: 'localhost', shiftyPort: 11348 }}
+                hubConnectionStatus={HUB_CONNECTED}
+                hubConnected={true}
+                settings={{ hubHost: 'localhost', hubPort: 11348 }}
                 actions={{}}
             />
         );
