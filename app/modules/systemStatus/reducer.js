@@ -9,6 +9,7 @@ const DEFAULT_STATE = {
     dumpling_kitchen_count: 0,
     dumpling_kitchens: [],
     server_uptime: 0,
+    total_dumplings_in: 0,
     total_dumplings_out: 0,
 };
 

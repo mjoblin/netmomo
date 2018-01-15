@@ -26,12 +26,14 @@ export const SystemStatus = ({ systemStatus }) => {
                 <br />
                 <span className="label">Dumplings in:</span>
                 <span className="value">
-                    { systemStatus.total_dumplings_in.toLocaleString() }
+                    { systemStatus.total_dumplings_in &&
+                      systemStatus.total_dumplings_in.toLocaleString() }
                 </span>
                 <br />
                 <span className="label">Dumplings out:</span>
                 <span className="value">
-                    { systemStatus.total_dumplings_out.toLocaleString() }
+                    { systemStatus.total_dumplings_out &&
+                      systemStatus.total_dumplings_out.toLocaleString() }
                 </span>
             </div>
 
