@@ -14,12 +14,12 @@ describe('settings reducer', () => {
         ).toEqual(defaultState);
     });
 
-    test('settings/SET_SHIFTY_HOST action', () => {
+    test('settings/SET_HUB_HOST action', () => {
         const testHost = 'testHost';
 
         expect(
             reducer(defaultState, {
-                type: actionTypes.SET_SHIFTY_HOST,
+                type: actionTypes.SET_HUB_HOST,
                 shiftyHost: testHost,
             })
         ).toEqual({
@@ -28,12 +28,12 @@ describe('settings reducer', () => {
         });
     });
 
-    test('settings/SET_SHIFTY_PORT action', () => {
+    test('settings/SET_HUB_PORT action', () => {
         const testPort = 99;
 
         expect(
             reducer(defaultState, {
-                type: actionTypes.SET_SHIFTY_PORT,
+                type: actionTypes.SET_HUB_PORT,
                 shiftyPort: testPort,
             })
         ).toEqual({

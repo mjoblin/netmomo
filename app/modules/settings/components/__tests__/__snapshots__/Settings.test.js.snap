@@ -7,8 +7,8 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Settings
     actions={
       Object {
-        "setShiftyHost": [Function],
-        "setShiftyPort": [Function],
+        "setHubHost": [Function],
+        "setHubPort": [Function],
         "shiftyCancelReconnect": [Function],
         "shiftyConnect": [Function],
         "shiftyDisconnect": [Function],

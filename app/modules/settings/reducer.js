@@ -8,9 +8,9 @@ const DEFAULT_STATE = {
 
 const settingsReducer = (state = DEFAULT_STATE, action) => {
     switch (action.type) {
-        case t.SET_SHIFTY_HOST:
+        case t.SET_HUB_HOST:
             return { ...state, shiftyHost: action.shiftyHost };
-        case t.SET_SHIFTY_PORT:
+        case t.SET_HUB_PORT:
             return { ...state, shiftyPort: action.shiftyPort };
         default:
             return state;

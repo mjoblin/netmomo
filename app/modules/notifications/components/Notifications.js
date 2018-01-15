@@ -11,17 +11,17 @@ export const Notifications = class extends React.Component {
         super(props);
 
         this.state = {
-            connectedToShifty: props.shiftyConnectionStatus ===
-                appModule.constants.SHIFTY_CONNECTED,
+            connectedToHub: props.shiftyConnectionStatus ===
+                appModule.constants.HUB_CONNECTED,
         };
     }
 
     componentWillReceiveProps(nextProps) {
-        const connectedToShifty = nextProps.shiftyConnectionStatus ===
-            appModule.constants.SHIFTY_CONNECTED;
+        const connectedToHub = nextProps.shiftyConnectionStatus ===
+            appModule.constants.HUB_CONNECTED;
 
-        if (connectedToShifty !== this.state.connectedToShifty) {
-            if (connectedToShifty) {
+        if (connectedToHub !== this.state.connectedToHub) {
+            if (connectedToHub) {
                 notification.success({
                     message: 'Connected to dumpling hub',
                     description: 'The dumpling hub connection has been established.',
@@ -34,7 +34,7 @@ export const Notifications = class extends React.Component {
 
             }
 
-            this.setState({ ...this.state, connectedToShifty });
+            this.setState({ ...this.state, connectedToHub });
         }
     }
 

@@ -1,4 +1,4 @@
-import { NAME, SHIFTY_CONNECTED } from './constants';
+import { NAME, HUB_CONNECTED } from './constants';
 
 
 export const shiftyConnectionStatus = state => {
@@ -6,5 +6,5 @@ export const shiftyConnectionStatus = state => {
 };
 
 export const shiftyConnected = state => {
-    return state[NAME].shiftyConnectionStatus === SHIFTY_CONNECTED;
+    return state[NAME].shiftyConnectionStatus === HUB_CONNECTED;
 };

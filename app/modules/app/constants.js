@@ -1,6 +1,6 @@
 export const NAME = 'app';
 
-export const SHIFTY_CONNECTING = 'Connecting';
-export const SHIFTY_CONNECTED = 'Connected';
-export const SHIFTY_DISCONNECTED = 'Disconnected';
-export const SHIFTY_RECONNECTING = 'Reconnecting';
+export const HUB_CONNECTING = 'Connecting';
+export const HUB_CONNECTED = 'Connected';
+export const HUB_DISCONNECTED = 'Disconnected';
+export const HUB_RECONNECTING = 'Reconnecting';

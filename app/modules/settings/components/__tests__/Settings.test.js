@@ -8,8 +8,8 @@ const testSettings = {
 };
 
 const testActions = {
-    setShiftyHost: () => {},
-    setShiftyPort: () => {},
+    setHubHost: () => {},
+    setHubPort: () => {},
     shiftyConnect: () => {},
     shiftyDisconnect: () => {},
     shiftyCancelReconnect: () => {},

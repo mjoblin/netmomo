@@ -3,8 +3,8 @@ import { all, call, fork, put, race, take } from 'redux-saga/effects';
 
 import { newDumpling, shiftyConnecting, shiftyConnect, shiftyConnected,
     shiftyDisconnected, shiftyError, shiftyReconnectAttempt } from './actions';
-import { SHIFTY_CANCEL_RECONNECT, SHIFTY_CONNECT, SHIFTY_CONNECTED,
-    SHIFTY_DISCONNECT, SHIFTY_DISCONNECTED } from './actionTypes';
+import { HUB_CANCEL_RECONNECT, HUB_CONNECT, HUB_CONNECTED,
+    HUB_DISCONNECT, HUB_DISCONNECTED } from './actionTypes';
 
 
 // TODO: Consider redux-observable/RxJS for the websocket handling.
@@ -31,7 +31,7 @@ function* reconnectAfterDelay(host, port, duration) {
  * @param {string} host - The shifty host.
  * @param {int} port - The shifty port for outgoing dumplings.
  */
-const initShiftyConnection = (host, port) =>
+const initHubConnection = (host, port) =>
     eventChannel(emitter => {
         // Connect to shifty.
         const shiftyUrl = `ws://${host}:${port}`;
@@ -40,7 +40,7 @@ const initShiftyConnection = (host, port) =>
 
         // Websocket event handlers.
         socket.addEventListener('open', () => {
-            console.log('Connected to shifty');
+            console.log('Connected to dumpling hub');
             socket.send(JSON.stringify({ 'eater_name': 'netmomo' }));
             emitter(shiftyConnected());
         });
@@ -86,9 +86,9 @@ const initShiftyConnection = (host, port) =>
  * connection-related actions (coming from the UI, such as requests to connect
  * or disconnect from shifty).
  */
-function* watchShiftyConnection() {
+function* watchHubConnection() {
     let wantToBeConnected = false;
-    let activeShiftyHost, activeShiftyPort;
+    let activeHubHost, activeHubPort;
     let shiftyChannel;
 
     // Configure reconnection settings.
@@ -99,7 +99,7 @@ function* watchShiftyConnection() {
     let reconnectTask;
 
     const externalActions =
-        [SHIFTY_CANCEL_RECONNECT, SHIFTY_CONNECT, SHIFTY_DISCONNECT];
+        [HUB_CANCEL_RECONNECT, HUB_CONNECT, HUB_DISCONNECT];
 
     for (;;) {
         // Wait for an action we care about to come in. This will either be a
@@ -127,17 +127,17 @@ function* watchShiftyConnection() {
 
         // Handle the new action.
 
-        if (action.type === SHIFTY_CONNECT) {
+        if (action.type === HUB_CONNECT) {
             // Attempt a connection to shifty. This will fail if shifty is
-            // unavailable, which manifests as a SHIFTY_DISCONNECTED.
+            // unavailable, which manifests as a HUB_DISCONNECTED.
             wantToBeConnected = true;
-            activeShiftyHost = action.host;
-            activeShiftyPort = action.port;
+            activeHubHost = action.host;
+            activeHubPort = action.port;
 
             yield put(shiftyConnecting());
             shiftyChannel = yield call(
-                initShiftyConnection, activeShiftyHost, activeShiftyPort);
-        } else if (action.type === SHIFTY_DISCONNECTED) {
+                initHubConnection, activeHubHost, activeHubPort);
+        } else if (action.type === HUB_DISCONNECTED) {
             // If we got a DISCONNECT while we were already connected then
             // we want to switch into a reconnect state. First connection
             // attempts don't put us into a reconnect cycle.
@@ -153,18 +153,18 @@ function* watchShiftyConnection() {
                     `${reconnectDelay} ms`
                 );
                 reconnectTask = yield fork(reconnectAfterDelay,
-                    activeShiftyHost, activeShiftyPort, reconnectDelay);
+                    activeHubHost, activeHubPort, reconnectDelay);
             }
-        } else if (action.type === SHIFTY_CONNECTED) {
+        } else if (action.type === HUB_CONNECTED) {
             haveBeenSuccessfullyConnected = true;
 
             if (reconnectCount > 0) {
                 // We've successfully reconnected.
                 reconnectCount = 0;
             }
-        } else if (action.type === SHIFTY_DISCONNECT) {
+        } else if (action.type === HUB_DISCONNECT) {
             // The user has requested a disconnect from shifty.
-            console.log('Disconnecting from shifty');
+            console.log('Disconnecting from dumpling hub');
             wantToBeConnected = false;
             haveBeenSuccessfullyConnected = false;
 
@@ -173,7 +173,7 @@ function* watchShiftyConnection() {
                 yield put(shiftyDisconnected());
             }
 
-        } else if (action.type === SHIFTY_CANCEL_RECONNECT) {
+        } else if (action.type === HUB_CANCEL_RECONNECT) {
             // The user has requested that we no longer attempt to reconnect.
             console.log('Cancelling dumpling hub reconnects');
             wantToBeConnected = false;
@@ -190,6 +190,6 @@ function* watchShiftyConnection() {
 
 export default function* () {
     yield all([
-        watchShiftyConnection(),
+        watchHubConnection(),
     ]);
 }

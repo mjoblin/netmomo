@@ -22,7 +22,7 @@ describe('app actions (shifty)', () => {
         const port = 11348;
 
         const expectedAction = {
-            type: actionTypes.SHIFTY_CONNECT,
+            type: actionTypes.HUB_CONNECT,
             host,
             port,
         };
@@ -32,7 +32,7 @@ describe('app actions (shifty)', () => {
 
     test('shiftyDisconnect', () => {
         const expectedAction = {
-            type: actionTypes.SHIFTY_DISCONNECT,
+            type: actionTypes.HUB_DISCONNECT,
         };
 
         expect(actions.shiftyDisconnect()).toEqual(expectedAction);
@@ -40,7 +40,7 @@ describe('app actions (shifty)', () => {
 
     test('shiftyConnecting', () => {
         const expectedAction = {
-            type: actionTypes.SHIFTY_CONNECTING,
+            type: actionTypes.HUB_CONNECTING,
         };
 
         expect(actions.shiftyConnecting()).toEqual(expectedAction);
@@ -48,7 +48,7 @@ describe('app actions (shifty)', () => {
 
     test('shiftyUnavailable', () => {
         const expectedAction = {
-            type: actionTypes.SHIFTY_UNAVAILABLE,
+            type: actionTypes.HUB_UNAVAILABLE,
         };
 
         expect(actions.shiftyUnavailable()).toEqual(expectedAction);
@@ -56,7 +56,7 @@ describe('app actions (shifty)', () => {
 
     test('shiftyConnected', () => {
         const expectedAction = {
-            type: actionTypes.SHIFTY_CONNECTED,
+            type: actionTypes.HUB_CONNECTED,
         };
 
         expect(actions.shiftyConnected()).toEqual(expectedAction);
@@ -64,7 +64,7 @@ describe('app actions (shifty)', () => {
 
     test('shiftyDisconnected', () => {
         const expectedAction = {
-            type: actionTypes.SHIFTY_DISCONNECTED,
+            type: actionTypes.HUB_DISCONNECTED,
         };
 
         expect(actions.shiftyDisconnected()).toEqual(expectedAction);
@@ -74,7 +74,7 @@ describe('app actions (shifty)', () => {
         const error = 'test error';
 
         const expectedAction = {
-            type: actionTypes.SHIFTY_ERROR,
+            type: actionTypes.HUB_ERROR,
             error,
         };
 
@@ -83,7 +83,7 @@ describe('app actions (shifty)', () => {
 
     test('shiftyCancelReconnect', () => {
         const expectedAction = {
-            type: actionTypes.SHIFTY_CANCEL_RECONNECT,
+            type: actionTypes.HUB_CANCEL_RECONNECT,
         };
 
         expect(actions.shiftyCancelReconnect()).toEqual(expectedAction);
@@ -93,7 +93,7 @@ describe('app actions (shifty)', () => {
         const delay = 10;
 
         const expectedAction = {
-            type: actionTypes.SHIFTY_RECONNECT_ATTEMPT,
+            type: actionTypes.HUB_RECONNECT_ATTEMPT,
             delay,
         };
 

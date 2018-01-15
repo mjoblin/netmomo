@@ -13,9 +13,9 @@ import './style.scss';
 
 
 export const Settings = ({ settings, actions, shiftyConnectionStatus }) => {
-    const shiftyConnected = appModule.constants.SHIFTY_CONNECTED;
-    const shiftyDisconnected = appModule.constants.SHIFTY_DISCONNECTED;
-    const shiftyReconnecting = appModule.constants.SHIFTY_RECONNECTING;
+    const shiftyConnected = appModule.constants.HUB_CONNECTED;
+    const shiftyDisconnected = appModule.constants.HUB_DISCONNECTED;
+    const shiftyReconnecting = appModule.constants.HUB_RECONNECTING;
 
     let shiftyActionButtonText, shiftyActionButtonClickHandler;
 
@@ -40,7 +40,7 @@ export const Settings = ({ settings, actions, shiftyConnectionStatus }) => {
                 <Input
                     className="value value-hub-host"
                     defaultValue={settings.shiftyHost}
-                    onChange={e => actions.setShiftyHost(e.target.value)}
+                    onChange={e => actions.setHubHost(e.target.value)}
                 />
 
                 <span className="label">port:</span>
@@ -49,7 +49,7 @@ export const Settings = ({ settings, actions, shiftyConnectionStatus }) => {
                     defaultValue={11348}
                     min={1}
                     max={65535}
-                    onChange={e => typeof(e) === 'number' && actions.setShiftyPort(e)}
+                    onChange={e => typeof(e) === 'number' && actions.setHubPort(e)}
                 />
                 <Button
                     type="primary"
