@@ -36,14 +36,14 @@ export const Settings = ({ settings, actions, shiftyConnectionStatus }) => {
             <h2>Settings</h2>
 
             <div>
-                <span className="label">Shifty location:</span>
+                <span className="label">Dumpling hub host:</span>
                 <Input
                     className="value value-shifty-host"
                     defaultValue={settings.shiftyHost}
                     onChange={e => actions.setShiftyHost(e.target.value)}
                 />
 
-                <span className="label">Port:</span>
+                <span className="label">port:</span>
                 <InputNumber
                     className="value"
                     defaultValue={11348}
@@ -65,7 +65,7 @@ export const Settings = ({ settings, actions, shiftyConnectionStatus }) => {
             </div>
 
             <div>
-                <span className="label">Shifty connection status:</span>
+                <span className="label">Dumpling hub connection status:</span>
                 <ConnectionStatus className="value" />
             </div>
         </div>

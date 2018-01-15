@@ -18,18 +18,18 @@ export const SystemStatus = ({ systemStatus }) => {
         <div className="system-status">
             <h2>System status</h2>
             <div className="summary">
-                <span className="label">shifty uptime:</span>
+                <span className="label">Dumpling hub uptime:</span>
                 <span className="value">
                     { moment.duration(systemStatus.server_uptime, 'seconds').format(
                           'd [days], h [hrs], mm [mins], ss [secs]') }
                 </span>
                 <br />
-                <span className="label">dumplings in:</span>
+                <span className="label">Dumplings in:</span>
                 <span className="value">
                     { systemStatus.total_dumplings_in.toLocaleString() }
                 </span>
                 <br />
-                <span className="label">dumplings out:</span>
+                <span className="label">Dumplings out:</span>
                 <span className="value">
                     { systemStatus.total_dumplings_out.toLocaleString() }
                 </span>

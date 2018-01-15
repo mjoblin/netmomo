@@ -19,11 +19,11 @@ export const Home = () => (
 
         <p />
         <div className="shifty-connection-status">
-            shifty connection status: <ConnectionStatus />
+            Dumpling hub connection status: <ConnectionStatus />
         </div>
         <p />
 
-        If you cannot connect to shifty then try changing
+        If you cannot connect to the dumpling hub then try changing
         the <NavLink to='/settings'>Settings.</NavLink>
     </div>
 );

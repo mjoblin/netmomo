@@ -35,11 +35,11 @@ ShallowWrapper {
         <div
           className="shifty-connection-status"
         >
-          shifty connection status: 
+          Dumpling hub connection status: 
           <Connect(ConnectionStatus) />
         </div>,
         <p />,
-        "If you cannot connect to shifty then try changing the ",
+        "If you cannot connect to the dumpling hub then try changing the ",
         <NavLink
           activeClassName="active"
           ariaCurrent="true"
@@ -92,14 +92,14 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            "shifty connection status: ",
+            "Dumpling hub connection status: ",
             <Connect(ConnectionStatus) />,
           ],
           "className": "shifty-connection-status",
         },
         "ref": null,
         "rendered": Array [
-          "shifty connection status: ",
+          "Dumpling hub connection status: ",
           Object {
             "instance": null,
             "key": null,
@@ -121,7 +121,7 @@ ShallowWrapper {
         "rendered": null,
         "type": "p",
       },
-      "If you cannot connect to shifty then try changing the ",
+      "If you cannot connect to the dumpling hub then try changing the ",
       Object {
         "instance": null,
         "key": null,
@@ -160,11 +160,11 @@ ShallowWrapper {
           <div
             className="shifty-connection-status"
           >
-            shifty connection status: 
+            Dumpling hub connection status: 
             <Connect(ConnectionStatus) />
           </div>,
           <p />,
-          "If you cannot connect to shifty then try changing the ",
+          "If you cannot connect to the dumpling hub then try changing the ",
           <NavLink
             activeClassName="active"
             ariaCurrent="true"
@@ -217,14 +217,14 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "shifty connection status: ",
+              "Dumpling hub connection status: ",
               <Connect(ConnectionStatus) />,
             ],
             "className": "shifty-connection-status",
           },
           "ref": null,
           "rendered": Array [
-            "shifty connection status: ",
+            "Dumpling hub connection status: ",
             Object {
               "instance": null,
               "key": null,
@@ -246,7 +246,7 @@ ShallowWrapper {
           "rendered": null,
           "type": "p",
         },
-        "If you cannot connect to shifty then try changing the ",
+        "If you cannot connect to the dumpling hub then try changing the ",
         Object {
           "instance": null,
           "key": null,
