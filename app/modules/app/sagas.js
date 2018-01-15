@@ -46,14 +46,15 @@ const initShiftyConnection = (host, port) =>
         });
 
         socket.addEventListener('close', () => {
-            console.log('Connection to shifty closed');
+            console.log('Connection to dumpling hub closed');
             emitter(shiftyDisconnected());
             emitter(END);
         });
 
         socket.addEventListener('error', () => {
-            emitter(shiftyError(
-                { message: 'There was an unexpected shifty WebSocket error' }));
+            emitter(shiftyError({
+                message: 'There was an unexpected dumpling hub WebSocket error'
+            }));
         });
 
         socket.addEventListener('message', event => {
@@ -73,7 +74,7 @@ const initShiftyConnection = (host, port) =>
         return () => {
             if ((socket.readyState !== socket.CLOSING) &&
                 (socket.readyState !== socket.CLOSED)) {
-                console.log('Terminating shifty connection');
+                console.log('Terminating dumpling hub connection');
                 socket.close();
             }
         };
@@ -148,7 +149,9 @@ function* watchShiftyConnection() {
                 }
 
                 console.log(
-                    `Attempting to reconnect to shifty in ${reconnectDelay} ms`);
+                    `Attempting to reconnect to dumpling hub in ` +
+                    `${reconnectDelay} ms`
+                );
                 reconnectTask = yield fork(reconnectAfterDelay,
                     activeShiftyHost, activeShiftyPort, reconnectDelay);
             }
@@ -172,7 +175,7 @@ function* watchShiftyConnection() {
 
         } else if (action.type === SHIFTY_CANCEL_RECONNECT) {
             // The user has requested that we no longer attempt to reconnect.
-            console.log('Cancelling shifty reconnects');
+            console.log('Cancelling dumpling hub reconnects');
             wantToBeConnected = false;
             haveBeenSuccessfullyConnected = false;
 

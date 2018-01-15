@@ -18,7 +18,7 @@ export const Home = () => (
         eater. It shows you the contents of the dumplings collected from your network.
 
         <p />
-        <div className="shifty-connection-status">
+        <div className="hub-connection-status">
             Dumpling hub connection status: <ConnectionStatus />
         </div>
         <p />

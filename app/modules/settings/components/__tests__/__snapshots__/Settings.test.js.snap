@@ -46,7 +46,7 @@ ShallowWrapper {
           </span>
           <Input
             autosize={false}
-            className="value value-shifty-host"
+            className="value value-hub-host"
             defaultValue="localhost"
             disabled={false}
             onChange={[Function]}
@@ -118,7 +118,7 @@ ShallowWrapper {
             </span>,
             <Input
               autosize={false}
-              className="value value-shifty-host"
+              className="value value-hub-host"
               defaultValue="localhost"
               disabled={false}
               onChange={[Function]}
@@ -172,7 +172,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "autosize": false,
-              "className": "value value-shifty-host",
+              "className": "value value-hub-host",
               "defaultValue": "localhost",
               "disabled": false,
               "onChange": [Function],
@@ -298,7 +298,7 @@ ShallowWrapper {
             </span>
             <Input
               autosize={false}
-              className="value value-shifty-host"
+              className="value value-hub-host"
               defaultValue="localhost"
               disabled={false}
               onChange={[Function]}
@@ -370,7 +370,7 @@ ShallowWrapper {
               </span>,
               <Input
                 autosize={false}
-                className="value value-shifty-host"
+                className="value value-hub-host"
                 defaultValue="localhost"
                 disabled={false}
                 onChange={[Function]}
@@ -424,7 +424,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "autosize": false,
-                "className": "value value-shifty-host",
+                "className": "value value-hub-host",
                 "defaultValue": "localhost",
                 "disabled": false,
                 "onChange": [Function],

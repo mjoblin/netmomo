@@ -38,7 +38,7 @@ export const Settings = ({ settings, actions, shiftyConnectionStatus }) => {
             <div>
                 <span className="label">Dumpling hub host:</span>
                 <Input
-                    className="value value-shifty-host"
+                    className="value value-hub-host"
                     defaultValue={settings.shiftyHost}
                     onChange={e => actions.setShiftyHost(e.target.value)}
                 />

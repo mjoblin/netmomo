@@ -23,13 +23,13 @@ export const Notifications = class extends React.Component {
         if (connectedToShifty !== this.state.connectedToShifty) {
             if (connectedToShifty) {
                 notification.success({
-                    message: 'Connected to shifty',
-                    description: 'The shifty connection has been established.',
+                    message: 'Connected to dumpling hub',
+                    description: 'The dumpling hub connection has been established.',
                 });
             } else {
                 notification.warning({
-                    message: 'Disconnected from shifty',
-                    description: 'The connection to shifty has been lost.',
+                    message: 'Disconnected from dumpling hub',
+                    description: 'The connection to the dumpling hub has been lost.',
                 });
 
             }

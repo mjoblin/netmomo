@@ -33,7 +33,7 @@ ShallowWrapper {
         " dumpling eater. It shows you the contents of the dumplings collected from your network.",
         <p />,
         <div
-          className="shifty-connection-status"
+          className="hub-connection-status"
         >
           Dumpling hub connection status: 
           <Connect(ConnectionStatus) />
@@ -95,7 +95,7 @@ ShallowWrapper {
             "Dumpling hub connection status: ",
             <Connect(ConnectionStatus) />,
           ],
-          "className": "shifty-connection-status",
+          "className": "hub-connection-status",
         },
         "ref": null,
         "rendered": Array [
@@ -158,7 +158,7 @@ ShallowWrapper {
           " dumpling eater. It shows you the contents of the dumplings collected from your network.",
           <p />,
           <div
-            className="shifty-connection-status"
+            className="hub-connection-status"
           >
             Dumpling hub connection status: 
             <Connect(ConnectionStatus) />
@@ -220,7 +220,7 @@ ShallowWrapper {
               "Dumpling hub connection status: ",
               <Connect(ConnectionStatus) />,
             ],
-            "className": "shifty-connection-status",
+            "className": "hub-connection-status",
           },
           "ref": null,
           "rendered": Array [
