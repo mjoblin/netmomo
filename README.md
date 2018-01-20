@@ -1,14 +1,14 @@
 # netmomo
 
 netmomo displays computer network information provided by a packet sniffing
-back-end (NetDumplings) in a web browser.
+back-end (netdumplings) in a web browser.
 
 netmomo is primarily an experiment in writing a
 [React](https://facebook.github.io/react/) / 
 [Redux](http://redux.js.org/) / 
 [Ant](https://ant.design/) application driven by data arriving over a
 websocket. The data is provided by a network packet sniffing framework called
-[NetDumplings](https://netdumplings.readthedocs.org). NetDumplings takes care
+[netdumplings](https://netdumplings.readthedocs.org). netdumplings takes care
 of the back-end (network packet sniffing and processing) and netmomo takes care
 of the front-end display.
 
@@ -21,7 +21,7 @@ If it can be sniffed, it can be displayed by netmomo.
 
 ### Home screen
 
-The main home screen of netmomo.
+The main home screen.
 
 <img alt="home" width="800" src="../screenshots/screenshots/home.png">
 
@@ -45,23 +45,23 @@ A chart of packet counts by protocol.
 
 ### System status (kitchens)
 
-NetDumplings kitchens are the packet sniffing processors (written in Python)
+netdumplings kitchens are the packet sniffing processors (written in Python)
 registered with the back-end.
 
 <img alt="system status" width="800" src="../screenshots/screenshots/systemstatus_kitchens.png">
 
 ### System status (eaters)
 
-NetDumpling eaters are the websocket clients receiving packet sniffing
-information from the NetDumplings back-end (via the `shifty` websocket server
+netdumpling eaters are the websocket clients receiving packet sniffing
+information from the netdumplings back-end (via the `nd-hub` websocket server
 that they all connect to). This shows netmomo and another client called
-'dumplingprinter' (a NetDumplings commandline helper tool).
+'dumplingprinter' (a netdumplings commandline helper tool).
 
 <img alt="system status" width="800" src="../screenshots/screenshots/systemstatus_eaters.png">
 
 ### Settings
 
-A simple settings screen to tell netmomo where it can find the NetDumplings
+A simple settings screen to tell netmomo where it can find the netdumplings
 `shifty` websocket server.
 
 <img alt="settings" width="800" src="../screenshots/screenshots/settings.png">
@@ -78,24 +78,24 @@ $ npm start
 netmomo will then be accessible on `http://localhost:3000`.
 
 You also need to
-[install NetDumplings](https://netdumplings.readthedocs.io/en/latest/pages/installation.html)
-and then start `nd-shifty` (the websocket server) and `nd-snifty` (the packet
+[install netdumplings](https://netdumplings.readthedocs.io/en/latest/pages/installation.html)
+and then start `nd-hub` (the websocket server) and `nd-sniff` (the packet
 sniffer):
 
 ```bash
 # in one terminal, start the websocket server
-$ nd-shifty
+$ nd-hub
 
 # in a second terminal, start the packet sniffer
-$ nd-snifty --interface en0 --filter "tcp or icmp or udp or arp"
+$ nd-sniff --interface en0 --filter "tcp or icmp or udp or arp"
 ```
 
-If you want to see the packet data being emitted from `nd-shifty` (i.e. the
-same data being sent to netmomo):
+If you want to see the packet data being emitted from `nd-hub` (i.e. the same
+data being sent to netmomo):
 
 ```
 # in a third terminal, start the dumpling printer:
-$ nd-printer
+$ nd-print
 ```
 
 ## The code
@@ -117,7 +117,7 @@ netmomo is a [React](https://facebook.github.io/react/) application using
     * `app/modules/app/` is a special top-level module which defines the main
       application layout.
         * **`app/modules/app/sagas.js` contains the code for opening the
-          WebSocket connection to the NetDumplings back-end, receiving
+          WebSocket connection to the netdumplings back-end, receiving
           dumplings, and re-emitting them as `app/DUMPLING` Redux actions.**
     * Each module can contain the following:
         * `components/` - React components.
@@ -128,7 +128,7 @@ netmomo is a [React](https://facebook.github.io/react/) application using
         * `reducer.js` - Redux reducer (which updates the Redux store; i.e.
            changes the application state).
             * **Most module reducers will listen for the `app/DUMPLING` action,
-              check which NetDumplings chef generated the dumpling, and if it's
+              check which netdumplings chef generated the dumpling, and if it's
               a chef/dumpling that the module cares about then the action will
               be used to update the module's slice of the Redux state.**
         * `sagas.js` - Redux sagas (mostly used for async Redux state updates).
