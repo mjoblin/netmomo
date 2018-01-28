@@ -1,50 +1,51 @@
 import deepcopy from 'deepcopy';
 
 import * as t from './actionTypes';
-import { SHIFTY_CONNECTING, SHIFTY_CONNECTED, SHIFTY_DISCONNECTED,
-    SHIFTY_RECONNECTING } from './constants';
+import { HUB_CONNECTING, HUB_CONNECTED, HUB_DISCONNECTED,
+    HUB_RECONNECTING } from './constants';
 
 
 const DEFAULT_STATE = {
-    shiftyConnectionStatus: SHIFTY_DISCONNECTED,
+    hubConnectionStatus: HUB_DISCONNECTED,
     dumplingsSeen: {},
 };
 
 const appReducer = (state = DEFAULT_STATE, action) => {
     switch (action.type) {
-        case t.SHIFTY_CONNECTING:
+        case t.HUB_CONNECTING:
             // If we're attempting to connect while in reconnect mode then we
             // want to keep the connection status as RECONNECTING. This avoids
             // constantly toggling the status between CONNECTING and
             // RECONNECTING between each reconnect attempt.
-            if (state.shiftyConnectionStatus === SHIFTY_RECONNECTING) {
+            if (state.hubConnectionStatus === HUB_RECONNECTING) {
                 return state;
             } else {
                 return {
                     ...state,
-                    shiftyConnectionStatus: SHIFTY_CONNECTING
+                    hubConnectionStatus: HUB_CONNECTING
                 };
             }
-        case t.SHIFTY_CONNECTED:
+        case t.HUB_CONNECTED:
             return {
                 ...state,
-                shiftyConnectionStatus: SHIFTY_CONNECTED
+                hubConnectionStatus: HUB_CONNECTED
             };
-        case t.SHIFTY_DISCONNECTED:
+        case t.HUB_DISCONNECTED:
             return {
                 ...state,
-                shiftyConnectionStatus: SHIFTY_DISCONNECTED
+                hubConnectionStatus: HUB_DISCONNECTED
             };
-        case t.SHIFTY_RECONNECT_ATTEMPT:
+        case t.HUB_RECONNECT_ATTEMPT:
             return {
                 ...state,
-                shiftyConnectionStatus: SHIFTY_RECONNECTING
+                hubConnectionStatus: HUB_RECONNECTING
             };
         case t.DUMPLING: {
             // Keep track of how many dumplings we've seen from each chef.
-            // These will probably not add up to total_dumplings_sent from the
-            // SystemStatusChef dumplings because shifty has likely been up
-            // longer than this web eater has.
+            // These will probably not add up to total_dumplings_out from the
+            // SystemStatusChef dumplings because hub has likely been up
+            // longer than this web eater has -- and there might be multiple
+            // eaters listening.
             const newState = deepcopy(state);
             const chef = action.dumpling.metadata.chef;
             newState.dumplingsSeen[chef] =

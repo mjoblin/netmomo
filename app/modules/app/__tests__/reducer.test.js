@@ -1,12 +1,12 @@
 import reducer from '../reducer';
 import arpPacketDumpling from './arpPacketDumpling.json';
 import appModule from "AppRoot/modules/app";
-import { SHIFTY_DISCONNECTED, SHIFTY_CONNECTING, SHIFTY_CONNECTED,
-    SHIFTY_RECONNECTING } from "AppRoot/modules/app/constants";
+import { HUB_DISCONNECTED, HUB_CONNECTING, HUB_CONNECTED,
+    HUB_RECONNECTING } from "AppRoot/modules/app/constants";
 
 
 const defaultState = {
-    shiftyConnectionStatus: SHIFTY_DISCONNECTED,
+    hubConnectionStatus: HUB_DISCONNECTED,
     dumplingsSeen: {},
 };
 
@@ -17,53 +17,53 @@ describe('app reducer', () => {
         ).toEqual(defaultState);
     });
 
-    test('SHIFTY_CONNECTING action', () => {
-        // The SHIFTY_CONNECTING action should always result in a
-        // SHIFTY_CONNECTING status except when the status is already
-        // SHIFTY_RECONNECTING in which case it should stay as-is.
+    test('HUB_CONNECTING action', () => {
+        // The HUB_CONNECTING action should always result in a
+        // HUB_CONNECTING status except when the status is already
+        // HUB_RECONNECTING in which case it should stay as-is.
         const stateReconnecting = {
             ...defaultState,
-            shiftyConnectionStatus: SHIFTY_RECONNECTING,
+            hubConnectionStatus: HUB_RECONNECTING,
         };
 
         expect(
             reducer(stateReconnecting, {
-                type: appModule.actionTypes.SHIFTY_CONNECTING,
+                type: appModule.actionTypes.HUB_CONNECTING,
             })
         ).toEqual(stateReconnecting);
 
-        // Other statuses should change to SHIFTY_CONNECTING.
-        [SHIFTY_CONNECTING, SHIFTY_CONNECTED, SHIFTY_DISCONNECTED].forEach(status => {
+        // Other statuses should change to HUB_CONNECTING.
+        [HUB_CONNECTING, HUB_CONNECTED, HUB_DISCONNECTED].forEach(status => {
             expect(
-                reducer({ ...defaultState, shiftyConnectionStatus: status }, {
-                    type: appModule.actionTypes.SHIFTY_CONNECTING,
+                reducer({ ...defaultState, hubConnectionStatus: status }, {
+                    type: appModule.actionTypes.HUB_CONNECTING,
                 })
-            ).toEqual({ ...defaultState, shiftyConnectionStatus: SHIFTY_CONNECTING });
+            ).toEqual({ ...defaultState, hubConnectionStatus: HUB_CONNECTING });
         });
     });
 
-    test('SHIFTY_CONNECTED action', () => {
+    test('HUB_CONNECTED action', () => {
         expect(
             reducer(defaultState, {
-                type: appModule.actionTypes.SHIFTY_CONNECTED,
+                type: appModule.actionTypes.HUB_CONNECTED,
             })
-        ).toEqual({ ...defaultState, shiftyConnectionStatus: SHIFTY_CONNECTED });
+        ).toEqual({ ...defaultState, hubConnectionStatus: HUB_CONNECTED });
     });
 
-    test('SHIFTY_DISCONNECTED action', () => {
+    test('HUB_DISCONNECTED action', () => {
         expect(
-            reducer({ ...defaultState, shiftyConnectionStatus: SHIFTY_CONNECTED }, {
-                type: appModule.actionTypes.SHIFTY_DISCONNECTED,
+            reducer({ ...defaultState, hubConnectionStatus: HUB_CONNECTED }, {
+                type: appModule.actionTypes.HUB_DISCONNECTED,
             })
-        ).toEqual({ ...defaultState, shiftyConnectionStatus: SHIFTY_DISCONNECTED });
+        ).toEqual({ ...defaultState, hubConnectionStatus: HUB_DISCONNECTED });
     });
 
-    test('SHIFTY_RECONNECT_ATTEMPT action', () => {
+    test('HUB_RECONNECT_ATTEMPT action', () => {
         expect(
             reducer(defaultState, {
-                type: appModule.actionTypes.SHIFTY_RECONNECT_ATTEMPT,
+                type: appModule.actionTypes.HUB_RECONNECT_ATTEMPT,
             })
-        ).toEqual({ ...defaultState, shiftyConnectionStatus: SHIFTY_RECONNECTING });
+        ).toEqual({ ...defaultState, hubConnectionStatus: HUB_RECONNECTING });
     });
 
     test('DUMPLING action', () => {

@@ -1,7 +1,7 @@
 {
     "metadata": {
         "chef": "SystemStatusChef",
-        "creation_time": 1509932455295.5361,
+        "creation_time": 1509932455.5361,
         "driver": "interval",
         "kitchen": null
     },
@@ -12,7 +12,7 @@
                 "info_from_eater": {
                     "eater_name": "netmomo"
                 },
-                "info_from_shifty": {
+                "info_from_hub": {
                     "host": "::1",
                     "port": 58725
                 }
@@ -21,7 +21,7 @@
                 "info_from_eater": {
                     "eater_name": "dumplingprinter"
                 },
-                "info_from_shifty": {
+                "info_from_hub": {
                     "host": "::1",
                     "port": 58897
                 }
@@ -41,13 +41,13 @@
                     "kitchen_name": "default_kitchen",
                     "poke_interval": 5
                 },
-                "info_from_shifty": {
+                "info_from_hub": {
                     "host": "::1",
                     "port": 58872
                 }
             }
         ],
         "server_uptime": 295.175053,
-        "total_dumplings_sent": 383
+        "total_dumplings_out": 383
     }
 }

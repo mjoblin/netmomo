@@ -37,7 +37,7 @@ export const DNSLookup = class extends React.Component {
                 dataIndex: 'latest',
                 sorter: (a, b) => a.latest - b.latest,
                 render: text =>
-                    moment(text).format('MMMM DD YYYY, h:mm:ss a'),
+                    moment.unix(text).format('MMMM DD YYYY, h:mm:ss a'),
             },
         ];
 

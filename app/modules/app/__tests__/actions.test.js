@@ -16,87 +16,87 @@ describe('app actions (general)', () => {
     });
 });
 
-describe('app actions (shifty)', () => {
-    test('shiftyConnect', () => {
+describe('app actions (hub)', () => {
+    test('hubConnect', () => {
         const host = 'localhost';
         const port = 11348;
 
         const expectedAction = {
-            type: actionTypes.SHIFTY_CONNECT,
+            type: actionTypes.HUB_CONNECT,
             host,
             port,
         };
 
-        expect(actions.shiftyConnect(host, port)).toEqual(expectedAction);
+        expect(actions.hubConnect(host, port)).toEqual(expectedAction);
     });
 
-    test('shiftyDisconnect', () => {
+    test('hubDisconnect', () => {
         const expectedAction = {
-            type: actionTypes.SHIFTY_DISCONNECT,
+            type: actionTypes.HUB_DISCONNECT,
         };
 
-        expect(actions.shiftyDisconnect()).toEqual(expectedAction);
+        expect(actions.hubDisconnect()).toEqual(expectedAction);
     });
 
-    test('shiftyConnecting', () => {
+    test('hubConnecting', () => {
         const expectedAction = {
-            type: actionTypes.SHIFTY_CONNECTING,
+            type: actionTypes.HUB_CONNECTING,
         };
 
-        expect(actions.shiftyConnecting()).toEqual(expectedAction);
+        expect(actions.hubConnecting()).toEqual(expectedAction);
     });
 
-    test('shiftyUnavailable', () => {
+    test('hubUnavailable', () => {
         const expectedAction = {
-            type: actionTypes.SHIFTY_UNAVAILABLE,
+            type: actionTypes.HUB_UNAVAILABLE,
         };
 
-        expect(actions.shiftyUnavailable()).toEqual(expectedAction);
+        expect(actions.hubUnavailable()).toEqual(expectedAction);
     });
 
-    test('shiftyConnected', () => {
+    test('hubConnected', () => {
         const expectedAction = {
-            type: actionTypes.SHIFTY_CONNECTED,
+            type: actionTypes.HUB_CONNECTED,
         };
 
-        expect(actions.shiftyConnected()).toEqual(expectedAction);
+        expect(actions.hubConnected()).toEqual(expectedAction);
     });
 
-    test('shiftyDisconnected', () => {
+    test('hubDisconnected', () => {
         const expectedAction = {
-            type: actionTypes.SHIFTY_DISCONNECTED,
+            type: actionTypes.HUB_DISCONNECTED,
         };
 
-        expect(actions.shiftyDisconnected()).toEqual(expectedAction);
+        expect(actions.hubDisconnected()).toEqual(expectedAction);
     });
 
-    test('shiftyError', () => {
+    test('hubError', () => {
         const error = 'test error';
 
         const expectedAction = {
-            type: actionTypes.SHIFTY_ERROR,
+            type: actionTypes.HUB_ERROR,
             error,
         };
 
-        expect(actions.shiftyError(error)).toEqual(expectedAction);
+        expect(actions.hubError(error)).toEqual(expectedAction);
     });
 
-    test('shiftyCancelReconnect', () => {
+    test('hubCancelReconnect', () => {
         const expectedAction = {
-            type: actionTypes.SHIFTY_CANCEL_RECONNECT,
+            type: actionTypes.HUB_CANCEL_RECONNECT,
         };
 
-        expect(actions.shiftyCancelReconnect()).toEqual(expectedAction);
+        expect(actions.hubCancelReconnect()).toEqual(expectedAction);
     });
 
-    test('shiftyReconnectAttempt', () => {
+    test('hubReconnectAttempt', () => {
         const delay = 10;
 
         const expectedAction = {
-            type: actionTypes.SHIFTY_RECONNECT_ATTEMPT,
+            type: actionTypes.HUB_RECONNECT_ATTEMPT,
             delay,
         };
 
-        expect(actions.shiftyReconnectAttempt(delay)).toEqual(expectedAction);
+        expect(actions.hubReconnectAttempt(delay)).toEqual(expectedAction);
     });
 });

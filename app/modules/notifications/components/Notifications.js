@@ -11,30 +11,30 @@ export const Notifications = class extends React.Component {
         super(props);
 
         this.state = {
-            connectedToShifty: props.shiftyConnectionStatus ===
-                appModule.constants.SHIFTY_CONNECTED,
+            connectedToHub: props.hubConnectionStatus ===
+                appModule.constants.HUB_CONNECTED,
         };
     }
 
     componentWillReceiveProps(nextProps) {
-        const connectedToShifty = nextProps.shiftyConnectionStatus ===
-            appModule.constants.SHIFTY_CONNECTED;
+        const connectedToHub = nextProps.hubConnectionStatus ===
+            appModule.constants.HUB_CONNECTED;
 
-        if (connectedToShifty !== this.state.connectedToShifty) {
-            if (connectedToShifty) {
+        if (connectedToHub !== this.state.connectedToHub) {
+            if (connectedToHub) {
                 notification.success({
-                    message: 'Connected to shifty',
-                    description: 'The shifty connection has been established.',
+                    message: 'Connected to dumpling hub',
+                    description: 'The dumpling hub connection has been established.',
                 });
             } else {
                 notification.warning({
-                    message: 'Disconnected from shifty',
-                    description: 'The connection to shifty has been lost.',
+                    message: 'Disconnected from dumpling hub',
+                    description: 'The connection to the dumpling hub has been lost.',
                 });
 
             }
 
-            this.setState({ ...this.state, connectedToShifty });
+            this.setState({ ...this.state, connectedToHub });
         }
     }
 
@@ -46,11 +46,11 @@ export const Notifications = class extends React.Component {
 Notifications.displayName = 'Notifications';
 
 Notifications.propTypes = {
-    shiftyConnectionStatus: PropTypes.string.isRequired,
+    hubConnectionStatus: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
-    shiftyConnectionStatus: appModule.selectors.shiftyConnectionStatus(state),
+    hubConnectionStatus: appModule.selectors.hubConnectionStatus(state),
 });
 
 export default connect(

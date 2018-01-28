@@ -1,12 +1,12 @@
 import * as t from './actionTypes';
 
 
-export const setShiftyHost = shiftyHost => ({
-    type: t.SET_SHIFTY_HOST,
-    shiftyHost,
+export const setHubHost = hubHost => ({
+    type: t.SET_HUB_HOST,
+    hubHost,
 });
 
-export const setShiftyPort = shiftyPort => ({
-    type: t.SET_SHIFTY_PORT,
-    shiftyPort,
+export const setHubPort = hubPort => ({
+    type: t.SET_HUB_PORT,
+    hubPort,
 });

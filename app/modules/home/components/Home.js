@@ -18,31 +18,31 @@ export const Home = () => (
         eater. It shows you the contents of the dumplings collected from your network.
 
         <p />
-        <div className="shifty-connection-status">
-            shifty connection status: <ConnectionStatus />
+        <div className="hub-connection-status">
+            Dumpling hub connection status: <ConnectionStatus />
         </div>
         <p />
 
-        If you cannot connect to shifty then try changing
+        If you cannot connect to the dumpling hub then try changing
         the <NavLink to='/settings'>Settings.</NavLink>
     </div>
 );
 
 Home.propTypes = {
-    shiftyConnected: PropTypes.bool.isRequired,
+    hubConnected: PropTypes.bool.isRequired,
     settings: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
-    shiftyConnected: appModule.selectors.shiftyConnected(state),
+    hubConnected: appModule.selectors.hubConnected(state),
     settings: settingsModule.selectors.getSettings(state),
 });
 
 const mapDispatchToProps = dispatch => {
     return {
         actions: bindActionCreators({
-            shiftyConnect: appModule.actions.shiftyConnect,
-            shiftyDisconnect: appModule.actions.shiftyDisconnect
+            hubConnect: appModule.actions.hubConnect,
+            hubDisconnect: appModule.actions.hubDisconnect
         }, dispatch)
     };
 };

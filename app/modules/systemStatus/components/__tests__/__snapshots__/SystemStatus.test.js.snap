@@ -32,7 +32,8 @@ ShallowWrapper {
           },
         ],
         "server_uptime": 130.094683,
-        "total_dumplings_sent": 68,
+        "total_dumplings_in": 34,
+        "total_dumplings_out": 68,
       }
     }
   />,
@@ -58,7 +59,7 @@ ShallowWrapper {
           <span
             className="label"
           >
-            shifty uptime:
+            Dumpling hub uptime:
           </span>
           <span
             className="value"
@@ -69,7 +70,18 @@ ShallowWrapper {
           <span
             className="label"
           >
-            dumplings sent:
+            Dumplings in:
+          </span>
+          <span
+            className="value"
+          >
+            34
+          </span>
+          <br />
+          <span
+            className="label"
+          >
+            Dumplings out:
           </span>
           <span
             className="value"
@@ -149,7 +161,7 @@ ShallowWrapper {
             <span
               className="label"
             >
-              shifty uptime:
+              Dumpling hub uptime:
             </span>,
             <span
               className="value"
@@ -160,7 +172,18 @@ ShallowWrapper {
             <span
               className="label"
             >
-              dumplings sent:
+              Dumplings in:
+            </span>,
+            <span
+              className="value"
+            >
+              34
+            </span>,
+            <br />,
+            <span
+              className="label"
+            >
+              Dumplings out:
             </span>,
             <span
               className="value"
@@ -177,11 +200,11 @@ ShallowWrapper {
             "key": null,
             "nodeType": "host",
             "props": Object {
-              "children": "shifty uptime:",
+              "children": "Dumpling hub uptime:",
               "className": "label",
             },
             "ref": null,
-            "rendered": "shifty uptime:",
+            "rendered": "Dumpling hub uptime:",
             "type": "span",
           },
           Object {
@@ -210,11 +233,44 @@ ShallowWrapper {
             "key": null,
             "nodeType": "host",
             "props": Object {
-              "children": "dumplings sent:",
+              "children": "Dumplings in:",
               "className": "label",
             },
             "ref": null,
-            "rendered": "dumplings sent:",
+            "rendered": "Dumplings in:",
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "34",
+              "className": "value",
+            },
+            "ref": null,
+            "rendered": "34",
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Dumplings out:",
+              "className": "label",
+            },
+            "ref": null,
+            "rendered": "Dumplings out:",
             "type": "span",
           },
           Object {
@@ -402,7 +458,7 @@ ShallowWrapper {
             <span
               className="label"
             >
-              shifty uptime:
+              Dumpling hub uptime:
             </span>
             <span
               className="value"
@@ -413,7 +469,18 @@ ShallowWrapper {
             <span
               className="label"
             >
-              dumplings sent:
+              Dumplings in:
+            </span>
+            <span
+              className="value"
+            >
+              34
+            </span>
+            <br />
+            <span
+              className="label"
+            >
+              Dumplings out:
             </span>
             <span
               className="value"
@@ -493,7 +560,7 @@ ShallowWrapper {
               <span
                 className="label"
               >
-                shifty uptime:
+                Dumpling hub uptime:
               </span>,
               <span
                 className="value"
@@ -504,7 +571,18 @@ ShallowWrapper {
               <span
                 className="label"
               >
-                dumplings sent:
+                Dumplings in:
+              </span>,
+              <span
+                className="value"
+              >
+                34
+              </span>,
+              <br />,
+              <span
+                className="label"
+              >
+                Dumplings out:
               </span>,
               <span
                 className="value"
@@ -521,11 +599,11 @@ ShallowWrapper {
               "key": null,
               "nodeType": "host",
               "props": Object {
-                "children": "shifty uptime:",
+                "children": "Dumpling hub uptime:",
                 "className": "label",
               },
               "ref": null,
-              "rendered": "shifty uptime:",
+              "rendered": "Dumpling hub uptime:",
               "type": "span",
             },
             Object {
@@ -554,11 +632,44 @@ ShallowWrapper {
               "key": null,
               "nodeType": "host",
               "props": Object {
-                "children": "dumplings sent:",
+                "children": "Dumplings in:",
                 "className": "label",
               },
               "ref": null,
-              "rendered": "dumplings sent:",
+              "rendered": "Dumplings in:",
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "34",
+                "className": "value",
+              },
+              "ref": null,
+              "rendered": "34",
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Dumplings out:",
+                "className": "label",
+              },
+              "ref": null,
+              "rendered": "Dumplings out:",
               "type": "span",
             },
             Object {

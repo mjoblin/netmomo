@@ -1,7 +1,7 @@
 {
     "metadata": {
         "chef": "ARPChef",
-        "creation_time": 1509932219145.2742,
+        "creation_time": 1509932219.2742,
         "driver": "packet",
         "kitchen": "default_kitchen"
     },
@@ -12,6 +12,6 @@
         "operation": "reply",
         "src_hw": "02:02:02:02:02:02",
         "src_ip": "192.168.1.2",
-        "time": 1509932219145.2742
+        "time": 1509932219.2742
     }
 }

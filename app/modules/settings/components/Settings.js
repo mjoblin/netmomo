@@ -12,23 +12,23 @@ import { getSettings } from '../selectors';
 import './style.scss';
 
 
-export const Settings = ({ settings, actions, shiftyConnectionStatus }) => {
-    const shiftyConnected = appModule.constants.SHIFTY_CONNECTED;
-    const shiftyDisconnected = appModule.constants.SHIFTY_DISCONNECTED;
-    const shiftyReconnecting = appModule.constants.SHIFTY_RECONNECTING;
+export const Settings = ({ settings, actions, hubConnectionStatus }) => {
+    const hubConnected = appModule.constants.HUB_CONNECTED;
+    const hubDisconnected = appModule.constants.HUB_DISCONNECTED;
+    const hubReconnecting = appModule.constants.HUB_RECONNECTING;
 
-    let shiftyActionButtonText, shiftyActionButtonClickHandler;
+    let hubActionButtonText, hubActionButtonClickHandler;
 
-    if (shiftyConnectionStatus === shiftyConnected) {
-        shiftyActionButtonText = 'Disconnect';
-        shiftyActionButtonClickHandler = actions.shiftyDisconnect;
-    } else if (shiftyConnectionStatus === shiftyReconnecting) {
-        shiftyActionButtonText = 'Cancel Reconnect';
-        shiftyActionButtonClickHandler = actions.shiftyCancelReconnect;
+    if (hubConnectionStatus === hubConnected) {
+        hubActionButtonText = 'Disconnect';
+        hubActionButtonClickHandler = actions.hubDisconnect;
+    } else if (hubConnectionStatus === hubReconnecting) {
+        hubActionButtonText = 'Cancel Reconnect';
+        hubActionButtonClickHandler = actions.hubCancelReconnect;
     } else  {
-        shiftyActionButtonText = 'Connect';
-        shiftyActionButtonClickHandler =
-            () => { actions.shiftyConnect(settings.shiftyHost, settings.shiftyPort); };
+        hubActionButtonText = 'Connect';
+        hubActionButtonClickHandler =
+            () => { actions.hubConnect(settings.hubHost, settings.hubPort); };
     }
 
     return (
@@ -36,36 +36,36 @@ export const Settings = ({ settings, actions, shiftyConnectionStatus }) => {
             <h2>Settings</h2>
 
             <div>
-                <span className="label">Shifty location:</span>
+                <span className="label">Dumpling hub host:</span>
                 <Input
-                    className="value value-shifty-host"
-                    defaultValue={settings.shiftyHost}
-                    onChange={e => actions.setShiftyHost(e.target.value)}
+                    className="value value-hub-host"
+                    defaultValue={settings.hubHost}
+                    onChange={e => actions.setHubHost(e.target.value)}
                 />
 
-                <span className="label">Port:</span>
+                <span className="label">port:</span>
                 <InputNumber
                     className="value"
                     defaultValue={11348}
                     min={1}
                     max={65535}
-                    onChange={e => typeof(e) === 'number' && actions.setShiftyPort(e)}
+                    onChange={e => typeof(e) === 'number' && actions.setHubPort(e)}
                 />
                 <Button
                     type="primary"
-                    onClick={shiftyActionButtonClickHandler}
+                    onClick={hubActionButtonClickHandler}
                     disabled={
-                        shiftyConnectionStatus !== shiftyConnected &&
-                        shiftyConnectionStatus !== shiftyDisconnected &&
-                        shiftyConnectionStatus !== shiftyReconnecting
+                        hubConnectionStatus !== hubConnected &&
+                        hubConnectionStatus !== hubDisconnected &&
+                        hubConnectionStatus !== hubReconnecting
                     }
                 >
-                    {shiftyActionButtonText}
+                    {hubActionButtonText}
                 </Button>
             </div>
 
             <div>
-                <span className="label">Shifty connection status:</span>
+                <span className="label">Dumpling hub connection status:</span>
                 <ConnectionStatus className="value" />
             </div>
         </div>
@@ -75,21 +75,21 @@ export const Settings = ({ settings, actions, shiftyConnectionStatus }) => {
 Settings.propTypes = {
     actions: PropTypes.object.isRequired,
     settings: PropTypes.object.isRequired,
-    shiftyConnectionStatus: PropTypes.string.isRequired,
+    hubConnectionStatus: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
     settings: getSettings(state),
-    shiftyConnectionStatus: appModule.selectors.shiftyConnectionStatus(state),
+    hubConnectionStatus: appModule.selectors.hubConnectionStatus(state),
 });
 
 const mapDispatchToProps = dispatch => {
     return {
         actions: bindActionCreators({
             ...actionCreators,
-            shiftyConnect: appModule.actions.shiftyConnect,
-            shiftyDisconnect: appModule.actions.shiftyDisconnect,
-            shiftyCancelReconnect: appModule.actions.shiftyCancelReconnect,
+            hubConnect: appModule.actions.hubConnect,
+            hubDisconnect: appModule.actions.hubDisconnect,
+            hubCancelReconnect: appModule.actions.hubCancelReconnect,
         }, dispatch)
     };
 };

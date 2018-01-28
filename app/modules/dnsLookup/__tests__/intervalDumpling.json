@@ -1,7 +1,7 @@
 {
     "metadata": {
         "chef": "DNSLookupChef",
-        "creation_time": 1509932454475.738,
+        "creation_time": 1509932454.738,
         "driver": "interval",
         "kitchen": "default_kitchen"
     },
@@ -9,43 +9,43 @@
         "lookups_seen": {
             "10.foo-bar.someplacea.com": {
                 "count": 2,
-                "latest": 1509932219145.2742
+                "latest": 1509932219.2742
             },
             "11.foo-bar.someplacea.com": {
                 "count": 2,
-                "latest": 1509932340149.4321
+                "latest": 1509932340.4321
             },
             "host.someplacea.com": {
                 "count": 4,
-                "latest": 1509932435591.8489
+                "latest": 1509932435.8489
             },
             "d13-c12.b11.a10.someplaceb.net": {
                 "count": 2,
-                "latest": 1509932240383.421
+                "latest": 1509932240.421
             },
             "foo-bar.baz.a01.b02.someplaceb.net": {
                 "count": 2,
-                "latest": 1509932412136.5508
+                "latest": 1509932412.5508
             },
             "one.two.com": {
                 "count": 100,
-                "latest": 1509932429599.334
+                "latest": 1509932429.334
             },
             "one-two.three-four.five.six.net": {
                 "count": 2,
-                "latest": 1509932402413.265
+                "latest": 1509932402.265
             },
             "local": {
                 "count": 2,
-                "latest": 1509932220688.684
+                "latest": 1509932220.684
             },
             "test.site.com": {
                 "count": 4,
-                "latest": 1509932368997.142
+                "latest": 1509932368.142
             },
             "one.two.three.com": {
                 "count": 2,
-                "latest": 1509932218908.175
+                "latest": 1509932218.175
             }
         }
     }

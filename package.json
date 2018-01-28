@@ -1,6 +1,6 @@
 {
   "name": "netmomo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A NetDumplings web viewer",
   "main": "index.js",
   "scripts": {

@@ -6,7 +6,7 @@ describe('Home', () => {
     it('matches snapshot', () => {
         const component = shallow(
             <Home
-                shiftyConnected={false}
+                hubConnected={false}
                 settings={{}}
             />
         );

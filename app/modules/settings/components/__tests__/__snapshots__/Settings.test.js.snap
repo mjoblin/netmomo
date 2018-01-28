@@ -7,20 +7,20 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Settings
     actions={
       Object {
-        "setShiftyHost": [Function],
-        "setShiftyPort": [Function],
-        "shiftyCancelReconnect": [Function],
-        "shiftyConnect": [Function],
-        "shiftyDisconnect": [Function],
+        "hubCancelReconnect": [Function],
+        "hubConnect": [Function],
+        "hubDisconnect": [Function],
+        "setHubHost": [Function],
+        "setHubPort": [Function],
       }
     }
+    hubConnectionStatus="Connected"
     settings={
       Object {
-        "shiftyHost": "localhost",
-        "shiftyPort": 11348,
+        "hubHost": "localhost",
+        "hubPort": 11348,
       }
     }
-    shiftyConnectionStatus="Connected"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -42,11 +42,11 @@ ShallowWrapper {
           <span
             className="label"
           >
-            Shifty location:
+            Dumpling hub host:
           </span>
           <Input
             autosize={false}
-            className="value value-shifty-host"
+            className="value value-hub-host"
             defaultValue="localhost"
             disabled={false}
             onChange={[Function]}
@@ -56,7 +56,7 @@ ShallowWrapper {
           <span
             className="label"
           >
-            Port:
+            port:
           </span>
           <InputNumber
             className="value"
@@ -83,7 +83,7 @@ ShallowWrapper {
           <span
             className="label"
           >
-            Shifty connection status:
+            Dumpling hub connection status:
           </span>
           <Connect(ConnectionStatus)
             className="value"
@@ -114,11 +114,11 @@ ShallowWrapper {
             <span
               className="label"
             >
-              Shifty location:
+              Dumpling hub host:
             </span>,
             <Input
               autosize={false}
-              className="value value-shifty-host"
+              className="value value-hub-host"
               defaultValue="localhost"
               disabled={false}
               onChange={[Function]}
@@ -128,7 +128,7 @@ ShallowWrapper {
             <span
               className="label"
             >
-              Port:
+              port:
             </span>,
             <InputNumber
               className="value"
@@ -159,11 +159,11 @@ ShallowWrapper {
             "key": null,
             "nodeType": "host",
             "props": Object {
-              "children": "Shifty location:",
+              "children": "Dumpling hub host:",
               "className": "label",
             },
             "ref": null,
-            "rendered": "Shifty location:",
+            "rendered": "Dumpling hub host:",
             "type": "span",
           },
           Object {
@@ -172,7 +172,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "autosize": false,
-              "className": "value value-shifty-host",
+              "className": "value value-hub-host",
               "defaultValue": "localhost",
               "disabled": false,
               "onChange": [Function],
@@ -188,11 +188,11 @@ ShallowWrapper {
             "key": null,
             "nodeType": "host",
             "props": Object {
-              "children": "Port:",
+              "children": "port:",
               "className": "label",
             },
             "ref": null,
-            "rendered": "Port:",
+            "rendered": "port:",
             "type": "span",
           },
           Object {
@@ -242,7 +242,7 @@ ShallowWrapper {
             <span
               className="label"
             >
-              Shifty connection status:
+              Dumpling hub connection status:
             </span>,
             <Connect(ConnectionStatus)
               className="value"
@@ -256,11 +256,11 @@ ShallowWrapper {
             "key": null,
             "nodeType": "host",
             "props": Object {
-              "children": "Shifty connection status:",
+              "children": "Dumpling hub connection status:",
               "className": "label",
             },
             "ref": null,
-            "rendered": "Shifty connection status:",
+            "rendered": "Dumpling hub connection status:",
             "type": "span",
           },
           Object {
@@ -294,11 +294,11 @@ ShallowWrapper {
             <span
               className="label"
             >
-              Shifty location:
+              Dumpling hub host:
             </span>
             <Input
               autosize={false}
-              className="value value-shifty-host"
+              className="value value-hub-host"
               defaultValue="localhost"
               disabled={false}
               onChange={[Function]}
@@ -308,7 +308,7 @@ ShallowWrapper {
             <span
               className="label"
             >
-              Port:
+              port:
             </span>
             <InputNumber
               className="value"
@@ -335,7 +335,7 @@ ShallowWrapper {
             <span
               className="label"
             >
-              Shifty connection status:
+              Dumpling hub connection status:
             </span>
             <Connect(ConnectionStatus)
               className="value"
@@ -366,11 +366,11 @@ ShallowWrapper {
               <span
                 className="label"
               >
-                Shifty location:
+                Dumpling hub host:
               </span>,
               <Input
                 autosize={false}
-                className="value value-shifty-host"
+                className="value value-hub-host"
                 defaultValue="localhost"
                 disabled={false}
                 onChange={[Function]}
@@ -380,7 +380,7 @@ ShallowWrapper {
               <span
                 className="label"
               >
-                Port:
+                port:
               </span>,
               <InputNumber
                 className="value"
@@ -411,11 +411,11 @@ ShallowWrapper {
               "key": null,
               "nodeType": "host",
               "props": Object {
-                "children": "Shifty location:",
+                "children": "Dumpling hub host:",
                 "className": "label",
               },
               "ref": null,
-              "rendered": "Shifty location:",
+              "rendered": "Dumpling hub host:",
               "type": "span",
             },
             Object {
@@ -424,7 +424,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "autosize": false,
-                "className": "value value-shifty-host",
+                "className": "value value-hub-host",
                 "defaultValue": "localhost",
                 "disabled": false,
                 "onChange": [Function],
@@ -440,11 +440,11 @@ ShallowWrapper {
               "key": null,
               "nodeType": "host",
               "props": Object {
-                "children": "Port:",
+                "children": "port:",
                 "className": "label",
               },
               "ref": null,
-              "rendered": "Port:",
+              "rendered": "port:",
               "type": "span",
             },
             Object {
@@ -494,7 +494,7 @@ ShallowWrapper {
               <span
                 className="label"
               >
-                Shifty connection status:
+                Dumpling hub connection status:
               </span>,
               <Connect(ConnectionStatus)
                 className="value"
@@ -508,11 +508,11 @@ ShallowWrapper {
               "key": null,
               "nodeType": "host",
               "props": Object {
-                "children": "Shifty connection status:",
+                "children": "Dumpling hub connection status:",
                 "className": "label",
               },
               "ref": null,
-              "rendered": "Shifty connection status:",
+              "rendered": "Dumpling hub connection status:",
               "type": "span",
             },
             Object {

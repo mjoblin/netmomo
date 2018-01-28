@@ -3,25 +3,25 @@ import * as actionTypes from '../actionTypes';
 
 
 describe('settings actions', () => {
-    test('setShiftyHost', () => {
+    test('setHubHost', () => {
         const testHost = 'foo.com';
 
         const expectedAction = {
-            type: actionTypes.SET_SHIFTY_HOST,
-            shiftyHost: testHost,
+            type: actionTypes.SET_HUB_HOST,
+            hubHost: testHost,
         };
 
-        expect(actions.setShiftyHost(testHost)).toEqual(expectedAction);
+        expect(actions.setHubHost(testHost)).toEqual(expectedAction);
     });
 
-    test('setShiftyPort', () => {
+    test('setHubPort', () => {
         const testPort = 1234;
 
         const expectedAction = {
-            type: actionTypes.SET_SHIFTY_PORT,
-            shiftyPort: testPort,
+            type: actionTypes.SET_HUB_PORT,
+            hubPort: testPort,
         };
 
-        expect(actions.setShiftyPort(testPort)).toEqual(expectedAction);
+        expect(actions.setHubPort(testPort)).toEqual(expectedAction);
     });
 });

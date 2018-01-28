@@ -6,7 +6,7 @@ describe('Notifications', () => {
     it('matches snapshot', () => {
         const component = shallow(
             <Notifications
-                shiftyConnectionStatus={'Connected'}
+                hubConnectionStatus={'Connected'}
             />
         );
 

@@ -3,16 +3,16 @@ import { shallow } from 'enzyme';
 import { Settings } from '../Settings';
 
 const testSettings = {
-    shiftyHost: 'localhost',
-    shiftyPort: 11348,
+    hubHost: 'localhost',
+    hubPort: 11348,
 };
 
 const testActions = {
-    setShiftyHost: () => {},
-    setShiftyPort: () => {},
-    shiftyConnect: () => {},
-    shiftyDisconnect: () => {},
-    shiftyCancelReconnect: () => {},
+    setHubHost: () => {},
+    setHubPort: () => {},
+    hubConnect: () => {},
+    hubDisconnect: () => {},
+    hubCancelReconnect: () => {},
 };
 
 describe('Settings', () => {
@@ -21,7 +21,7 @@ describe('Settings', () => {
             <Settings
                 actions={testActions}
                 settings={testSettings}
-                shiftyConnectionStatus={'Connected'}
+                hubConnectionStatus={'Connected'}
             />
         );
 

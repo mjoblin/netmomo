@@ -3,8 +3,8 @@ import * as actionTypes from '../actionTypes';
 
 
 const defaultState = {
-    shiftyHost: 'localhost',
-    shiftyPort: 11348,
+    hubHost: 'localhost',
+    hubPort: 11348,
 };
 
 describe('settings reducer', () => {
@@ -14,31 +14,31 @@ describe('settings reducer', () => {
         ).toEqual(defaultState);
     });
 
-    test('settings/SET_SHIFTY_HOST action', () => {
+    test('settings/SET_HUB_HOST action', () => {
         const testHost = 'testHost';
 
         expect(
             reducer(defaultState, {
-                type: actionTypes.SET_SHIFTY_HOST,
-                shiftyHost: testHost,
+                type: actionTypes.SET_HUB_HOST,
+                hubHost: testHost,
             })
         ).toEqual({
             ...defaultState,
-            shiftyHost: testHost,
+            hubHost: testHost,
         });
     });
 
-    test('settings/SET_SHIFTY_PORT action', () => {
+    test('settings/SET_HUB_PORT action', () => {
         const testPort = 99;
 
         expect(
             reducer(defaultState, {
-                type: actionTypes.SET_SHIFTY_PORT,
-                shiftyPort: testPort,
+                type: actionTypes.SET_HUB_PORT,
+                hubPort: testPort,
             })
         ).toEqual({
             ...defaultState,
-            shiftyPort: testPort,
+            hubPort: testPort,
         });
     });
 });

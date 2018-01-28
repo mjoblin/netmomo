@@ -20,61 +20,61 @@ describe('dnsLookup selectors', () => {
             "count": 2,
             "host": "10.foo-bar.someplacea.com",
             "key": "10.foo-bar.someplacea.com",
-            "latest": 1509932219145.2742
+            "latest": 1509932219.2742
         },
         {
             "count": 2,
             "host": "11.foo-bar.someplacea.com",
             "key": "11.foo-bar.someplacea.com",
-            "latest": 1509932340149.4321
+            "latest": 1509932340.4321
         },
         {
             "count": 4,
             "host": "host.someplacea.com",
             "key": "host.someplacea.com",
-            "latest": 1509932435591.8489
+            "latest": 1509932435.8489
         },
         {
             "count": 2,
             "host": "d13-c12.b11.a10.someplaceb.net",
             "key": "d13-c12.b11.a10.someplaceb.net",
-            "latest": 1509932240383.421
+            "latest": 1509932240.421
         },
         {
             "count": 2,
             "host": "foo-bar.baz.a01.b02.someplaceb.net",
             "key": "foo-bar.baz.a01.b02.someplaceb.net",
-            "latest": 1509932412136.5508
+            "latest": 1509932412.5508
         },
         {
             "count": 100,
             "host": "one.two.com",
             "key": "one.two.com",
-            "latest": 1509932429599.334
+            "latest": 1509932429.334
         },
         {
             "count": 2,
             "host": "one-two.three-four.five.six.net",
             "key": "one-two.three-four.five.six.net",
-            "latest": 1509932402413.265
+            "latest": 1509932402.265
         },
         {
             "count": 2,
             "host": "local",
             "key": "local",
-            "latest": 1509932220688.684
+            "latest": 1509932220.684
         },
         {
             "count": 4,
             "host": "test.site.com",
             "key": "test.site.com",
-            "latest": 1509932368997.142
+            "latest": 1509932368.142
         },
         {
             "count": 2,
             "host": "one.two.three.com",
             "key": "one.two.three.com",
-            "latest": 1509932218908.175
+            "latest": 1509932218.175
         }
     ];
 
@@ -106,19 +106,19 @@ describe('dnsLookup selectors', () => {
                     "count": 114,
                     "host": "com",
                     "key": "10.foo-bar.someplacea.com",
-                    "latest": 1509932435591.8489
+                    "latest": 1509932435.8489
                 },
                 {
                     "count": 6,
                     "host": "net",
                     "key": "d13-c12.b11.a10.someplaceb.net",
-                    "latest": 1509932412136.5508
+                    "latest": 1509932412.5508
                 },
                 {
                     "count": 2,
                     "host": "local",
                     "key": "local",
-                    "latest": 1509932220688.684
+                    "latest": 1509932220.684
                 }
             ]
         );
@@ -137,7 +137,7 @@ describe('dnsLookup selectors', () => {
             "count": 2,
             "host": "local",
             "key": "local",
-            "latest": 1509932220688.684
+            "latest": 1509932220.684
         }
     ];
 
